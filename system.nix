@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  sddm-sugar-catppuccin,
+  ...
+}:
 
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -113,7 +118,7 @@
     ripgrep
     htop
     neofetch
-    (libsForQt5.callPackage ./pkgs/sddm-sugar-catppuccin { })
+    sddm-sugar-catppuccin
     waylock
     alacritty
     wofi

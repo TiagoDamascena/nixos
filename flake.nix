@@ -8,12 +8,25 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    sddm-sugar-catppuccin = {
+      url = "github:TiagoDamascena/sddm-sugar-catppuccin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    sddm-sugar-catppuccin,
+    ...
+  }@inputs: let 
+    system = "x86_64-linux";
+  in {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        system = system;
 
 	      modules = [
           ./system.nix
@@ -23,9 +36,11 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.tiago = import ./home.nix;
+            home-manager.users.tiago = import ./home/tiago.nix;
           }
         ];
+
+        specialArgs.sddm-sugar-catppuccin = sddm-sugar-catppuccin.packages.${system}.default;
       };
     };
   };
