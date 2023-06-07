@@ -91,7 +91,12 @@
   };
 
   security = {
-    pam.services.waylock = {};
+    pam.services = {
+      sddm = {
+        enableGnomeKeyring = true;
+      };
+      waylock = {};
+    };
   };
 
   programs = {
