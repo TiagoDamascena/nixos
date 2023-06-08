@@ -36,7 +36,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.tiago = import ./home/tiago.nix;
+            home-manager.users.tiago = import ./home/tiago;
           }
         ];
 

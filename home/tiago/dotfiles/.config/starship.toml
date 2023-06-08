@@ -1,0 +1,39 @@
+add_newline = false
+
+format = """
+[╭─](#cba6f7)$fill[](#cba6f7)$time[](#cba6f7)
+[│](#cba6f7) $username [◆](#b4befe) $directory$git_branch 
+[╰─► ](#cba6f7)
+"""
+
+[username]
+style_user = "#94e2d5 bold"
+style_root = "#f38ba8 bold"
+format = "[$user]($style)"
+disabled = false
+show_always = true
+
+[character]
+success_symbol = "[►](#cba6f7)"
+error_symbol = "[►](#f38ba8)"
+
+[directory]
+format = "[$read_only]($read_only_style)[$path]($style)"
+read_only = " "
+truncation_length = 0
+truncate_to_repo = false
+style = "bold italic #74c7ec"
+
+[git_branch]
+symbol = " "
+format = " [$symbol$branch(:$remote_branch)]($style) "
+style = "bold #f9e2af"
+
+[fill]
+symbol = "─"
+style = "#cba6f7"
+
+[time]
+disabled = false
+format = "[ $time ]($style)"
+style = "#11111b bg:#cba6f7"
