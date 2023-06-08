@@ -20,6 +20,12 @@
     recursive = true;
   }) (builtins.readDir ./dotfiles);
 
+  home.file.wallpapers = {
+    source = ./wallpapers;
+    target = "Images/wallpapers";
+    recursive = true;
+  };
+
   home.stateVersion = "23.05";
 
   programs.home-manager.enable = true;
