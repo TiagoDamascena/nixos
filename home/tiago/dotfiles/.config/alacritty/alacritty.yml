@@ -1,0 +1,97 @@
+import:
+  - ~/.config/alacritty/catppuccin/catppuccin-mocha.yml
+
+env:
+  WINIT_X11_SCALE_FACTOR: "1"
+
+window:
+  padding:
+    x: 10
+    y: 10
+  title: Terminal
+  dynamic_title: true
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+# Colors retrowave
+theme: &retrowave
+  primary:
+    background: '0x130822'
+    foreground: '0xffffff'
+
+  # Normal colors
+  normal:
+    black:   '0x403E41'
+    red:     '0xfe4450'
+    green:   '0x72f1b8'
+    yellow:  '0xfede5d'
+    blue:    '0x03edf9'
+    magenta: '0xff7edb'
+    cyan:    '0x03edf9'
+    white:   '0xfcfcfc'
+
+  # Bright colors
+  bright:
+    black:   '0x727072'
+    red:     '0xfe4450'
+    green:   '0x72f1b8'
+    yellow:  '0xfede5d'
+    blue:    '0x03edf9'
+    magenta: '0xff7edb'
+    cyan:    '0x03edf9'
+    white:   '0xfcfcfc'
+
+# Colors (Synthwave '84)
+theme: &synthwave84
+  primary:
+    background: '#261f32'
+    foreground: '#f2ebe0'
+    bright_foreground: '#ffffff'
+  cursor:
+    text: CellBackground
+    cursor: '#f825a4'
+  selection:
+    text: '#ffffff'
+    background: '#f825a4'
+
+  # Normal colors
+  normal:
+    black:   '#393939'
+    red:     '#f625a3'
+    green:   '#66edad'
+    yellow:  '#ff7f32'
+    blue:    '#03edf9'
+    magenta: '#de3cf7'
+    cyan:    '#91eed9'
+    white:   '#f2ebe0'
+
+  # Bright colors
+  bright:
+    black:   '#747369'
+    red:     '#b31a77'
+    green:   '#40946d'
+    yellow:  '#ad5621'
+    blue:    '#018890'
+    magenta: '#a52dba'
+    cyan:    '#67aa9a'
+    white:   '#f2ebe0'
+
+# Reference a theme anchor
+#colors: *retrowave
+
+font:
+  normal:
+    family: JetBrainsMono Nerd Font 
+
+  bold:
+    family: JetBrainsMono Nerd Font
+
+  italic:
+    family: JetBrainsMono Nerd Font
+
+  bold_italic:
+    family: JetBrainsMono Nerd Font
+
+  size: 11.0
