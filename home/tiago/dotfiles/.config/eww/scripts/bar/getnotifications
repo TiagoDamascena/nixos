@@ -1,0 +1,6 @@
+#!/bin/sh
+
+notifications=$(jq -s '. | reverse' /tmp/wired.log 2> /dev/null)
+count=$(jq '. | length' <<< "$notifications")
+
+printf '{"dnd": %s, "count": %d, "notifications": %s}\n' false "$count" "$notifications"

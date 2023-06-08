@@ -1,0 +1,31 @@
+(include "widgets/bar/notification.yuck")
+(include "widgets/bar/media.yuck")
+(include "widgets/bar/volume.yuck")
+(include "widgets/bar/wifi.yuck")
+(include "widgets/bar/battery.yuck")
+(include "widgets/bar/power.yuck")
+
+(defwidget sidestuff []
+  (box
+    :class "sidestuff"
+    :orientation "h"
+    :space-evenly false
+    :halign "end"
+    (icons)
+  )
+)
+
+(defwidget icons []
+  (box
+    :orientation "h"
+    :spacing 15
+    :space-evenly true
+    :halign "end"
+    (notification)
+    (media)
+    (volume)
+    (wifi)
+    (battery)
+    (power)
+  )
+)

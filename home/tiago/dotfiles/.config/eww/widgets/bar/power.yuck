@@ -1,0 +1,90 @@
+(defwidget power []
+  (eventbox
+    :class "icon power"
+    :cursor "pointer"
+    :onclick "scripts/menu open powermenu &"
+    (label :text "")
+  )
+)
+
+(defwidget powermenubox []
+  (box
+    :class "dropdown powermenu-box"
+    :orientation "v"
+    :spacing 15
+    (eventbox
+      :class "menu-button"
+      :cursor "pointer"
+      :onclick "waylock -fork-on-lock"
+      (box
+        :orientation "h"
+        :spacing 10
+        :space-evenly false
+        (label :class "icon" :text "")
+        (label :hexpand true :xalign 0 :text "Lock screen")
+        (label :class "shortcut" :text "‎וּ ‎גּ L")
+      )
+    )
+    (eventbox
+      :class "menu-button"
+      :cursor "pointer"
+      :onclick "loginctl kill-session $XDG_SESSION_ID"
+      (box
+        :orientation "h"
+        :spacing 10
+        :space-evenly false
+        (label :class "icon" :text "")
+        (label :hexpand true :xalign 0 :text "Log out")
+        (label :class "shortcut" :text "‎וּ ‎גּ Q")
+      )
+    )
+    (eventbox
+      :class "menu-button"
+      :cursor "pointer"
+      :onclick "systemctl suspend"
+      (box
+        :orientation "h"
+        :spacing 10
+        :space-evenly false
+        (label :class "icon" :text "")
+        (label :hexpand true :xalign 0 :text "Sleep")
+        (label :class "shortcut" :text "‎וּ ‎גּ S")
+      )
+    )
+    (eventbox
+      :class "menu-button"
+      :cursor "pointer"
+      :onclick "systemctl reboot"
+      (box
+        :orientation "h"
+        :spacing 10
+        :space-evenly false
+        (label :class "icon" :text "")
+        (label :hexpand true :xalign 0 :text "Restart")
+      )
+    )
+    (eventbox
+      :class "menu-button"
+      :cursor "pointer"
+      :onclick "systemctl poweroff"
+      (box
+        :orientation "h"
+        :spacing 10
+        :space-evenly false
+        (label :class "icon" :text "")
+        (label :hexpand true :xalign 0 :text "Shut down")
+      )
+    )
+  )
+)
+
+(defwindow powermenu
+	:geometry (geometry
+    :x "10"
+    :y "0" 
+    :anchor "top right"
+    :width "220px"
+  )
+  :stacking "fg"
+  (powermenubox)
+)

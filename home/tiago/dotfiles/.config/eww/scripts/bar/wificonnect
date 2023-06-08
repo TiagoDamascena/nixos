@@ -1,0 +1,9 @@
+#!/bin/sh
+
+ssid=$1
+passwd=$2
+
+$(nmcli device wifi connect $ssid password $passwd)
+$(eww close wifipassword)
+$(eww update ssid="")
+$(eww update passwd="")

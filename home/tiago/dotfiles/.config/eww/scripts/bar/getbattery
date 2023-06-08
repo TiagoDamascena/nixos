@@ -1,0 +1,47 @@
+#!/bin/sh
+
+PATH_AC="/sys/class/power_supply/AC0"
+PATH_BATTERY="/sys/class/power_supply/BAT0"
+
+ac=0
+battery_level=0
+battery_max=0
+
+if [ -f "$PATH_AC/online" ]; then
+    ac=$(cat "$PATH_AC/online")
+fi
+
+if [ -f "$PATH_BATTERY/energy_now" ]; then
+    battery_level=$(cat "$PATH_BATTERY/energy_now")
+fi
+
+if [ -f "$PATH_BATTERY/energy_full" ]; then
+    battery_max=$(cat "$PATH_BATTERY/energy_full")
+fi
+
+battery_percent=$(("$battery_level * 100"))
+battery_percent=$(("$battery_percent / $battery_max"))
+
+if [ "$battery_percent" -gt 90 ]; then
+    [[ "$ac" -eq 1 ]] && icon="" || icon=""
+elif [ "$battery_percent" -gt 80 ]; then
+    [[ "$ac" -eq 1 ]] && icon="" || icon=""
+elif [ "$battery_percent" -gt 70 ]; then
+    [[ "$ac" -eq 1 ]] && icon="" || icon=""
+elif [ "$battery_percent" -gt 60 ]; then
+    [[ "$ac" -eq 1 ]] && icon="" || icon=""
+elif [ "$battery_percent" -gt 50 ]; then
+    [[ "$ac" -eq 1 ]] && icon="" || icon=""
+elif [ "$battery_percent" -gt 40 ]; then
+    [[ "$ac" -eq 1 ]] && icon="" || icon=""
+elif [ "$battery_percent" -gt 30 ]; then
+    [[ "$ac" -eq 1 ]] && icon="" || icon=""
+elif [ "$battery_percent" -gt 20 ]; then
+    [[ "$ac" -eq 1 ]] && icon="" || icon=""
+elif [ "$battery_percent" -gt 10 ]; then
+    [[ "$ac" -eq 1 ]] && icon="" || icon=""
+else
+    [[ "$ac" -eq 1 ]] && icon="" || icon=""
+fi
+
+printf '{"ac": %d, "percent": %d, "icon": "%s"}\n' "$ac" "$battery_percent" "$icon"

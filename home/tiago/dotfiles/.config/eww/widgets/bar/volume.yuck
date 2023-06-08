@@ -1,0 +1,101 @@
+(defwidget volume []
+  (eventbox
+    :class {audio.mute ? "icon volume muted" : "icon volume"}
+    :tooltip "${audio.volume}%"
+    :cursor "pointer"
+    :onclick "scripts/menu open audiomenu &"
+    (overlay
+      (label :class "overlay" :text "")
+      (label :text {"${audio.icon}"})
+    )
+  )
+)
+
+(defwidget audiomenubox []
+  (box
+    :class "dropdown audiomenu-box"
+    :orientation "v"
+    :spacing 15
+    :space-evenly false
+    (box
+      :orientation "v"
+      :spacing 5
+      :space-evenly false
+      (label
+        :class "title"
+        :halign "start"
+        :text "Audio"
+      )
+      (box
+        :class "volume-bar"
+        :orientation "h"
+        :spacing 5
+        :space-evenly false
+        (eventbox :cursor "pointer" :hexpand true
+          (scale
+            :min 0
+            :max 100
+            :value "${audio.volume}"
+            :active true
+            :hexpand true
+            :onchange "pamixer --set-volume {}"
+          )
+        )
+      )
+    )
+    (box :class "hr" :height 1)
+    (box
+      :orientation "v"
+      :spacing 10
+      :space-evenly false
+      (label
+        :class "title"
+        :halign "start"
+        :text "Output"
+      )
+      (box
+        :class "sinks"
+        :orientation "v"
+        :spacing 10
+        :space-evenly false
+        (for sink in '${audio.sinks}'
+          (eventbox
+            :class {sink.name == audio.default ? "sink active" : "sink"}
+            :cursor "pointer"
+            :onclick "pactl set-default-sink ${sink.name}"
+            (box
+              :orientation "h"
+              :spacing 10
+              :space-evenly false
+              (label
+                :class "icon"
+                :text ""
+              )
+              (label
+                :class "label"
+                :limit-width 38
+                :show-truncated false
+                :text {sink.description}
+              )
+            )
+          )
+        )
+      )
+    )
+  )
+)
+
+(defwindow audiomenu
+	:geometry (geometry
+    :x "10"
+    :y "0" 
+    :anchor "top right"
+    :width "320px"
+  )
+  :stacking "fg"
+  (audiomenubox)
+)
+
+(deflisten audio :initial '{"volume": 100, "mute": false, "sinks": [], "default": "", "icon": ""}'
+  "scripts/bar/getvol"
+)

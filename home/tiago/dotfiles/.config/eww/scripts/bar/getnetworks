@@ -1,0 +1,33 @@
+#!/bin/sh
+
+connections="[]"
+others="[]"
+
+get_connections()
+{
+    connections=$(nmcli -c no -g name,type,active connection | awk -F':' '{ printf "{\"ssid\": \"%s\", \"type\": \"%s\", \"active\": %d }\n", $1, $2, $3 == "yes" }' | jq -s '[ .[] | select(.type == "802-11-wireless") ]')
+}
+
+get_others()
+{
+    others=$(nmcli -c no -g ssid,signal,in-use device wifi list | awk -F':' '{ printf "{\"ssid\": \"%s\", \"signal\": %d, \"active\": %d}\n", $1, $2, $3 == "*"}' | jq -s '.')
+}
+
+output()
+{
+    fconnections=$(jq  -c --argjson oth "$others" '[ .[] | select(.active == 1 or (.ssid | IN($oth | .[] | .ssid))) ]' <<< $connections)
+    fothers=$(jq -c --argjson con "$connections" '[ .[] | select(.ssid | IN($con | .[] | .ssid) | not) ]' <<< $others)
+    printf '{ "connections": %s, "others": %s }\n' "$fconnections" "$fothers"
+}
+
+get_connections
+output
+sleep 1
+
+while true; do
+    get_others
+    get_connections
+    output
+
+    sleep 5
+done

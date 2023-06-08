@@ -1,0 +1,11 @@
+(defwidget battery []
+  (button
+    :class "icon battery"
+    :tooltip "${battery.percent}%"
+    (label :text {"${battery.icon}"})
+  )
+)
+
+(defpoll battery :interval "1s" :initial '{"ac": 0, "percent": 100, "icon": ""}'
+  "scripts/bar/getbattery"
+)

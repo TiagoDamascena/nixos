@@ -7,6 +7,12 @@
     recursive = true;
   };
 
+  home.file.eww = {
+    source = ./.config/eww;
+    target = ".config/eww";
+    recursive = true;
+  };
+
   home.file.hypr = {
     source = ./.config/hypr;
     target = ".config/hypr";

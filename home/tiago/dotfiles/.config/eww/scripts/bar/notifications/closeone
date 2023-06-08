@@ -1,0 +1,6 @@
+#!/bin/sh
+
+notification=$1
+filtered=$(jq -cs --arg id "$notification" '.[]  | select(.id != ($id | tonumber))' /tmp/wired.log 2> /dev/null)
+
+echo "$filtered" > /tmp/wired.log

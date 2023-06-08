@@ -1,0 +1,39 @@
+(defwidget time []
+  (eventbox
+    :class "time"
+    :cursor "pointer"
+    :onclick "scripts/menu open calendar &"
+    (label :text {time})
+  )
+)
+
+(defwidget cal []
+	(box
+    :class "dropdown cal-box"
+    :orientation "v"
+	  (box :class "cal-in"
+	    (calendar
+        :class "cal" 
+			  :day {calendar_day}
+        :month {calendar_month}
+			  :year {calendar_year}
+      )
+    )
+  )
+)
+
+(defwindow calendar
+	:geometry (geometry
+    :x "0"
+    :y "0" 
+    :anchor "top center"
+    :width "200px"
+  )
+  (cal)
+)
+
+(defpoll time :interval "10s" "date '+%A, %d de %B %H:%M'")
+
+(defpoll calendar_day :interval "20h" "date '+%d'")
+(defpoll calendar_month :interval "20h" "date '+%m'")
+(defpoll calendar_year :interval "20h" "date '+%Y'")

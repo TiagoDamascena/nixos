@@ -1,0 +1,10 @@
+#!/bin/sh
+
+playerctl --follow metadata --format '{"artist": "{{ artist }}", "title": "{{ title }}", "album": "{{ album }}", "cover": "{{ mpris:artUrl }}",  "status": "{{ status }}", "length": "{{ mpris:length }}"}' | while read -r LINE; do
+    cover=$(jq -r '.cover' <<< "$LINE")
+    file="/tmp/covers/$(cat /proc/sys/kernel/random/uuid).jpg"
+
+    rm /tmp/covers/*
+    curl -s --create-dirs "$cover" -o "$file"
+    echo $(jq ".cover = \"$file\"" <<< "$LINE")
+done

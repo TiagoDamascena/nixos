@@ -1,0 +1,446 @@
+* {
+  all: unset; //Unsets everything so you can style everything from scratch
+}
+
+// Bars
+.bar-container {
+  padding: 0 10px;
+}
+
+.bar {
+  padding: 0 5px;
+  border-radius: 10px;
+  background-color: #11111b;
+  font-family: 'JetBrainsMono Nerd Font';
+  color: #cdd6f4;
+}
+
+.icon {
+  font-family: 'Segoe Fluent Icons';
+}
+
+.overlay {
+  color: #585b70;
+}
+
+.hr {
+  background: #575757;
+}
+
+.workspaces {
+  padding: 0 10px;
+
+  .ws-button {
+    padding: 0 5px;
+    color: #6c7086;
+    font-size: 14px;
+
+    &.ws-button-mine {
+      color: #ea76cb;
+    }
+
+    &.ws-button-visible {
+      color: #b4befe;
+    }
+
+    &.ws-button-urgent {
+      animation: urgent 1s steps(2, start) infinite;
+    }
+
+    &.ws-button-busy {
+      color: #9399b2;
+    }
+  }
+
+  .ws-button-container:hover {
+    .ws-button {
+      color: #D35D6E;
+    }
+  }
+}
+
+.time {
+  font-size: 14px;
+  color: #9399b2;
+}
+
+.sidestuff {
+  padding: 0 10px 0 20px;
+}
+
+.notifications .counter {
+  color: #D2226F;
+}
+
+.media label:last-child {
+  font-size: 8px;
+}
+
+.volume {
+  font-size: 18px;
+}
+
+.volume.muted {
+  .overlay {
+    opacity: 0;
+  }
+}
+
+.wifi {
+  font-size: 18px;
+
+  .wifi-icon {
+    opacity: 0;
+  }
+}
+
+.wifi.disconnected {
+  .wifi-icon {
+    opacity: 0;
+  }
+}
+
+.wifi.connecting {
+  .wifi-icon {
+    animation-duration: 2s;
+    animation-timing-function: steps(5, start);
+    animation-iteration-count: infinite;
+  }
+
+  .wifi-25 {
+    animation-name: connecting-1;
+  }
+
+  .wifi-50 {
+    animation-name: connecting-2;
+  }
+
+  .wifi-75 {
+    animation-name: connecting-3;
+  }
+
+  .wifi-100 {
+    animation-name: connecting-4;
+  }
+}
+
+.wifi.connected {
+  .wifi-icon {
+    opacity: 1;
+  }
+}
+
+.battery {
+  font-size: 26px;
+}
+
+.power {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.dropdown {
+  padding: 10px;
+  border: 2px solid #cba6f7;
+  border-radius: 10px;
+  background: rgba(17, 17, 27, .7);
+
+  .title {
+    font-size: 14px;
+    font-weight: 500;
+    font-weight: bold;
+  }
+}
+
+.popup {
+  padding: 15px;
+  border: 2px solid #cba6f7;
+  border-radius: 10px;
+  background: rgba(17, 16, 27, .7);
+
+  .title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .button {
+    padding: 5px 10px;
+    border: 1px solid #8839ef;
+    border-radius: 5px;
+    background: #cba6f7;
+    color: #45475a;
+
+    &:hover {
+      background: #8839ef;
+      color: #ffffff;
+    }
+  }
+}
+
+.cal-box {
+  padding: 10px;
+
+  .cal {
+    padding: 10px;
+  }
+
+  .cal:selected {
+    color:  #89b4fa;
+  }
+}
+
+.notificationmenu-box {
+  padding: 15px;
+
+  .clear:hover {
+    color: #cba6f7;
+  }
+
+  .notification {
+    border-radius: 10px;
+    background: rgba(30, 30, 46, .8);
+
+    .notification-box {
+      padding: 10px 10px 10px 15px;
+    }
+  
+    .summary {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  
+    .body {
+      opacity: .8;
+    }
+
+    .close {
+      opacity: 0;
+
+      label {
+        margin: -10px 0;
+        font-size: 28px;
+      }
+    }
+
+    &:hover {
+      .close {
+        opacity: 1;
+      }
+    }
+  }  
+}
+
+.mediamenu-box {
+  padding: 15px;
+
+  .cover {
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .title {
+    font-weight: bold;
+  }
+  
+  .artist {
+    font-size: 14px;
+    opacity: .6;
+  }
+  
+  .controls {
+    .button {
+      font-size: 18px;
+
+      &:hover {
+        color: #cba6f7;
+      }
+    }
+  }
+}
+
+.audiomenu-box {
+  padding: 15px 15px 20px;
+
+  .volume-bar {
+    padding: 10px 0 0;
+
+    scale {
+      trough {
+        min-height: 3px;
+        border-radius: 15px;
+        background: #45475a;
+        padding: 0 12px;
+
+        highlight {
+          border-radius: 15px;
+          margin: 0 -12px;
+          background-color: #ffffff;
+        }
+      }
+
+      slider {
+        background: #ffffff;
+        border: 1px solid #a6adc8;
+        border-radius: 50%;
+        min-width: 24px;
+        min-height: 24px;
+      }
+    }
+  }
+  
+  .sink {
+    .icon {
+      padding: 8px;
+      border-radius: 50%;
+      background: #45475a;
+      font-size: 16px;
+    }
+
+    &:hover .label {
+      color: #cba6f7;
+    }
+  }
+  
+  .sink.active {
+    .icon{
+      background: #8839ef;
+    }
+  }
+}
+
+.wifimenu-box {
+  padding: 15px;
+
+  .checkbox {
+    label {
+      font-size: 32px;
+      margin: -20 0 ;
+    }
+
+    &:hover {
+      color: #cba6f7;
+    }
+  }
+
+  .network {
+    .icon {
+      padding: 8px;
+      border-radius: 50%;
+      background: #45475a;
+      font-size: 16px;
+
+      .overlay {
+        color: #7f849c;
+      }
+    }
+
+    &:hover {
+      .label {
+        color: #cba6f7;
+      }
+    }
+  }
+
+  .network.active {
+    .icon {
+      background: #8839ef;
+    }
+  }
+}
+
+.wifipassword-box {
+  padding: 15px;
+
+  .input {
+    padding: 10px;
+    border: 1px solid #585b70;
+    border-radius: 10px;
+  }
+}
+
+.powermenu-box {
+  padding: 15px;
+
+  .menu-button {
+    .shortcut {
+      font-family: 'FiraCode Nerd Font';
+      color: #585b70;
+      font-size: 12px;
+    }
+
+    &:hover {
+      color: #cba6f7;
+    }
+  }
+}
+
+@keyframes urgent {
+  0% {
+    color: #f38ba8
+  }
+  50% {
+    color: #9399b2;
+  }
+}
+
+//Wi-Fi icon keyframes
+@keyframes connecting-1 {
+  0% {
+    opacity: 0;
+  }
+  19% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes connecting-2 {
+  0% {
+    opacity: 0;
+  }
+  39% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes connecting-3 {
+  0% {
+    opacity: 0;
+  }
+  59% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes connecting-4 {
+  0% {
+    opacity: 0;
+  }
+  79% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
