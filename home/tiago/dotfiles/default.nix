@@ -19,6 +19,12 @@
     recursive = true;
   };
 
+  home.file.rofi = {
+    source = ./.config/rofi;
+    target = ".config/rofi";
+    recursive = true;
+  };
+
   home.file.starship = {
     source = ./.config/starship.toml;
     target = ".config/starship.toml";

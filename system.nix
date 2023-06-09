@@ -126,7 +126,7 @@
     sddm-sugar-catppuccin
     waylock
     alacritty
-    wofi
+    rofi-wayland
     glib
     gnome.adwaita-icon-theme
     gnome.nautilus

@@ -1,0 +1,17 @@
+@import "colors.rasi"
+@import "font.rasi"
+
+window {
+  transparency: "real";
+  background-color: @BG;
+  text-color: @FG;
+  border: 2px;
+  border-color: @BDR;
+  border-radius: 10px;
+  width: 800px;
+  height: 460px;
+  location: center;
+  anchor: center;
+  x-offset: 0;
+  y-offset: 0;
+}
