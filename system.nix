@@ -47,6 +47,8 @@
   };
 
   services = {
+    gvfs.enable = true;
+
     udev.packages = with pkgs; [
       gnome.gnome-settings-daemon
     ];
