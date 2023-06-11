@@ -173,12 +173,6 @@
       dbeaver
       postman
       drawio
-      (catppuccin-gtk.override {
-        accents = [ "mauve" ];
-        size = "standard";
-        tweaks = [ "rimless" ];
-        variant = "mocha";
-      })
     ];
     shell = pkgs.zsh;
   };
