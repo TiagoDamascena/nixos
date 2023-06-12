@@ -3,6 +3,7 @@
 {
   imports = [
     ./gnome
+    ./vscode
     ./zsh
   ];
 

@@ -8,6 +8,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     
     sddm-sugar-catppuccin = {
       url = "github:TiagoDamascena/sddm-sugar-catppuccin";
@@ -19,6 +24,7 @@
     self,
     nixpkgs,
     home-manager,
+    vscode-extensions,
     sddm-sugar-catppuccin,
     ...
   }@inputs: let 
@@ -37,10 +43,15 @@
             home-manager.useUserPackages = true;
 
             home-manager.users.tiago = import ./home/tiago;
+            home-manager.extraSpecialArgs = {
+              vscode-marketplace = vscode-extensions.extensions.${system}.vscode-marketplace;
+            };
           }
         ];
 
-        specialArgs.sddm-sugar-catppuccin = sddm-sugar-catppuccin.packages.${system}.default;
+        specialArgs = {
+          sddm-sugar-catppuccin = sddm-sugar-catppuccin.packages.${system}.default;
+        };
       };
     };
   };
