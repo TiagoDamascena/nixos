@@ -148,7 +148,7 @@
  
   users.users.tiago = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" ];
+    extraGroups = [ "wheel" "audio" "network" ];
     packages = with pkgs; [
       zsh
       starship
