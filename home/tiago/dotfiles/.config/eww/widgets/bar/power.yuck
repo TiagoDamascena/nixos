@@ -22,7 +22,7 @@
         :space-evenly false
         (label :class "icon" :text "")
         (label :hexpand true :xalign 0 :text "Lock screen")
-        (label :class "shortcut" :text "‎וּ ‎גּ L")
+        (label :class "shortcut" :text "󰘳 󰘶 L")
       )
     )
     (eventbox
@@ -35,7 +35,7 @@
         :space-evenly false
         (label :class "icon" :text "")
         (label :hexpand true :xalign 0 :text "Log out")
-        (label :class "shortcut" :text "‎וּ ‎גּ Q")
+        (label :class "shortcut" :text "󰘳 󰘶 Q")
       )
     )
     (eventbox
@@ -48,7 +48,7 @@
         :space-evenly false
         (label :class "icon" :text "")
         (label :hexpand true :xalign 0 :text "Sleep")
-        (label :class "shortcut" :text "‎וּ ‎גּ S")
+        (label :class "shortcut" :text "󰘳 󰘶 S")
       )
     )
     (eventbox

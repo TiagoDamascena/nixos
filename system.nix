@@ -143,7 +143,11 @@
 
   fonts.fonts = with pkgs; [
     corefonts
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override {
+      fonts = [
+        "JetBrainsMono"
+        ];
+      })
   ];
  
   users.users.tiago = {

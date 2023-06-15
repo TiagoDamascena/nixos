@@ -11,7 +11,6 @@
   padding: 0 5px;
   border-radius: 10px;
   background-color: #11111b;
-  font-family: 'JetBrainsMono Nerd Font';
   color: #cdd6f4;
 }
 
@@ -310,12 +309,9 @@
 }
 
 .wifimenu-box {
-  padding: 15px;
-
   .checkbox {
     label {
-      font-size: 32px;
-      margin: -20 0 ;
+      font-size: 24px;
     }
 
     &:hover {
