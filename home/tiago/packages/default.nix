@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./dbeaver
     ./gnome
     ./vscode
     ./zsh

@@ -175,8 +175,6 @@
       slack
       discord
       obsidian
-      vscode
-      dbeaver
       postman
       drawio
     ];
