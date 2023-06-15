@@ -1,18 +1,14 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "tiago";
-  home.homeDirectory = "/home/tiago";
-
   imports = [
     ./dotfiles
     ./packages
   ];
 
-  programs.git = {
-    enable = true;
-    userName = "Tiago Damascena";
-    userEmail = "tiagobdamascena@gmail.com";
+  home = {
+    username = "tiago";
+    homeDirectory = "/home/tiago";
   };
 
   home.file.wallpapers = {
