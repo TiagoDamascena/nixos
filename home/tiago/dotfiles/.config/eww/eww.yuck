@@ -9,7 +9,7 @@
     :height "40px"
     :anchor "top center"
   )
-  :exclusive true
+  :exclusive false
   :stacking "fg"
   :namespace eww
   (bar :monitor 0)
@@ -24,7 +24,7 @@
     :height "40px"
     :anchor "top center"
   )
-  :reserve (struts :side "top" :distance "50px")
+  :exclusive false
   :windowtype "dock"
   :stacking "fg"
   (bar :monitor 1)

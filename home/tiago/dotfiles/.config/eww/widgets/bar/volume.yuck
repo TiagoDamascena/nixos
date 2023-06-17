@@ -88,7 +88,7 @@
 (defwindow audiomenu
 	:geometry (geometry
     :x "10"
-    :y "0" 
+    :y "60"
     :anchor "top right"
     :width "320px"
   )

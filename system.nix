@@ -177,6 +177,8 @@
       obsidian
       postman
       drawio
+      swaynotificationcenter
+      libnotify
     ];
     shell = pkgs.zsh;
   };

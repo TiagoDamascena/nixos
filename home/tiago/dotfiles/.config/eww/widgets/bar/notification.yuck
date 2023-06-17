@@ -1,88 +1,19 @@
 (defwidget notification []
   (eventbox
     :class "icon notifications"
-    :visible {notifications.count > 0}
     :cursor "pointer"
-    :onclick "scripts/menu open notificationmenu &"
+    :onclick "swaync-client -t -sw"
     (overlay
       (label :text "")
-      (label :class "counter" :text "")
-    )
-  )
-)
-
-(defwidget notificationmenubox []
-  (box
-    :class "dropdown notificationmenu-box"
-    :orientation "v"
-    :spacing 15
-    :space-evenly false
-    (box
-      :orientation "h"
-      :space-evenly false
       (label
-        :class "title"
-        :halign "start"
-        :hexpand true
-        :text "Notifications"
-      )
-      (eventbox
-        :class "clear"
-        :cursor "pointer"
-        :onclick "scripts/bar/notifications/clearall"
-        (label
-          :halign "end"
-          :text "Clear all"
-        )
-      )
-    )
-    
-    (for notification in '${notifications.notifications}'
-      (eventbox
-        :class "notification"
-        :cursor "pointer"
-        :onclick "wired -a ${notification.id}:default"
-        (box
-          :class "notification-box"
-          :orientation "v"
-          :spacing 5
-          (box
-            :orientation "h"
-            :space-evenly false
-            (label
-              :class "summary"
-              :halign "start"
-              :hexpand true
-              :text {notification.summary}
-            )
-            (eventbox
-              :class "close"
-              :cursor "pointer"
-              :onclick "scripts/bar/notifications/closeone ${notification.id}"
-              (label
-                :text ""
-              )
-            )
-          )
-          
-          (label :class "body" :halign "start" :text {notification.body})
-        )
+        :class "counter"
+        :visible {notifications.count > 0}
+        :text ""
       )
     )
   )
 )
 
-(defwindow notificationmenu
-	:geometry (geometry
-    :x "10"
-    :y "0" 
-    :anchor "top right"
-    :width "420px"
-  )
-  :stacking "fg"
-  (notificationmenubox)
-)
-
-(defpoll notifications :interval "1s" :initial '{"dnd": false, "count": 0, "notifications": []}'
+(deflisten notifications :initial '{"count": 0, "dnd": false, "visible": false, "inhibited": false}'
   "scripts/bar/getnotifications"
 )
