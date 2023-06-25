@@ -29,4 +29,10 @@
     source = ./.config/starship.toml;
     target = ".config/starship.toml";
   };
+
+  home.file.swaync = {
+    source = ./.config/swaync;
+    target = ".config/swaync";
+    recursive = true;
+  };
 }
