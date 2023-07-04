@@ -5,7 +5,6 @@
     enable = true;
 
     enableAutosuggestions = true;
-    enableSyntaxHighlighting = true;
 
     oh-my-zsh = {
       enable = true;
@@ -14,6 +13,10 @@
         "git"
         "vi-mode"
       ];
+    };
+
+    syntaxHighlighting = {
+      enable = true;
     };
 
     sessionVariables = {

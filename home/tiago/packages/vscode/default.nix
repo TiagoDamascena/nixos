@@ -19,9 +19,14 @@
     ];
 
     userSettings = {
+      "update.mode" = "none";
+      "update.showReleaseNotes" = false;
       "workbench.iconTheme" = "material-icon-theme";
       "editor.detectIndentation" = true;
       "editor.tabSize" = 2;
+      "extensions.autoUpdate" = false;
+      "extensions.autoCheckUpdates" = false;
+      "tabnine.experimentalAutoImports" = false;
     };
 
     keybindings = [
