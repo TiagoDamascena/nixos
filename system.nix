@@ -101,6 +101,10 @@
     };
   };
 
+  virtualisation = {
+    docker.enable = true;
+  };
+
   programs = {
     hyprland.enable = true;
     waybar.enable = true;
@@ -181,6 +185,10 @@
       swaynotificationcenter
       libnotify
       avizo
+      docker-compose
+      lazydocker
+      gnumake
+      mariadb
     ];
     shell = pkgs.zsh;
   };
