@@ -140,6 +140,7 @@
     gnome.gnome-disk-utility
     gnome.dconf-editor
     gnome.gnome-control-center
+    gnome.eog
   ];
 
   fonts.fonts = with pkgs; [
@@ -163,7 +164,6 @@
       neovim
       eww-wayland
       hyprpaper
-      feh
       (google-chrome.override {
         commandLineArgs = [
           "--enable-features=VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization"
