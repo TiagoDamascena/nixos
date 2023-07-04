@@ -104,6 +104,7 @@
   programs = {
     hyprland.enable = true;
     waybar.enable = true;
+    light.enable = true;
 
     dconf.enable = true;
     seahorse.enable = true;
@@ -152,7 +153,7 @@
  
   users.users.tiago = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "network" ];
+    extraGroups = [ "wheel" "video" "audio" "networkmanager" ];
     packages = with pkgs; [
       zsh
       starship
@@ -179,6 +180,7 @@
       drawio
       swaynotificationcenter
       libnotify
+      avizo
     ];
     shell = pkgs.zsh;
   };

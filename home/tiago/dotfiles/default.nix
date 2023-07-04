@@ -7,6 +7,12 @@
     recursive = true;
   };
 
+  home.file.avizo = {
+    source = ./.config/avizo;
+    target = ".config/avizo";
+    recursive = true;
+  };
+
   home.file.eww = {
     source = ./.config/eww;
     target = ".config/eww";
