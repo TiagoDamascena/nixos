@@ -12,6 +12,7 @@
   )
   :stacking "fg"
   :focusable false
+  :namespace "eww-closer"
   (closer)
 )
 

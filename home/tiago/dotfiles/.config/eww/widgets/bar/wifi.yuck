@@ -213,7 +213,7 @@
 (defwindow wifimenu
 	:geometry (geometry
     :x "10"
-    :y "60"
+    :y "55"
     :anchor "top right"
     :width "390px")
   :stacking "fg"

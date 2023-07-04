@@ -11,7 +11,7 @@
   )
   :exclusive false
   :stacking "fg"
-  :namespace eww
+  :namespace "eww"
   (bar :monitor 0)
 )
 
@@ -25,7 +25,7 @@
     :anchor "top center"
   )
   :exclusive false
-  :windowtype "dock"
   :stacking "fg"
+  :namespace "eww"
   (bar :monitor 1)
 )
