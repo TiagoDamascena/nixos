@@ -3,17 +3,21 @@
     :class "icon notifications"
     :cursor "pointer"
     :onclick "swaync-client -t -sw"
-    (overlay
-      (label :text "")
-      (label
-        :class "counter"
-        :visible {notifications.count > 0}
-        :text ""
+    (box
+      :class "icon-container"
+      :orientation "h"
+      :space-evenly false
+      :spacing 0
+      (overlay
+        (label :text {notifications.dnd ? "" : ""})
+        (label
+          :class "counter"
+          :visible {notifications.count > 0}
+          :text ""
+        )
       )
     )
   )
 )
 
-(deflisten notifications :initial '{"count": 0, "dnd": false, "visible": false, "inhibited": false}'
-  "scripts/bar/getnotifications"
-)
+(deflisten notifications "scripts/bar/getnotifications")

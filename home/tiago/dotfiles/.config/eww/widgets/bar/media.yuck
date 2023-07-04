@@ -2,11 +2,26 @@
   (eventbox
     :class "icon media"
     :cursor "pointer"
+    :onhover "${EWW_CMD} update mediaHover=true"
+    :onhoverlost "${EWW_CMD} update mediaHover=false"
     :onclick "scripts/menu open mediamenu &"
     :visible {mediadata.title != ''}
-    (overlay
-      (label :text "")
-      (label :text "")
+    (box
+      :class "icon-container ${mediaHover ? "open" : ""}"
+      :orientation "h"
+      :space-evenly false
+      :spacing {mediaHover ? 10 : 0}
+      (overlay
+        :class "icon-overlay"
+        (label :text "")
+        (label :text "")
+      )
+      (revealer
+        :transition "slideright"
+        :reveal {mediaHover}
+        :duration 200
+        (label :class "tooltip" :text "${mediadata.title}")
+      )
     )
   )
 )
@@ -98,6 +113,7 @@
   (mediamenubox)
 )
 
+(defvar mediaHover false)
 (deflisten mediadata :initial '{"artist": "", "title": "", "album": "", "cover": "", "length": ""}'
   "scripts/bar/getmusic"
 )

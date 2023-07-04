@@ -1,3 +1,15 @@
 #!/bin/sh
 
-swaync-client -s
+swaync-client -swb |
+while IFS= read -r line; do
+  count=$(echo "$line" | jq -r '.text | tonumber')
+
+  # Check if the 'class' field contains any of the values "dnd-none" or "dnd-notification"
+  dnd=$(echo "$line" | jq '.class | if type == "string" then contains("dnd-none") or contains("dnd-notification") else any(.[]; contains("dnd-none") or contains("dnd-notification")) end')
+
+  # Check if the 'class' field contains "cc-open"
+  visible=$(echo "$line" | jq '.class | if type == "string" then contains("cc-open") else any(.[]; contains("cc-open")) end')
+
+  output="{ \"count\": $count, \"dnd\": $dnd, \"visible\": $visible, \"inhibited\": false }"
+  echo "$output"
+done

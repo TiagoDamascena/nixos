@@ -1,12 +1,25 @@
 (defwidget volume []
   (eventbox
-    :class {audio.mute ? "icon volume muted" : "icon volume"}
-    :tooltip "${audio.volume}%"
+    :class "icon volume ${audio.mute ? "muted" : ""}"
     :cursor "pointer"
+    :onhover "${EWW_CMD} update volumeHover=true"
+    :onhoverlost "${EWW_CMD} update volumeHover=false"
     :onclick "scripts/menu open audiomenu &"
-    (overlay
-      (label :class "overlay" :text "")
-      (label :text {"${audio.icon}"})
+    (box
+      :class "icon-container ${volumeHover ? "open" : ""}"
+      :orientation "h"
+      :space-evenly false
+      :spacing {volumeHover ? 10 : 0}
+      (overlay
+        (label :class "overlay" :text "")
+        (label :text "${audio.icon}")
+      )
+      (revealer
+        :transition "slideright"
+        :reveal {volumeHover}
+        :duration 200
+        (label :class "tooltip" :text "${audio.volume}%")
+      )
     )
   )
 )
@@ -95,6 +108,8 @@
   :stacking "fg"
   (audiomenubox)
 )
+
+(defvar volumeHover false)
 
 (deflisten audio :initial '{"volume": 100, "mute": false, "sinks": [], "default": "", "icon": ""}'
   "scripts/bar/getvol"

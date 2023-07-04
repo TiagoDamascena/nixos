@@ -18,8 +18,8 @@
 (defwidget icons []
   (box
     :orientation "h"
-    :spacing 15
-    :space-evenly true
+    :spacing 8
+    :space-evenly false
     :halign "end"
     (notification)
     (media)

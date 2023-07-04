@@ -25,7 +25,7 @@
 (defwindow calendar
 	:geometry (geometry
     :x "0"
-    :y "0" 
+    :y "60" 
     :anchor "top center"
     :width "200px"
   )

@@ -16,6 +16,28 @@
 
 .icon {
   font-family: 'Segoe Fluent Icons';
+
+  .icon-container {
+    margin: 6px 0;
+    padding: 0 7px;
+    border-radius: 20px;
+    transition-property: background-color, color;
+    transition-duration: 400ms;
+    transition-timing-function: ease-out;
+    transition-delay: 300ms;
+
+    &.open {
+      padding: 0 10px;
+      background-color: #cba6f7;
+      color: #1e1e2e;
+      transition-duration: 100ms;
+      transition-delay: 0;
+    }
+  }
+}
+
+.tooltip {
+  font-size: 12px;
 }
 
 .overlay {
@@ -67,12 +89,26 @@
   padding: 0 10px 0 20px;
 }
 
-.notifications .counter {
-  color: #D2226F;
+.notifications {
+  font-size: 16px;
+
+  .counter {
+    color: #D2226F;
+  }
 }
 
-.media label:last-child {
-  font-size: 8px;
+.media {
+  .icon-container.open {
+    background-color: #fab387;
+  }
+
+  .icon-overlay label {
+    font-size: 16px;
+
+    &:last-child {
+      font-size: 11px;
+    }
+  }
 }
 
 .volume {
@@ -87,6 +123,10 @@
 
 .wifi {
   font-size: 18px;
+
+  .icon-container.open {
+    background-color: #89b4fa;
+  }
 
   .wifi-icon {
     opacity: 0;
@@ -131,6 +171,10 @@
 
 .battery {
   font-size: 26px;
+
+  .icon-container.open {
+    background-color: #a6e3a1;
+  }
 }
 
 .power {

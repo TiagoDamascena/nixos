@@ -1,15 +1,28 @@
 (defwidget wifi []
   (eventbox
     :class "icon wifi ${wifi.status}"
-    :tooltip "${wifi.network}"
     :cursor "pointer"
+    :onhover "${EWW_CMD} update wifiHover=true"
+    :onhoverlost "${EWW_CMD} update wifiHover=false"
     :onclick "scripts/menu open wifimenu &"
-    (overlay
-      (label :class "overlay" :text "")
-      (label :class "wifi-icon wifi-25" :visible {wifi.status == "connecting" || rssi < -70} :text "")
-      (label :class "wifi-icon wifi-50" :visible {wifi.status == "connecting" || (rssi >= -70 && rssi < -60)} :text "")
-      (label :class "wifi-icon wifi-75" :visible {wifi.status == "connecting" || (rssi >= -60 && rssi < -50)}  :text "")
-      (label :class "wifi-icon wifi-100" :visible {wifi.status == "connecting" || rssi >= -50}  :text "")
+    (box
+      :class "icon-container ${wifiHover ? "open" : ""}"
+      :orientation "h"
+      :space-evenly false
+      :spacing {wifiHover ? 10 : 0}
+      (overlay
+        (label :class "overlay" :text "")
+        (label :class "wifi-icon wifi-25" :visible {wifi.status == "connecting" || rssi < -70} :text "")
+        (label :class "wifi-icon wifi-50" :visible {wifi.status == "connecting" || (rssi >= -70 && rssi < -60)} :text "")
+        (label :class "wifi-icon wifi-75" :visible {wifi.status == "connecting" || (rssi >= -60 && rssi < -50)}  :text "")
+        (label :class "wifi-icon wifi-100" :visible {wifi.status == "connecting" || rssi >= -50}  :text "")
+      )
+      (revealer
+        :transition "slideright"
+        :reveal {wifiHover}
+        :duration 200
+        (label :class "tooltip" :text "${wifi.network}")
+      )
     )
   )
 )
@@ -233,6 +246,7 @@
   "scripts/bar/getnetworks"
 )
 
+(defvar wifiHover false)
 (defvar wifishowlist false)
 (defvar ssid "")
 (defvar passwd "")

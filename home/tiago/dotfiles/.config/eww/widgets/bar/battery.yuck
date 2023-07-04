@@ -1,11 +1,27 @@
 (defwidget battery []
-  (button
+  (eventbox
     :class "icon battery"
-    :tooltip "${battery.percent}%"
-    (label :text {"${battery.icon}"})
+    :cursor "pointer"
+    :onhover "${EWW_CMD} update batteryHover=true"
+    :onhoverlost "${EWW_CMD} update batteryHover=false"
+    :onclick "scripts/menu open wifimenu &"
+    (box
+      :class "icon-container ${batteryHover ? "open" : ""}"
+      :orientation "h"
+      :space-evenly false
+      :spacing {batteryHover ? 10 : 0}
+      (label :text {"${battery.icon}"})
+      (revealer
+        :transition "slideright"
+        :reveal {batteryHover}
+        :duration 200
+        (label :class "tooltip" :text "${battery.percent}%")
+      )
+    )
   )
 )
 
+(defvar batteryHover false)
 (defpoll battery :interval "1s" :initial '{"ac": 0, "percent": 100, "icon": ""}'
   "scripts/bar/getbattery"
 )

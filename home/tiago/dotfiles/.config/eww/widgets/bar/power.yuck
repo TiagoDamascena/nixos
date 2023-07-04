@@ -3,7 +3,13 @@
     :class "icon power"
     :cursor "pointer"
     :onclick "scripts/menu open powermenu &"
-    (label :text "")
+    (box
+      :class "icon-container"
+      :orientation "h"
+      :space-evenly false
+      :spacing 0
+      (label :text "")
+    )
   )
 )
 
