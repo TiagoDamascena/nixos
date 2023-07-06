@@ -1,6 +1,9 @@
 {
   config,
   pkgs,
+  grimblast,
+  hyprswap,
+  scratchpad,
   sddm-sugar-catppuccin,
   ...
 }:
@@ -185,6 +188,9 @@
       swaynotificationcenter
       libnotify
       avizo
+      grimblast
+      scratchpad
+      hyprswap
       docker-compose
       lazydocker
       gnumake

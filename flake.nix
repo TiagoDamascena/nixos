@@ -13,6 +13,11 @@
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprland-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     
     sddm-sugar-catppuccin = {
       url = "github:TiagoDamascena/sddm-sugar-catppuccin";
@@ -25,6 +30,7 @@
     nixpkgs,
     home-manager,
     vscode-extensions,
+    hyprland-contrib,
     sddm-sugar-catppuccin,
     ...
   }@inputs: let 
@@ -50,6 +56,9 @@
         ];
 
         specialArgs = {
+          grimblast = hyprland-contrib.packages.${system}.grimblast;
+          hyprswap = hyprland-contrib.packages.${system}.try_swap_workspace;
+          scratchpad = hyprland-contrib.packages.${system}.scratchpad;
           sddm-sugar-catppuccin = sddm-sugar-catppuccin.packages.${system}.default;
         };
       };

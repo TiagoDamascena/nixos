@@ -11,9 +11,18 @@
     homeDirectory = "/home/tiago";
   };
 
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+    desktop = null;
+    music = null;
+    publicShare = null;
+    templates = null;
+  };
+
   home.file.wallpapers = {
     source = ./wallpapers;
-    target = "Images/wallpapers";
+    target = "Pictures/Wallpapers";
     recursive = true;
   };
 
