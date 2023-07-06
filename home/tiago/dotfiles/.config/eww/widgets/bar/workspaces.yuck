@@ -10,7 +10,7 @@
         :class "ws-button-container"
         :cursor "pointer"
         :onclick "hyprctl dispatch workspace ${workspace.id}"
-        (box :class {workspace.id == workspaces.active ? "ws-button ws-button-mine" :
+        (box :class {workspace.id == workspaces.monitors[monitor].activeWorkspace.id ? "ws-button ws-button-mine" :
                     workspace.windows > 0 ? "ws-button ws-button-visible" : "ws-button"}
           (label :text {"${workspace.id}"})
         )
@@ -19,4 +19,4 @@
   )
 )
 
-(deflisten  workspaces  "scripts/bar/hyprland workspaces")
+(deflisten workspaces "scripts/bar/hyprland workspaces")

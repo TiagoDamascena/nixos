@@ -5,6 +5,7 @@
     ./dbeaver
     ./git
     ./gnome
+    ./kanshi
     ./vscode
     ./zsh
   ];

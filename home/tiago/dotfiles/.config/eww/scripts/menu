@@ -5,7 +5,7 @@ window=$2
 
 if [[ "$command" == "open" ]]; then
   if [[ ! "$(eww windows)" =~ "*$window" ]]; then
-    screen=0
+    screen=$(eww get workspaces | jq -r '.monitors[] | select(.focused == true).id')
 
     $(eww update openmenu="$window")
     $(eww open --screen "$screen" closer)

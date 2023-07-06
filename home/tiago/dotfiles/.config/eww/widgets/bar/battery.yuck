@@ -4,7 +4,6 @@
     :cursor "pointer"
     :onhover "${EWW_CMD} update batteryHover=true"
     :onhoverlost "${EWW_CMD} update batteryHover=false"
-    :onclick "scripts/menu open wifimenu &"
     (box
       :class "icon-container ${batteryHover ? "open" : ""}"
       :orientation "h"
