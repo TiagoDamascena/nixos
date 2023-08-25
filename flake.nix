@@ -23,6 +23,11 @@
       url = "github:TiagoDamascena/sddm-sugar-catppuccin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    eww-tray = {
+      url = "github:ralismark/eww/tray-3";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -32,6 +37,7 @@
     vscode-extensions,
     hyprland-contrib,
     sddm-sugar-catppuccin,
+    eww-tray,
     ...
   }@inputs: let 
     system = "x86_64-linux";
@@ -60,6 +66,7 @@
           hyprswap = hyprland-contrib.packages.${system}.try_swap_workspace;
           scratchpad = hyprland-contrib.packages.${system}.scratchpad;
           sddm-sugar-catppuccin = sddm-sugar-catppuccin.packages.${system}.default;
+          eww-tray = eww-tray.packages.${system}.eww-wayland;
         };
       };
     };

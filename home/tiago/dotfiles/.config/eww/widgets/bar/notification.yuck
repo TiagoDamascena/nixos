@@ -2,12 +2,14 @@
   (eventbox
     :class "icon notifications"
     :cursor "pointer"
+    :onhover "${EWW_CMD} update notificationsHover=true"
+    :onhoverlost "${EWW_CMD} update notificationsHover=false"
     :onclick "swaync-client -t -sw"
     (box
-      :class "icon-container"
+      :class "icon-container ${notificationsHover ? "hover" : ""} ${notifications.count > 0 ? "expand" : ""}"
       :orientation "h"
       :space-evenly false
-      :spacing 0
+      :spacing {notificationsHover ? 10 : 0}
       (overlay
         (label :text {notifications.dnd ? "" : ""})
         (label
@@ -16,8 +18,16 @@
           :text ""
         )
       )
+      (revealer
+        :visible {notifications.count > 0}
+        :transition "slideright"
+        :reveal {notificationsHover}
+        :duration 200
+        (label :class "tooltip" :text "${notifications.count}")
+      )
     )
   )
 )
 
+(defvar notificationsHover false)
 (deflisten notifications "scripts/bar/getnotifications")

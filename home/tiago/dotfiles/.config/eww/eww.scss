@@ -26,12 +26,15 @@
     transition-timing-function: ease-out;
     transition-delay: 300ms;
 
-    &.open {
-      padding: 0 10px;
+    &.hover {
       background-color: #cba6f7;
       color: #1e1e2e;
       transition-duration: 100ms;
       transition-delay: 0;
+    }
+
+    &.expand {
+      padding: 0 10px;
     }
   }
 }
@@ -89,16 +92,27 @@
   padding: 0 10px 0 20px;
 }
 
+.tray {
+  menubar > menuitem {
+    margin-left: 8px;
+    padding: 0 8px;
+  }
+}
+
 .notifications {
   font-size: 16px;
 
   .counter {
     color: #D2226F;
   }
+
+  .icon-container.hover {
+    background-color: #f9e2af;
+  }
 }
 
 .media {
-  .icon-container.open {
+  .icon-container.hover {
     background-color: #fab387;
   }
 
@@ -124,7 +138,7 @@
 .wifi {
   font-size: 18px;
 
-  .icon-container.open {
+  .icon-container.hover {
     background-color: #89b4fa;
   }
 
@@ -172,7 +186,7 @@
 .battery {
   font-size: 26px;
 
-  .icon-container.open {
+  .icon-container.hover {
     background-color: #a6e3a1;
   }
 }
@@ -180,6 +194,10 @@
 .power {
   font-size: 16px;
   font-weight: bold;
+
+  .icon-container.hover {
+    background-color: #f38ba8;
+  }
 }
 
 .dropdown {
@@ -199,7 +217,7 @@
   padding: 15px;
   border: 2px solid #cba6f7;
   border-radius: 10px;
-  background: rgba(17, 16, 27, .7);
+  background: rgba(17, 16, 27, .9);
 
   .title {
     font-size: 16px;
@@ -216,6 +234,22 @@
     &:hover {
       background: #8839ef;
       color: #ffffff;
+    }
+  }
+
+  menu {
+    padding: 10px;
+
+    menuitem {
+      padding: 8px 40px 8px 10px;
+
+      &:hover label {
+        color: #cba6f7;
+      }
+    }
+
+    separator {
+      background: #575757;
     }
   }
 }

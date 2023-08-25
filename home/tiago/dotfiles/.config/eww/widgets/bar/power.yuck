@@ -2,9 +2,11 @@
   (eventbox
     :class "icon power"
     :cursor "pointer"
+    :onhover "${EWW_CMD} update powerHover=true"
+    :onhoverlost "${EWW_CMD} update powerHover=false"
     :onclick "scripts/menu open powermenu &"
     (box
-      :class "icon-container"
+      :class "icon-container ${powerHover ? "hover" : ""}"
       :orientation "h"
       :space-evenly false
       :spacing 0
@@ -94,3 +96,5 @@
   :stacking "fg"
   (powermenubox)
 )
+
+(defvar powerHover false)

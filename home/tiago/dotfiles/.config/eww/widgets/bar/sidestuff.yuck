@@ -4,6 +4,7 @@
 (include "widgets/bar/wifi.yuck")
 (include "widgets/bar/battery.yuck")
 (include "widgets/bar/power.yuck")
+(include "widgets/bar/tray.yuck")
 
 (defwidget sidestuff []
   (box
@@ -21,6 +22,7 @@
     :spacing 8
     :space-evenly false
     :halign "end"
+    (tray)
     (notification)
     (media)
     (volume)

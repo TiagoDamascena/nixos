@@ -5,6 +5,7 @@
   hyprswap,
   scratchpad,
   sddm-sugar-catppuccin,
+  eww-tray,
   ...
 }:
 
@@ -169,7 +170,7 @@
       playerctl
       joshuto
       neovim
-      eww-wayland
+      eww-tray
       hyprpaper
       (google-chrome.override {
         commandLineArgs = [

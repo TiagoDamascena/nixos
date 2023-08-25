@@ -6,7 +6,7 @@
     :onhoverlost "${EWW_CMD} update wifiHover=false"
     :onclick "scripts/menu open wifimenu &"
     (box
-      :class "icon-container ${wifiHover ? "open" : ""}"
+      :class "icon-container ${wifiHover ? "hover expand" : ""}"
       :orientation "h"
       :space-evenly false
       :spacing {wifiHover ? 10 : 0}

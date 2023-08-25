@@ -6,7 +6,7 @@
     :onhoverlost "${EWW_CMD} update volumeHover=false"
     :onclick "scripts/menu open audiomenu &"
     (box
-      :class "icon-container ${volumeHover ? "open" : ""}"
+      :class "icon-container ${volumeHover ? "hover expand" : ""}"
       :orientation "h"
       :space-evenly false
       :spacing {volumeHover ? 10 : 0}
