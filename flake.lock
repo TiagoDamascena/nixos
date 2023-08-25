@@ -61,16 +61,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1687033460,
-        "narHash": "sha256-X93JvDR+SeXYylPq0pn+yM/GpTz31rN/ioY7Lsrv1OE=",
-        "owner": "hyprwm",
-        "repo": "contrib",
-        "rev": "93b6aba94c29388e1fe28908bc9b50e2ee841835",
+        "lastModified": 1692628438,
+        "narHash": "sha256-IW9RYf0ebpucx7llOzc5q+lo5MK38qnrlFLNdo3FgXY=",
+        "owner": "TiagoDamascena",
+        "repo": "hyprwm-contrib",
+        "rev": "4f729e0d0185e8c4d464a1b2ac23db37497b9ac6",
         "type": "github"
       },
       "original": {
-        "owner": "hyprwm",
-        "repo": "contrib",
+        "owner": "TiagoDamascena",
+        "repo": "hyprwm-contrib",
         "type": "github"
       }
     },

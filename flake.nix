@@ -15,7 +15,7 @@
     };
 
     hyprland-contrib = {
-      url = "github:hyprwm/contrib";
+      url = "github:TiagoDamascena/hyprwm-contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     
