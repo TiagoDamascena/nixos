@@ -196,6 +196,12 @@
       lazydocker
       gnumake
       mariadb
+      awscli2
+      kubectl
+      kubeseal
+      eksctl
+      openvpn
+      bitwarden
     ];
     shell = pkgs.zsh;
   };
