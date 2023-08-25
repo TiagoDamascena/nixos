@@ -151,7 +151,7 @@
     gnome.eog
   ];
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     corefonts
     (nerdfonts.override {
       fonts = [
@@ -162,7 +162,7 @@
  
   users.users.tiago = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" ];
+    extraGroups = [ "wheel" "video" "audio" "networkmanager" "docker" ];
     packages = with pkgs; [
       zsh
       starship
