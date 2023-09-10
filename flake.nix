@@ -33,41 +33,16 @@
   outputs = {
     self,
     nixpkgs,
-    home-manager,
-    vscode-extensions,
-    hyprland-contrib,
-    sddm-sugar-catppuccin,
-    eww-tray,
     ...
-  }@inputs: let 
-    system = "x86_64-linux";
-  in {
+  }@inputs: {
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
-        system = system;
+      vivobook = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = inputs;
 
-	      modules = [
-          ./system.nix
-          ./hardware/vivobook.nix
-
-          home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-
-            home-manager.users.tiago = import ./home/tiago;
-            home-manager.extraSpecialArgs = {
-              vscode-marketplace = vscode-extensions.extensions.${system}.vscode-marketplace;
-            };
-          }
+        modules = [
+          ./hosts/vivobook
         ];
-
-        specialArgs = {
-          grimblast = hyprland-contrib.packages.${system}.grimblast;
-          hyprswap = hyprland-contrib.packages.${system}.try_swap_workspace;
-          scratchpad = hyprland-contrib.packages.${system}.scratchpad;
-          sddm-sugar-catppuccin = sddm-sugar-catppuccin.packages.${system}.default;
-          eww-tray = eww-tray.packages.${system}.eww-wayland;
-        };
       };
     };
   };

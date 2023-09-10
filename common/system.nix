@@ -1,11 +1,7 @@
 {
   config,
   pkgs,
-  grimblast,
-  hyprswap,
-  scratchpad,
-  sddm-sugar-catppuccin,
-  eww-tray,
+  lib,
   ...
 }:
 
@@ -38,8 +34,6 @@
   };
 
   networking = {
-    hostName = "nixos";
-
     networkmanager.enable = true;
     firewall = {
       enable = true;
@@ -135,7 +129,7 @@
     jq
     socat
     pulseaudio
-    exa
+    eza
     bat
     ripgrep
     htop
@@ -176,7 +170,7 @@
       playerctl
       joshuto
       neovim
-      eww-tray
+      eww
       hyprpaper
       (google-chrome.override {
         commandLineArgs = [
@@ -197,7 +191,7 @@
       avizo
       grimblast
       scratchpad
-      hyprswap
+      try_swap_workspace
       docker-compose
       lazydocker
       gnumake
