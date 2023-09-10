@@ -4,7 +4,7 @@ get_volume()
 {
   volume=$(pamixer --get-volume)
   mute=$(pamixer --get-mute)
-  sinks=$(pactl -f json list sinks | jq -c '[ .[] | {name: .name, description: .properties."alsa.card_name"} ]')
+  sinks=$(pactl -f json list sinks 2>&1 | grep -Eo '\[.*\]' | jq -c '[ .[] | {name: .name, description: .properties."alsa.card_name"} ]')
   default=$(pactl get-default-sink)
   icon=""
 
