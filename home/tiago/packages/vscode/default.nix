@@ -27,6 +27,8 @@
       "extensions.autoUpdate" = false;
       "extensions.autoCheckUpdates" = false;
       "tabnine.experimentalAutoImports" = false;
+      "window.menuBarVisibility" = "toggle";
+      "files.trimTrailingWhitespace" = true;
     };
 
     keybindings = [
