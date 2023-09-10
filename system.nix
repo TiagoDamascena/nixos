@@ -33,6 +33,10 @@
     };
   };
 
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
+
   networking = {
     hostName = "nixos";
 
@@ -59,10 +63,17 @@
 
     xserver = {
       enable = true;
-
+      
       displayManager.sddm = {
         enable = true;
         theme = "sugar-catppuccin";
+        settings = {
+          General = {
+            DisplayServer = "wayland";
+            InputMethod = "";
+          };
+          Wayland.CompositorCommand = "${pkgs.weston}/bin/weston --shell=fullscreen-shell.so";
+        };
       };
       
       libinput = {
@@ -71,11 +82,6 @@
 
       layout = "br";
       xkbVariant = "abnt2";
-
-      deviceSection = ''
-        Option "TearFree" "true"
-        Option "TripleBuffer" "true"
-      '';
     };
 
     pipewire = {
