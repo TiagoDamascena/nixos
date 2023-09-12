@@ -29,6 +29,7 @@
       "tabnine.experimentalAutoImports" = false;
       "window.menuBarVisibility" = "toggle";
       "files.trimTrailingWhitespace" = true;
+      "extensions.ignoreRecommendations" = true;
     };
 
     keybindings = [
@@ -36,6 +37,14 @@
         "key" = "ctrl+shift+c";
         "command" = "-workbench.action.terminal.openNativeConsole";
         "when" = "!terminalFocus";
+      } {
+        "key" = "ctrl+shift+[BracketLeft]";
+        "command" = "-workbench.action.terminal.toggleTerminal";
+        "when" = "terminal.active";
+      } {
+        "key" = "ctrl+t";
+        "command" = "workbench.action.terminal.toggleTerminal";
+        "when" = "terminal.active";
       }
     ];
   };
