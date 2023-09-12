@@ -57,7 +57,7 @@
 
     xserver = {
       enable = true;
-      
+
       displayManager.sddm = {
         enable = true;
         theme = "sugar-catppuccin";
@@ -69,7 +69,7 @@
           Wayland.CompositorCommand = "${pkgs.weston}/bin/weston --shell=fullscreen-shell.so";
         };
       };
-      
+
       libinput = {
         enable = true;
       };
@@ -159,7 +159,7 @@
         ];
       })
   ];
- 
+
   users.users.tiago = {
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "networkmanager" "docker" ];
@@ -168,6 +168,7 @@
       starship
       pamixer
       playerctl
+      wl-clip-persist
       joshuto
       neovim
       eww
@@ -206,6 +207,6 @@
     ];
     shell = pkgs.zsh;
   };
- 
+
   system.stateVersion = "unstable";
 }
