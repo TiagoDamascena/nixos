@@ -179,6 +179,7 @@
           "--use-vulkan"
         ];
       })
+      firefox
       spotify
       whatsapp-for-linux
       slack
