@@ -9,8 +9,8 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot = {
-    kernelParams = [ "quiet" "udev.log_level=3" "splash" ];
-    consoleLogLevel = 3;
+    kernelParams = [ "quiet" "udev.log_level=0" "splash" ];
+    consoleLogLevel = 0;
 
     initrd = {
       verbose = false;
