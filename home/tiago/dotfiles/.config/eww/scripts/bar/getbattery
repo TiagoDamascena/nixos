@@ -8,7 +8,7 @@ ac=0
 battery_level=0
 battery_max=100
 
-if [ -f "$PATH_BATTERY" ]; then
+if [ -d "$PATH_BATTERY" ]; then
     enabled=1
 
     if [ -f "$PATH_AC/online" ]; then
