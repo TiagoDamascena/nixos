@@ -4,18 +4,24 @@
     :cursor "pointer"
     :onhover "${EWW_CMD} update wifiHover=true"
     :onhoverlost "${EWW_CMD} update wifiHover=false"
-    :onclick "scripts/menu open wifimenu &"
+    :onclick {wifi.type == "wifi" ? "scripts/menu open wifimenu &" : ""}
     (box
       :class "icon-container ${wifiHover ? "hover expand" : ""}"
       :orientation "h"
       :space-evenly false
       :spacing {wifiHover ? 10 : 0}
       (overlay
+        :visible {wifi.type == "wifi"}
         (label :class "overlay" :text "")
         (label :class "wifi-icon wifi-25" :visible {wifi.status == "connecting" || rssi < -70} :text "")
         (label :class "wifi-icon wifi-50" :visible {wifi.status == "connecting" || (rssi >= -70 && rssi < -60)} :text "")
         (label :class "wifi-icon wifi-75" :visible {wifi.status == "connecting" || (rssi >= -60 && rssi < -50)}  :text "")
         (label :class "wifi-icon wifi-100" :visible {wifi.status == "connecting" || rssi >= -50}  :text "")
+      )
+      (overlay
+        :visible {wifi.type == "lan"}
+        (label :class "overlay" :text "")
+        (label :class "wifi-icon" :visible {wifi.status == "connected"} :text "")
       )
       (revealer
         :transition "slideright"
@@ -115,7 +121,7 @@
           )
         )
       )
-      
+
       (revealer
         :transition "slidedown"
         :duration 200
@@ -158,7 +164,7 @@
                 )
               )
             )
-          )  
+          )
         )
       )
     )
@@ -238,7 +244,7 @@
   "scripts/bar/getrssi"
 )
 
-(deflisten wifi :initial '{"enabled": 0, "status": "disconnected", "network": ""}'
+(deflisten wifi :initial '{"type": "wifi", "enabled": 0, "status": "disconnected", "network": ""}'
   "scripts/bar/getwifi"
 )
 

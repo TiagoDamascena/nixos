@@ -120,7 +120,7 @@
     font-size: 16px;
 
     &:last-child {
-      font-size: 13px;
+      font-size: 8px;
     }
   }
 }
@@ -280,12 +280,12 @@
     .notification-box {
       padding: 10px 10px 10px 15px;
     }
-  
+
     .summary {
       font-size: 16px;
       font-weight: bold;
     }
-  
+
     .body {
       opacity: .8;
     }
@@ -304,7 +304,7 @@
         opacity: 1;
       }
     }
-  }  
+  }
 }
 
 .mediamenu-box {
@@ -315,16 +315,16 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
-  
+
   .title {
     font-weight: bold;
   }
-  
+
   .artist {
     font-size: 14px;
     opacity: .6;
   }
-  
+
   .controls {
     .button {
       font-size: 18px;
@@ -365,7 +365,7 @@
       }
     }
   }
-  
+
   .sink {
     .icon {
       padding: 8px;
@@ -378,7 +378,7 @@
       color: #cba6f7;
     }
   }
-  
+
   .sink.active {
     .icon{
       background: #8839ef;

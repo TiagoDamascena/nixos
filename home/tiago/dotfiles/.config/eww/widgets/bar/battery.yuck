@@ -4,6 +4,7 @@
     :cursor "pointer"
     :onhover "${EWW_CMD} update batteryHover=true"
     :onhoverlost "${EWW_CMD} update batteryHover=false"
+    :visible {battery.enabled == 1}
     (box
       :class "icon-container ${batteryHover ? "hover expand" : ""}"
       :orientation "h"
@@ -21,6 +22,6 @@
 )
 
 (defvar batteryHover false)
-(defpoll battery :interval "1s" :initial '{"ac": 0, "percent": 100, "icon": ""}'
+(defpoll battery :interval "1s" :initial '{"enabled": 0, "ac": 0, "percent": 100, "icon": ""}'
   "scripts/bar/getbattery"
 )

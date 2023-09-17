@@ -1,15 +1,23 @@
 #!/bin/sh
 
-DEVICE="wlo1"
-
 get_details()
 {
-  data=$(nmcli device show $DEVICE)
+  type=$(hostname | grep -qF 'desktop' && echo 'lan' || echo 'wifi')
 
-  enabled=$(nmcli radio wifi | awk '{print $0 == "enabled"}')
+  if [ "$type" = "wifi" ]; then
+    DEVICE="wlo1"
+
+    enabled=$(nmcli radio wifi | awk '{print $0 == "enabled"}')
+  else
+    DEVICE="enp4s0"
+
+    enabled=1
+  fi
+
+  data=$(nmcli device show $DEVICE)
   state=$(echo "$data" | grep 'GENERAL.STATE' | awk '{printf "%d", $2}')
   network=$(echo "$data" | grep 'GENERAL.CONNECTION' | awk '{printf "%s", $2}')
-  
+
   status=""
   if [ "$state" -eq 100 ]; then
     status="connected"
@@ -20,7 +28,7 @@ get_details()
     network="Disconnected"
   fi
 
-  printf '{"enabled": %d, "status": "%s", "network": "%s"}\n' "$enabled" "$status" "$network"
+  printf '{"type": "%s", "enabled": %d, "status": "%s", "network": "%s"}\n' "$type" "$enabled" "$status" "$network"
 }
 
 get_details
