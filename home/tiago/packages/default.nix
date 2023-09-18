@@ -5,6 +5,7 @@
     ./dbeaver
     ./git
     ./gnome
+    ./hyprland
     ./kanshi
     ./vscode
     ./zsh

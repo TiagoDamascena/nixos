@@ -19,9 +19,9 @@
     recursive = true;
   };
 
-  home.file.hypr = {
-    source = ./.config/hypr;
-    target = ".config/hypr";
+  home.file.hyprpaper = {
+    source = ./.config/hypr/hyprpaper.conf;
+    target = ".config/hypr/hyprpaper.conf";
     recursive = true;
   };
 
