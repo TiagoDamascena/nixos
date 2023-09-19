@@ -109,7 +109,6 @@
 
   programs = {
     hyprland.enable = true;
-    waybar.enable = true;
     light.enable = true;
 
     dconf.enable = true;

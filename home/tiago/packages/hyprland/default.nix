@@ -1,6 +1,7 @@
 {
   pkgs,
-  hyprland,
+  lib,
+  osConfig,
   ...
 }:
 
@@ -16,20 +17,37 @@
     };
 
     settings = {
-      monitor = [
-        ",addreserved,50,0,0,0"
-        "eDP-1,1920x1080@60,0x0,1"
-        ",preferred,auto,1"
-      ];
+      monitor = (
+        [
+          ",addreserved,50,0,0,0"
+        ]
+        ++
+        (if (osConfig.networking.hostName == "vivobook") then [
+          "eDP-1,1920x1080@60,0x0,1"
+          ",preferred,auto,1"
+        ] else if (osConfig.networking.hostName == "desktop") then [
+          "HDMI-A-1, 2560x1080@75, 0x560, 1"
+          "HDMI-A-2, 1920x1080@60, 2560x0, 1, transform, 3"
+        ] else [ ])
+      );
 
-      exec-once = [
-        "kanshi"
-        "dbus-update-activation-environment --all"
-        "gnome-keyring-daemon -sd"
-        "wl-clip-persist --clipboard regular"
-        "swaync"
-        "avizo-service"
-      ];
+      exec-once = (
+        [
+          "dbus-update-activation-environment --all"
+          "gnome-keyring-daemon -sd"
+          "wl-clip-persist --clipboard regular"
+          "swaync"
+          "avizo-service"
+        ]
+        ++
+        (if (osConfig.networking.hostName == "vivobook") then [
+          "kanshi"
+        ] else if (osConfig.networking.hostName == "desktop") then [
+          "hyprpaper"
+          "eww open bar0"
+          "eww open bar1"
+        ] else [ ])
+      );
 
       env = [
         "XCURSOR_SIZE,24"
@@ -55,7 +73,7 @@
         "col.active_border" = "rgba(ea76cbee) rgba(b4befeee) 45deg";
         "col.inactive_border" = "rgba(7f849cee)";
 
-        layout = "master";
+        layout = "dwindle";
       };
 
       misc = {
@@ -94,8 +112,9 @@
       };
 
       dwindle = {
-        pseudotile = "yes";
-        preserve_split = "yes";
+        pseudotile = false;
+        force_split = 2;
+        preserve_split = false;
       };
 
       master = {
