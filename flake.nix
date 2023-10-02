@@ -2,11 +2,9 @@
   description = "NixOS de Tiago";
 
   nixConfig = {
-    experimental-features = [ "nix-command" "flakes" ];
-
     substituters = [
-      "https://nix-community.cachix.org"
       "https://hyprland.cachix.org"
+      "https://nix-community.cachix.org"
       "https://cache.nixos.org/"
     ];
 

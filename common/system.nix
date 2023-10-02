@@ -6,6 +6,8 @@
 }:
 
 {
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   boot = {
     kernelParams = [ "quiet" "udev.log_level=0" "splash" ];
     consoleLogLevel = 0;
