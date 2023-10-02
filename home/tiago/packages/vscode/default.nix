@@ -12,7 +12,7 @@
     extensions = with vscode-marketplace; [
       antiantisepticeye.vscode-color-picker
       gruntfuggly.todo-tree
-      maattdd.gitless
+      eamodio.gitlens
       mhutchie.git-graph
       pkief.material-icon-theme
       tabnine.tabnine-vscode
@@ -30,6 +30,7 @@
       "window.menuBarVisibility" = "toggle";
       "files.trimTrailingWhitespace" = true;
       "extensions.ignoreRecommendations" = true;
+      "window.titleBarStyle" = "custom";
     };
 
     keybindings = [
