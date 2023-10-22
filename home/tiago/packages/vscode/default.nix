@@ -30,7 +30,6 @@
       "window.menuBarVisibility" = "toggle";
       "files.trimTrailingWhitespace" = true;
       "extensions.ignoreRecommendations" = true;
-      "window.titleBarStyle" = "custom";
     };
 
     keybindings = [
