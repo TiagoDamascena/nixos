@@ -41,4 +41,9 @@
     target = ".config/swaync";
     recursive = true;
   };
+
+  home.file.vscode-args = {
+    source = ./.vscode/argv.json;
+    target = ".vscode/argv.json";
+  };
 }

@@ -11,11 +11,12 @@
 
     extensions = with vscode-marketplace; [
       antiantisepticeye.vscode-color-picker
-      gruntfuggly.todo-tree
       eamodio.gitlens
+      github.copilot
+      gruntfuggly.todo-tree
+      jnoortheen.nix-ide
       mhutchie.git-graph
       pkief.material-icon-theme
-      tabnine.tabnine-vscode
     ];
 
     userSettings = {
@@ -26,7 +27,6 @@
       "editor.tabSize" = 2;
       "extensions.autoUpdate" = false;
       "extensions.autoCheckUpdates" = false;
-      "tabnine.experimentalAutoImports" = false;
       "window.menuBarVisibility" = "toggle";
       "files.trimTrailingWhitespace" = true;
       "extensions.ignoreRecommendations" = true;
