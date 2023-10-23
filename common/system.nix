@@ -61,13 +61,7 @@
       displayManager.sddm = {
         enable = true;
         theme = "sugar-catppuccin";
-        settings = {
-          General = {
-            DisplayServer = "wayland";
-            InputMethod = "";
-          };
-          Wayland.CompositorCommand = "${pkgs.weston}/bin/weston --shell=fullscreen-shell.so";
-        };
+        wayland.enable = true;
       };
 
       libinput = {

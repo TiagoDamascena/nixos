@@ -8,11 +8,14 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
-    enableNvidiaPatches = true;
-    systemdIntegration = true;
+    enableNvidiaPatches = osConfig.networking.hostName == "desktop";
     package = pkgs.hyprland;
 
     xwayland = {
+      enable = true;
+    };
+
+    systemd = {
       enable = true;
     };
 

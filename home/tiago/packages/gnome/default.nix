@@ -4,7 +4,7 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Catppuccin-Mocha-Standard-Mauve-dark";
+      name = "Catppuccin-Mocha-Standard-Mauve-Dark";
       package = pkgs.catppuccin-gtk.override {
         accents = [ "mauve" ];
         size = "standard";
@@ -26,7 +26,7 @@
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
     };
-    
+
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:";
     };
