@@ -44,7 +44,6 @@
   time.timeZone = "America/Sao_Paulo";
 
   console = {
-    font = "Lat2-Terminus16";
     useXkbConfig = true;
   };
 
