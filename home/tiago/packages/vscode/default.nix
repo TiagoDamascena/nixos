@@ -9,14 +9,17 @@
     enable = true;
     package = pkgs.vscode;
 
+    mutableExtensionsDir = true;
     extensions = with vscode-marketplace; [
       antiantisepticeye.vscode-color-picker
       eamodio.gitlens
       github.copilot
+      github.copilot-chat
       gruntfuggly.todo-tree
       jnoortheen.nix-ide
       mhutchie.git-graph
       pkief.material-icon-theme
+      bradlc.vscode-tailwindcss
     ];
 
     userSettings = {
@@ -47,5 +50,25 @@
         "when" = "terminal.active";
       }
     ];
+  };
+
+  xdg.desktopEntries = {
+    code = {
+      name = "Visual Studio Code";
+      genericName = "Text Editor";
+      icon = "vscode";
+      exec = "code %F --ozone-platform=x11";
+      terminal = false;
+      categories = [
+        "Utility"
+        "TextEditor"
+        "Development"
+        "IDE"
+      ];
+      mimeType = [
+        "text/plain"
+        "inode/directory"
+      ];
+    };
   };
 }
