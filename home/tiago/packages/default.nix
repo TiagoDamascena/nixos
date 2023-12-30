@@ -7,6 +7,7 @@
     ./gnome
     ./hyprland
     ./kanshi
+    ./obsidian
     ./vscode
     ./zsh
   ];
