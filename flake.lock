@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "ags": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1704371796,
+        "narHash": "sha256-/gOMapfraWDmo+FUalFrOVOXomIy5zn3w/nn8tOESk8=",
+        "owner": "Aylur",
+        "repo": "ags",
+        "rev": "7be7b4439275e6fa0d674c2c29491d7b53760f0d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Aylur",
+        "repo": "ags",
+        "type": "github"
+      }
+    },
     "eww-tray": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -198,6 +218,7 @@
     },
     "root": {
       "inputs": {
+        "ags": "ags",
         "eww-tray": "eww-tray",
         "home-manager": "home-manager",
         "hyprland": "hyprland",

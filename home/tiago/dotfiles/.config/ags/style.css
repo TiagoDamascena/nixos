@@ -1,0 +1,162 @@
+.bar button {
+  all: unset;
+}
+
+.bar .panel {
+  min-height: 26px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background-color: #11111b;
+  color: #cdd6f4;
+}
+
+.bar-icon {
+  margin: 0 5px;
+  padding: 0 5px;
+  border-radius: 50%;
+}
+
+.icon {
+  font-family: 'Segoe Fluent Icons';
+}
+
+.icon.overlay {
+  color: #585b70;
+}
+
+.power .icon {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.network .icon {
+  font-size: 18px;
+}
+
+.battery .icon {
+  font-size: 26px;
+}
+
+.volume .icon {
+  font-size: 18px;
+}
+
+.volume.muted .overlay {
+  opacity: 0;
+}
+
+.notifications .icon {
+  font-size: 16px;
+}
+
+.clock {
+  font-size: 14px;
+  color: #9399b2;
+}
+
+.workspaces .workspace {
+  margin: 0 2px;
+	padding: 0 6px;
+	border-radius: 5px;
+  color: #6c7086;
+  font-size: 14px;
+}
+
+.workspaces .workspace.occupied {
+  color: #9399b2;
+}
+
+.workspaces .workspace.active {
+  color: #ea76cb;
+}
+
+.workspaces .workspace:hover {
+  color: #D35D6E;
+}
+
+.popup-window .container {
+  border: 2px solid #cba6f7;
+  border-radius: 10px;
+  background: rgba(17, 16, 27, .9);
+}
+
+.popup-window button {
+  all: unset;
+  padding: 8px 10px;
+}
+
+.popup-window .title {
+  font-size: 14px;
+  font-weight: 500;
+  font-weight: bold;
+}
+
+.power-menu .container {
+  padding: 5px 0;
+}
+
+.power-menu .option {
+  min-width: 200px;
+}
+
+.power-menu .option:hover .label,
+.power-menu .option:hover .icon {
+  color: #cba6f7;
+}
+
+.power-menu .option .shortcut {
+  color: #585b70;
+  font-size: 12px;
+}
+
+.volume-menu .container {
+  padding: 15px 15px 20px;
+  min-width: 250px;
+}
+
+.volume-menu .slider trough {
+  padding: 0 12px;
+  border-radius: 25px;
+  background: #45475a;
+}
+
+.volume-menu .slider trough highlight {
+  padding: 12px 0;
+  margin-left: -12px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  background: #8839ef;
+}
+
+.volume-menu .slider slider {
+  background: white;
+  box-shadow: 0 0 0 3px #8839ef;
+}
+
+.volume-menu .slider value {
+  opacity: 0;
+}
+
+.volume-menu .audio-device {
+  padding: 5px 0;
+}
+
+.volume-menu .audio-device:hover .label {
+  color: #cba6f7;
+}
+
+.volume-menu .audio-device .icon {
+  padding: 8px;
+  border-radius: 50%;
+  background: #45475a;
+  font-size: 16px;
+}
+
+.volume-menu .audio-device.active .icon {
+  background: #8839ef;
+}
+
+.volume-menu .more {
+  font-size: 14px;
+  color: #7c7c7c;
+}

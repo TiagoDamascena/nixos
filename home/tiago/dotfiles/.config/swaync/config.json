@@ -5,7 +5,7 @@
   "control-center-layer": "top",
   "layer-shell": true,
   "cssPriority": "application",
-  "control-center-margin-top": 55,
+  "control-center-margin-top": 10,
   "control-center-margin-bottom": 10,
   "control-center-margin-right": 10,
   "control-center-margin-left": 0,
@@ -28,10 +28,10 @@
   "hide-on-action": true,
   "script-fail-notify": true,
   "scripts": {
-    
+
   },
   "notification-visibility": {
-    
+
   },
   "widgets": [
     "title",

@@ -21,17 +21,13 @@
 
     settings = {
       monitor = (
-        [
-          ",addreserved,50,0,0,0"
-        ]
-        ++
-        (if (osConfig.networking.hostName == "vivobook") then [
+        if (osConfig.networking.hostName == "vivobook") then [
           "eDP-1,1920x1080@60,0x0,1"
           ",preferred,auto,1"
         ] else if (osConfig.networking.hostName == "desktop") then [
           "HDMI-A-1, 2560x1080@75, 0x560, 1"
           "HDMI-A-2, 1920x1080@60, 2560x0, 1, transform, 3"
-        ] else [ ])
+        ] else [ ]
       );
 
       exec-once = (
@@ -41,14 +37,13 @@
           "wl-clip-persist --clipboard regular"
           "swaync"
           "avizo-service"
+          "ags"
         ]
         ++
         (if (osConfig.networking.hostName == "vivobook") then [
           "kanshi"
         ] else if (osConfig.networking.hostName == "desktop") then [
           "hyprpaper"
-          "eww open bar0"
-          "eww open bar1"
         ] else [ ])
       );
 
@@ -135,7 +130,7 @@
         "workspace 4 silent, class:^(Slack)$"
         "workspace 4 silent, class:^(whatsapp-for-linux)$"
         "workspace 5 silent, class:^(Spotify)$"
-        "workspace 6 silent, class:^(code-url-handler)$"
+        "workspace 6 silent, class:^(Code)$"
         "workspace 7 silent, class:^(DBeaver)$"
       ];
 

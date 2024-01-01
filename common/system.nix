@@ -87,6 +87,10 @@
       gnome-online-accounts.enable = true;
       gnome-settings-daemon.enable = true;
     };
+
+    upower = {
+      enable = true;
+    };
   };
 
   security = {
@@ -163,6 +167,7 @@
       starship
       pamixer
       playerctl
+      pavucontrol
       wl-clip-persist
       joshuto
       neovim

@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./ags
     ./dbeaver
     ./git
     ./gnome

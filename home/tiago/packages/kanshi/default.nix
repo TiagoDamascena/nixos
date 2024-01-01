@@ -19,7 +19,6 @@
         ];
         exec = [
           "hyprpaper"
-          "eww open bar0"
         ];
       };
       docked = {
@@ -33,8 +32,6 @@
         ];
         exec = [
           "hyprpaper"
-          "eww open bar0"
-          "eww open bar1"
         ];
       };
     };
