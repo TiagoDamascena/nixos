@@ -83,15 +83,23 @@ const VolumeMenu = () => Widget.Box({
           xalign: 0,
           label: 'Audio'
         }),
-        Widget.Slider({
-          class_name: 'slider',
-          min: 0,
-          max: 1,
-          drawValue: false,
-          onChange: ({ value }) => AudioService.speaker.volume = value,
-          connections: [[AudioService, slider => {
-              slider.value = AudioService.speaker.volume;
-          }, `speaker-changed`]],
+        Widget.EventBox({
+          onHover: box => {
+            box.window.set_cursor(Gdk.Cursor.new_from_name(display, 'pointer'));
+          },
+          onHoverLost: box => {
+            box.window.set_cursor(null);
+          },
+          child: Widget.Slider({
+            class_name: 'slider',
+            min: 0,
+            max: 1,
+            drawValue: false,
+            onChange: ({ value }) => AudioService.speaker.volume = value,
+            connections: [[AudioService, slider => {
+                slider.value = AudioService.speaker.volume;
+            }, `speaker-changed`]],
+          }),
         }),
       ],
     }),

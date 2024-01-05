@@ -22,6 +22,7 @@ const Center = () => Widget.Box({
 
 const End = () => Widget.Box({
   hpack: 'end',
+  spacing: 10,
   children: [
     SysTray(),
     Notifications(),
