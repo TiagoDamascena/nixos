@@ -185,7 +185,7 @@
       whatsapp-for-linux
       slack
       discord
-      postman
+      insomnia
       drawio
       swaynotificationcenter
       libnotify
@@ -203,6 +203,8 @@
       eksctl
       openvpn
       bitwarden
+      onlyoffice-bin
+      mpv
     ];
     shell = pkgs.zsh;
   };
