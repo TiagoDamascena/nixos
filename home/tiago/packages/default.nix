@@ -9,6 +9,7 @@
     ./hyprland
     ./kanshi
     ./obsidian
+    ./slack
     ./vscode
     ./zsh
   ];

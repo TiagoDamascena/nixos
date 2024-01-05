@@ -183,7 +183,6 @@
       firefox
       spotify
       whatsapp-for-linux
-      slack
       discord
       insomnia
       drawio
