@@ -5,11 +5,11 @@ import { execAsync } from 'resource:///com/github/Aylur/ags/utils.js'
 import { range } from '../common/utils.js';
 
 const workspaces = 9;
-const dispatch = id => () => execAsync(`hyprctl dispatch workspace ${id}`);
+const dispatch = id => () => execAsync(`try_swap_workspace ${id}`);
 
 const display = Gdk.Display.get_default();
 
-const Workspace = (id) => Widget.EventBox({
+const Workspace = (monitor, id) => Widget.EventBox({
   setup: box => box.id = id,
   child: Widget.Button({
     class_name: 'workspace',
@@ -20,7 +20,7 @@ const Workspace = (id) => Widget.EventBox({
       vpack: 'center',
     }),
     connections: [[Hyprland, btn => {
-      btn.toggleClassName('active', Hyprland.active.workspace.id === id);
+      btn.toggleClassName('active', Hyprland.monitors.find(m => m.id === monitor)?.activeWorkspace?.id === id);
       btn.toggleClassName('occupied', Hyprland.getWorkspace(id)?.windows > 0);
     }]],
   }),
@@ -32,11 +32,11 @@ const Workspace = (id) => Widget.EventBox({
   },
 });
 
-const Workspaces = () => Widget.Box({
-  children: range(workspaces).map(i => Workspace(i)),
+const Workspaces = (monitor) => Widget.Box({
+  children: range(workspaces).map(i => Workspace(monitor, i)),
 });
 
-export default () => Widget.Box({
+export default (monitor) => Widget.Box({
   class_name: 'workspaces',
-  child: Workspaces(),
+  child: Workspaces(monitor),
 });

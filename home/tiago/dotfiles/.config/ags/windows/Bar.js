@@ -8,19 +8,19 @@ import Power from '../widgets/Power.js';
 import Network from '../widgets/Network.js';
 import Notifications from '../widgets/Notifications.js';
 
-const Start = () => Widget.Box({
+const Start = (monitor) => Widget.Box({
   children: [
-    Workspaces(),
+    Workspaces(monitor),
   ],
 });
 
-const Center = () => Widget.Box({
+const Center = (monitor) => Widget.Box({
   children: [
     Clock(),
   ],
 });
 
-const End = () => Widget.Box({
+const End = (monitor) => Widget.Box({
   hpack: 'end',
   spacing: 10,
   children: [
@@ -33,13 +33,13 @@ const End = () => Widget.Box({
   ],
 });
 
-const Bar = () => Widget.Box({
+const Bar = (monitor) => Widget.Box({
   class_name: 'panel',
   child: Widget.CenterBox({
     hexpand: true,
-    start_widget: Start(),
-    center_widget: Center(),
-    end_widget: End(),
+    start_widget: Start(monitor),
+    center_widget: Center(monitor),
+    end_widget: End(monitor),
   }),
 });
 
@@ -47,8 +47,9 @@ export default monitor => Widget.Window({
   name: `bar-${monitor}`,
   class_name: 'bar',
   exclusivity: 'exclusive',
+  layer: 'top',
   monitor: monitor,
   anchor: ['top', 'left', 'right'],
   margins: [10, 10, 0],
-  child: Bar(),
+  child: Bar(monitor),
 });
