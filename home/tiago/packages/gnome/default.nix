@@ -3,6 +3,7 @@
 {
   gtk = {
     enable = true;
+
     theme = {
       name = "Catppuccin-Mocha-Standard-Mauve-Dark";
       package = pkgs.catppuccin-gtk.override {
@@ -11,6 +12,12 @@
         tweaks = [ "rimless" ];
         variant = "mocha";
       };
+    };
+
+    cursorTheme = {
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
+      size = 24;
     };
 
     gtk3.extraConfig = {

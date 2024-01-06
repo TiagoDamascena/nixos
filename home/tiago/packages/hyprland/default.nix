@@ -34,6 +34,7 @@
           "dbus-update-activation-environment --all"
           "gnome-keyring-daemon -sd"
           "wl-clip-persist --clipboard regular"
+          "hyprctl setcursor Bibata-Modern-Ice 24"
           "swaync"
           "avizo-service"
           "ags"
