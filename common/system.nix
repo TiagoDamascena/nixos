@@ -48,8 +48,6 @@
   };
 
   services = {
-    gvfs.enable = true;
-
     udev.packages = with pkgs; [
       gnome.gnome-settings-daemon
     ];
@@ -83,10 +81,13 @@
 
     gnome = {
       evolution-data-server.enable = true;
+      glib-networking.enable = true;
       gnome-keyring.enable = true;
       gnome-online-accounts.enable = true;
       gnome-settings-daemon.enable = true;
     };
+
+    gvfs.enable = true;
 
     upower = {
       enable = true;
@@ -100,6 +101,8 @@
       };
       waylock = {};
     };
+
+    polkit.enable = true;
   };
 
   virtualisation = {
