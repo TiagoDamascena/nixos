@@ -80,7 +80,7 @@
       };
 
       decoration = {
-        rounding = 5;
+        rounding = 10;
         drop_shadow = "yes";
         shadow_range = 4;
         shadow_render_power = 3;
@@ -113,6 +113,7 @@
         pseudotile = false;
         force_split = 2;
         preserve_split = false;
+        special_scale_factor = 0.9;
       };
 
       master = {
