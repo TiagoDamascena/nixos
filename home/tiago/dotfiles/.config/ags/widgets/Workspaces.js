@@ -19,10 +19,9 @@ const Workspace = (monitor, id) => Widget.EventBox({
       class_name: 'indicator',
       vpack: 'center',
     }),
-    connections: [[Hyprland, btn => {
-      btn.toggleClassName('active', Hyprland.monitors.find(m => m.id === monitor)?.activeWorkspace?.id === id);
-      btn.toggleClassName('occupied', Hyprland.getWorkspace(id)?.windows > 0);
-    }]],
+  }).hook(Hyprland, btn => {
+    btn.toggleClassName('active', Hyprland.monitors.find(m => m.id === monitor)?.activeWorkspace?.id === id);
+    btn.toggleClassName('occupied', Hyprland.getWorkspace(id)?.windows > 0);
   }),
   onHover: box => {
     box.window.set_cursor(Gdk.Cursor.new_from_name(display, 'pointer'));

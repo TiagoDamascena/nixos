@@ -1,14 +1,18 @@
 import App from 'resource:///com/github/Aylur/ags/app.js';
-import Bar from "./windows/Bar.js";
-import PowerMenu from './windows/PowerMenu.js';
-import VolumeMenu from './windows/VolumeMenu.js';
 import { forMonitors } from './common/utils.js';
+import Bar from "./windows/Bar.js";
+import PowerMenu from './windows/SystemMenu.js';
+import VolumeMenu from './windows/VolumeMenu.js';
+import Corners from './windows/Corners.js';
+
+const windows = () => [
+  forMonitors(Corners),
+  forMonitors(Bar),
+  PowerMenu(),
+  VolumeMenu()
+];
 
 export default {
   style: App.configDir + '/style.css',
-  windows: [
-    forMonitors(Bar),
-    PowerMenu(),
-    VolumeMenu(),
-  ]
+  windows: windows().flat(1)
 }

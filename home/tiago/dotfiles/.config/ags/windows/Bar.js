@@ -4,12 +4,16 @@ import Workspaces from '../widgets/Workspaces.js';
 import SysTray from '../widgets/SysTray.js';
 import Volume from '../widgets/Volume.js';
 import Battery from '../widgets/Battery.js';
-import Power from '../widgets/Power.js';
+import System from '../widgets/System.js';
 import Network from '../widgets/Network.js';
 import Notifications from '../widgets/Notifications.js';
+import BarDivider from '../widgets/BarDivider.js';
 
 const Start = (monitor) => Widget.Box({
+  spacing: 10,
   children: [
+    System(),
+    BarDivider(),
     Workspaces(monitor),
   ],
 });
@@ -25,11 +29,10 @@ const End = (monitor) => Widget.Box({
   spacing: 10,
   children: [
     SysTray(),
-    Notifications(),
     Volume(),
     Network(),
     Battery(),
-    Power(),
+    Notifications(),
   ],
 });
 

@@ -16,12 +16,9 @@ export const PopupWindow = ({
     class_name: 'container',
     child: Widget.Revealer({
       transition: 'slide_down',
-      connections: [
-        [App, (Widget, wname, visible) => {
-          if (wname === name) Widget.reveal_child = visible;
-        }]
-      ],
       child: child
+    }).hook(App, (Widget, wname, visible) => {
+      if (wname === name) Widget.reveal_child = visible;
     }),
   }),
   ...rest

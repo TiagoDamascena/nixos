@@ -33,10 +33,9 @@ const SpeakerItem = speaker => Widget.Button({
           }),
       ],
   }),
-  connections: [[AudioService, btn => {
-    btn.toggleClassName('active', AudioService.speaker.id === speaker.id);
-  }, `speaker-changed`]],
-});
+}).hook(AudioService, btn => {
+  btn.toggleClassName('active', AudioService.speaker.id === speaker.id);
+}, `speaker-changed`);
 
 const MicrophoneItem = microphone => Widget.Button({
   class_name: 'audio-device microphone',
@@ -64,10 +63,9 @@ const MicrophoneItem = microphone => Widget.Button({
           }),
       ],
   }),
-  connections: [[AudioService, btn => {
-    btn.toggleClassName('active', AudioService.microphone.id === microphone.id);
-  }, `microphone-changed`]],
-});
+}).hook(AudioService, btn => {
+  btn.toggleClassName('active', AudioService.microphone.id === microphone.id);
+}, `microphone-changed`);
 
 const VolumeMenu = () => Widget.Box({
   vertical: true,
@@ -96,10 +94,9 @@ const VolumeMenu = () => Widget.Box({
             max: 1,
             drawValue: false,
             onChange: ({ value }) => AudioService.speaker.volume = value,
-            connections: [[AudioService, slider => {
-                slider.value = AudioService.speaker.volume;
-            }, `speaker-changed`]],
-          }),
+          }).hook(AudioService, slider => {
+            slider.value = AudioService.speaker.volume;
+          }, `speaker-changed`),
         }),
       ],
     }),
@@ -117,8 +114,7 @@ const VolumeMenu = () => Widget.Box({
           vertical: true,
           hexpand: true,
           spacing: 5,
-          binds: [['children', AudioService, 'speakers', s => s.map(SpeakerItem)]],
-        })
+        }).bind('children', AudioService, 'speakers', s => s.map(SpeakerItem))
       ],
     }),
     Widget.Box({
@@ -135,15 +131,14 @@ const VolumeMenu = () => Widget.Box({
           vertical: true,
           hexpand: true,
           spacing: 5,
-          binds: [['children', AudioService, 'microphones', m => m.map(MicrophoneItem)]],
-        })
+        }).bind('children', AudioService, 'microphones', m => m.map(MicrophoneItem))
       ],
     }),
     Widget.Box({
       hexpand: true,
       children: [
-        Widget.EventBox({
-          onPrimaryClick: () => {
+        Widget.Button({
+          onClicked: () => {
             execAsync('pavucontrol');
             App.toggleWindow('volume-menu');
           },

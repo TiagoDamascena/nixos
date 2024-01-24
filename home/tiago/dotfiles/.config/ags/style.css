@@ -4,7 +4,7 @@
 
 .bar .panel {
   min-height: 26px;
-  padding: 6px 10px;
+  padding: 6px 15px;
   border-radius: 10px;
   background-color: #11111b;
   color: #cdd6f4;
@@ -12,6 +12,28 @@
 
 .bar-icon {
   padding: 0 5px;
+  border-radius: 20px;
+  transition-property: background-color, color;
+  transition-duration: 400ms;
+  transition-timing-function: ease-out;
+  transition-delay: 200ms;
+}
+
+.bar-icon.active {
+  background-color: #cba6f7;
+  color: #1e1e2e;
+  transition-duration: 200ms;
+  transition-delay: 0;
+}
+
+.bar-divider {
+  padding: 10px 2px;
+}
+
+.bar-divider-line {
+  min-width: 6px;
+  min-height: 6px;
+  background: #313244;
   border-radius: 50%;
 }
 
@@ -23,17 +45,31 @@
   color: #585b70;
 }
 
-.power .icon {
+.system .icon {
   font-size: 16px;
   font-weight: bold;
+}
+
+.system.active {
+  background-color: #89b4fa;
 }
 
 .network .icon {
   font-size: 18px;
 }
 
+.network.active {
+  padding: 0 10px;
+  background-color: #89b4fa;
+}
+
 .battery .icon {
   font-size: 26px;
+}
+
+.battery.active {
+  padding: 0 10px;
+  background-color: #a6e3a1;
 }
 
 .volume .icon {
@@ -42,6 +78,14 @@
 
 .volume.muted .overlay {
   opacity: 0;
+}
+
+.volume.active {
+  padding: 0 10px;
+}
+
+.notifications.active {
+  background: #f9e2af;
 }
 
 .notifications .icon {
@@ -90,20 +134,20 @@
   font-weight: bold;
 }
 
-.power-menu .container {
+.system-menu .container {
   padding: 5px 0;
 }
 
-.power-menu .option {
+.system-menu .option {
   min-width: 200px;
 }
 
-.power-menu .option:hover .label,
-.power-menu .option:hover .icon {
+.system-menu .option:hover .label,
+.system-menu .option:hover .icon {
   color: #cba6f7;
 }
 
-.power-menu .option .shortcut {
+.system-menu .option .shortcut {
   color: #585b70;
   font-size: 12px;
 }
@@ -162,4 +206,25 @@
 
 .system-tray-item {
   padding: 0 5px;
+}
+
+.corner {
+  min-width: 10px;
+  min-height: 10px;
+}
+
+.corner.top-left {
+  background: radial-gradient(circle at bottom right, transparent 10px, #000000 1px);
+}
+
+.corner.top-right {
+  background: radial-gradient(circle at bottom left, transparent 10px, #000000 1px);
+}
+
+.corner.bottom-left {
+  background: radial-gradient(circle at top right, transparent 10px, #000000 1px);
+}
+
+.corner.bottom-right {
+  background: radial-gradient(circle at top left, transparent 10px, #000000 1px);
 }

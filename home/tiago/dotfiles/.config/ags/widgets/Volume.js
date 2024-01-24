@@ -1,31 +1,35 @@
 import Gdk from 'gi://Gdk';
 import App from 'resource:///com/github/Aylur/ags/app.js';
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
+import Variable from 'resource:///com/github/Aylur/ags/variable.js';
 import AudioService from 'resource:///com/github/Aylur/ags/service/audio.js';
 
 const display = Gdk.Display.get_default();
+const active = Variable(false);
 
-const Volume = () => Widget.Box({
-  child: Widget.EventBox({
-    onPrimaryClick: () => {
-      App.toggleWindow('volume-menu');
-    },
-    onHover: box => {
-      box.window.set_cursor(Gdk.Cursor.new_from_name(display, 'pointer'));
-    },
-    onHoverLost: box => {
-      box.window.set_cursor(null);
-    },
-    child: Widget.Overlay({
-      child: Widget.Label({
-        class_names: ['icon', 'overlay', 'volume-label'],
-        justification: 'center',
-        label: '',
-      }),
-      overlays: [
-        Widget.Label({
-          class_names: ['icon', 'volume-label'],
-          connections: [[AudioService, Widget => {
+const Volume = () => Widget.EventBox({
+  onPrimaryClick: () => {
+    App.toggleWindow('volume-menu');
+  },
+  onHover: () => {
+    active.value = true;
+  },
+  onHoverLost: () => {
+    active.value = false;
+  },
+  child: Widget.Box({
+    spacing: active.bind().transform(v => v ? 10 : 0),
+    children: [
+      Widget.Overlay({
+        child: Widget.Label({
+          class_names: ['icon', 'overlay', 'volume-label'],
+          justification: 'center',
+          label: '',
+        }),
+        overlays: [
+          Widget.Label({
+            class_names: ['icon', 'volume-label'],
+          }).hook(AudioService, Widget => {
             if (!AudioService.speaker) return;
 
             const icons = [
@@ -38,23 +42,31 @@ const Volume = () => Widget.Box({
 
             const volume = AudioService.speaker.stream.isMuted ? 0 : AudioService.speaker.volume * 100;
             Widget.label = icons.find(icon => volume <= icon.threshold).icon;
-          }]],
+          }),
+        ]
+      }),
+      Widget.Revealer({
+        reveal_child: active.bind(),
+        transition: 'slide_right',
+        transition_duration: 200,
+        child: Widget.Label().hook(AudioService, Widget => {
+          Widget.label = `${parseInt(AudioService?.speaker?.volume * 100)}%`;
         }),
-      ]
-    }),
+      }),
+    ],
   }),
+}).hook(active, Widget => {
+  Widget.parent.toggleClassName('active', active.value);
+  Widget.window.set_cursor(active.value ? Gdk.Cursor.new_from_name(display, 'pointer') : null);
 });
 
 export default () => Widget.Box({
   class_names: ['bar-icon', 'volume'],
   child: Volume(),
-  connections: [
-    [AudioService, Widget => {
-      Widget.visible = !!AudioService.speaker;
+}).hook(AudioService, Widget => {
+  Widget.visible = !!AudioService.speaker;
 
-      if (!AudioService.speaker) return;
+  if (!AudioService.speaker) return;
 
-      Widget.toggleClassName('muted', AudioService.speaker.stream.isMuted || AudioService.speaker.volume === 0);
-    }]
-  ]
+  Widget.toggleClassName('muted', AudioService.speaker.stream.isMuted || AudioService.speaker.volume === 0);
 });

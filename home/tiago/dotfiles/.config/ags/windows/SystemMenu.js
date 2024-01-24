@@ -13,7 +13,7 @@ const MenuOption = ({
   action,
 }) => Widget.Button({
   class_name: 'option',
-  onPrimaryClick: action,
+  onClicked: action,
   onHover: button => {
     button.window.set_cursor(Gdk.Cursor.new_from_name(display, 'pointer'));
   },
@@ -41,15 +41,25 @@ const MenuOption = ({
   }),
 });
 
-const PowerMenu = () => Widget.Box({
+const SystemMenu = () => Widget.Box({
   vertical: true,
   children: [
+    MenuOption({
+      icon: '',
+      text: 'Applications',
+      action: () => {() => {}},
+    }),
+    MenuOption({
+      icon: '',
+      text: 'Sobre',
+      action: () => {() => {}},
+    }),
     MenuOption({
       icon: '',
       text: 'Lock screen',
       shortcut: '󰘳 󰘶 L',
       action: () => {
-        App.closeWindow('power-menu');
+        App.closeWindow('system-menu');
         exec('waylock -fork-on-lock');
       },
     }),
@@ -58,7 +68,7 @@ const PowerMenu = () => Widget.Box({
       text: 'Logout',
       shortcut: '󰘳 󰘶 Q',
       action: () => {
-        App.closeWindow('power-menu');
+        App.closeWindow('system-menu');
         exec('bash -c "loginctl kill-session $XDG_SESSION_ID"');
       },
     }),
@@ -67,7 +77,7 @@ const PowerMenu = () => Widget.Box({
       text: 'Sleep',
       shortcut: '󰘳 󰘶 S',
       action: () => {
-        App.closeWindow('power-menu');
+        App.closeWindow('system-menu');
         exec('systemctl suspend');
       },
     }),
@@ -75,7 +85,7 @@ const PowerMenu = () => Widget.Box({
       icon: '',
       text: 'Restart',
       action: () => {
-        App.closeWindow('power-menu');
+        App.closeWindow('system-menu');
         exec('systemctl reboot');
       },
     }),
@@ -83,7 +93,7 @@ const PowerMenu = () => Widget.Box({
       icon: '',
       text: 'Shutdown',
       action: () => {
-        App.closeWindow('power-menu');
+        App.closeWindow('system-menu');
         exec('systemctl poweroff');
       },
     }),
@@ -91,8 +101,8 @@ const PowerMenu = () => Widget.Box({
 });
 
 export default () => PopupWindow({
-  name: 'power-menu',
-  anchor: ['top', 'right'],
-  margins: [0, 10, 0, 0],
-  child: PowerMenu(),
+  name: 'system-menu',
+  anchor: ['top', 'left'],
+  margins: [0, 0, 0, 10],
+  child: SystemMenu(),
 });
