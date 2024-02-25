@@ -65,8 +65,11 @@
         enable = true;
       };
 
-      layout = "br";
-      xkbVariant = "abnt2";
+
+      xkb = {
+        layout = "br";
+        variant = "abnt2";
+      };
     };
 
     pipewire = {
@@ -176,6 +179,7 @@
       neovim
       eww
       hyprpaper
+      swww
       (google-chrome.override {
         commandLineArgs = [
           "--enable-features=VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization"
