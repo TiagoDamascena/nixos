@@ -18,21 +18,33 @@
       gruntfuggly.todo-tree
       jnoortheen.nix-ide
       mhutchie.git-graph
-      pkief.material-icon-theme
+      miguelsolorio.min-theme
+      miguelsolorio.symbols
       bradlc.vscode-tailwindcss
     ];
 
     userSettings = {
       "update.mode" = "none";
       "update.showReleaseNotes" = false;
-      "workbench.iconTheme" = "material-icon-theme";
       "editor.detectIndentation" = true;
-      "editor.tabSize" = 2;
       "extensions.autoUpdate" = false;
       "extensions.autoCheckUpdates" = false;
-      "window.menuBarVisibility" = "toggle";
-      "files.trimTrailingWhitespace" = true;
       "extensions.ignoreRecommendations" = true;
+      "window.menuBarVisibility" = "toggle";
+      "symbols.hidesExplorerArrows" = false;
+      "workbench.colorTheme" = "Min Dark";
+      "workbench.iconTheme" = "symbols";
+      "workbench.editor.labelFormat" = "short";
+      "editor.fontFamily" = "JetBrainsMono Nerd Font";
+      "editor.fontLigatures" = true;
+      "ditor.minimap.enabled" = false;
+      "editor.rulers" = [80 120];
+      "editor.renderLineHighlight" = "gutter";
+      "editor.semanticHighlighting.enabled" = false;
+      "editor.tabSize" = 2;
+      "breadcrumbs.enabled" = false;
+      "explorer.compactFolders" = false;
+      "files.trimTrailingWhitespace" = true;
     };
 
     keybindings = [
