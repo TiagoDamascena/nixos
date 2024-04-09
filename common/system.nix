@@ -144,7 +144,6 @@
     gnome.nautilus
     gnome.gnome-calculator
     gnome.gnome-calendar
-    gnome.gnome-screenshot
     gnome.gnome-system-monitor
     gnome.gnome-disk-utility
     gnome.dconf-editor
@@ -178,6 +177,7 @@
       neovim
       hypridle
       hyprpaper
+      hyprpicker
       swww
       (google-chrome.override {
         commandLineArgs = [

@@ -197,6 +197,9 @@
         ", Print, exec, grimblast copysave screen"
         "SHIFT, Print, exec, grimblast --freeze copysave area"
 
+        # Colorpicker keybindings
+        "$mainMod, C, exec, hyprpicker -a"
+
         # Media keybindings
         ", XF86AudioMute, exec, volumectl toggle-mute"
         ", XF86AudioMicMute, exec, volumectl -m toggle-mute"
