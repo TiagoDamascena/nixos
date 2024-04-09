@@ -13,6 +13,18 @@
     recursive = true;
   };
 
+  home.file.hypridle = {
+    source = ./.config/hypr/hypridle.conf;
+    target = ".config/hypr/hypridle.conf";
+    recursive = true;
+  };
+
+  home.file.hyprlock = {
+    source = ./.config/hypr/hyprlock.conf;
+    target = ".config/hypr/hyprlock.conf";
+    recursive = true;
+  };
+
   home.file.hyprpaper = {
     source = ./.config/hypr/hyprpaper.conf;
     target = ".config/hypr/hyprpaper.conf";
@@ -39,5 +51,11 @@
   home.file.vscode-args = {
     source = ./.vscode/argv.json;
     target = ".vscode/argv.json";
+  };
+
+  home.file.settings = {
+    source = ./.settings;
+    target = ".settings";
+    recursive = true;
   };
 }

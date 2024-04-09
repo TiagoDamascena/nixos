@@ -102,7 +102,7 @@
       sddm = {
         enableGnomeKeyring = true;
       };
-      waylock = {};
+      hyprlock = {};
     };
 
     polkit.enable = true;
@@ -137,7 +137,6 @@
     htop
     neofetch
     sddm-sugar-catppuccin
-    waylock
     alacritty
     rofi-wayland
     glib
@@ -155,6 +154,8 @@
 
   fonts.packages = with pkgs; [
     corefonts
+    inter
+    rubik
     (nerdfonts.override {
       fonts = [
         "JetBrainsMono"
@@ -163,6 +164,7 @@
   ];
 
   users.users.tiago = {
+    description = "Tiago Damascena";
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "networkmanager" "docker" ];
     packages = with pkgs; [
@@ -174,7 +176,7 @@
       wl-clip-persist
       joshuto
       neovim
-      eww
+      hypridle
       hyprpaper
       swww
       (google-chrome.override {

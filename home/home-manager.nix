@@ -3,6 +3,7 @@
   home-manager,
   vscode-extensions,
   ags,
+  hyprlock,
   ...
 }:
 
@@ -17,6 +18,7 @@
     extraSpecialArgs = {
       vscode-marketplace = vscode-extensions.extensions.${pkgs.system}.vscode-marketplace;
       ags-module = ags.homeManagerModules.default;
+      hyprlock-module = hyprlock.homeManagerModules.hyprlock;
     };
   };
 }

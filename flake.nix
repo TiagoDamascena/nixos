@@ -38,6 +38,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprlock = {
+      url = "github:hyprwm/hyprlock";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     sddm-sugar-catppuccin = {
       url = "github:TiagoDamascena/sddm-sugar-catppuccin";
       inputs.nixpkgs.follows = "nixpkgs";
