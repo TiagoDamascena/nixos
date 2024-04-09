@@ -13,12 +13,6 @@
     recursive = true;
   };
 
-  home.file.eww = {
-    source = ./.config/eww;
-    target = ".config/eww";
-    recursive = true;
-  };
-
   home.file.hyprpaper = {
     source = ./.config/hypr/hyprpaper.conf;
     target = ".config/hypr/hyprpaper.conf";

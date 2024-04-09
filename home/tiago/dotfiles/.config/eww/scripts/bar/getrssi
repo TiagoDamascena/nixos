@@ -1,6 +1,0 @@
-#!/bin/sh
-
-DEVICE="wlo1"
-
-rssi=$(cat /proc/net/wireless | grep "$DEVICE" | awk '{printf "%d", $4}')
-printf '%d\n' "$rssi"
