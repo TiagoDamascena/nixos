@@ -4,7 +4,9 @@
   programs.zsh = {
     enable = true;
 
-    enableAutosuggestions = true;
+    autosuggestion = {
+      enable = true;
+    };
 
     oh-my-zsh = {
       enable = true;
@@ -37,6 +39,7 @@
 
     profileExtra = ''
       export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/keyring/ssh
+      export XDG_SCREENSHOTS_DIR="$HOME/Pictures/Screenshots"
     '';
   };
 }

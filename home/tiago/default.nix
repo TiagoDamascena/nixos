@@ -9,6 +9,13 @@
   home = {
     username = "tiago";
     homeDirectory = "/home/tiago";
+
+    pointerCursor = {
+      gtk.enable = true;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 24;
+    };
   };
 
   xdg.userDirs = {

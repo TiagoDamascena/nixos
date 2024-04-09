@@ -9,10 +9,13 @@
     enable = true;
     package = pkgs.vscode;
 
-    mutableExtensionsDir = true;
     extensions = with vscode-marketplace; [
       antiantisepticeye.vscode-color-picker
+      bmewburn.vscode-intelephense-client
+      bradlc.vscode-tailwindcss
+      dbaeumer.vscode-eslint
       eamodio.gitlens
+      esbenp.prettier-vscode
       github.copilot
       github.copilot-chat
       gruntfuggly.todo-tree
@@ -20,24 +23,25 @@
       mhutchie.git-graph
       miguelsolorio.min-theme
       miguelsolorio.symbols
-      bradlc.vscode-tailwindcss
+      simonsiefke.svg-preview
     ];
 
     userSettings = {
       "update.mode" = "none";
       "update.showReleaseNotes" = false;
       "editor.detectIndentation" = true;
+      "editor.defaultFormatter" = "esbenp.prettier-vscode";
       "extensions.autoUpdate" = false;
       "extensions.autoCheckUpdates" = false;
       "extensions.ignoreRecommendations" = true;
       "window.menuBarVisibility" = "toggle";
-      "symbols.hidesExplorerArrows" = false;
+      "symbols.hidesExplorerArrows" = true;
       "workbench.colorTheme" = "Min Dark";
       "workbench.iconTheme" = "symbols";
       "workbench.editor.labelFormat" = "short";
       "editor.fontFamily" = "JetBrainsMono Nerd Font";
       "editor.fontLigatures" = true;
-      "ditor.minimap.enabled" = false;
+      "editor.minimap.enabled" = false;
       "editor.rulers" = [80 120];
       "editor.renderLineHighlight" = "gutter";
       "editor.semanticHighlighting.enabled" = false;
@@ -45,6 +49,10 @@
       "breadcrumbs.enabled" = false;
       "explorer.compactFolders" = false;
       "files.trimTrailingWhitespace" = true;
+      "tailwindCSS.experimental.classRegex" = [[
+        "tv\\((([^()]*|\\([^()]*\\))*)\\)"
+        "[\"'`]([^\"'`]*).*?[\"'`]"
+      ]];
     };
 
     keybindings = [
@@ -62,25 +70,5 @@
         "when" = "terminal.active";
       }
     ];
-  };
-
-  xdg.desktopEntries = {
-    code = {
-      name = "Visual Studio Code";
-      genericName = "Text Editor";
-      icon = "vscode";
-      exec = "code %F --ozone-platform=x11";
-      terminal = false;
-      categories = [
-        "Utility"
-        "TextEditor"
-        "Development"
-        "IDE"
-      ];
-      mimeType = [
-        "text/plain"
-        "inode/directory"
-      ];
-    };
   };
 }
