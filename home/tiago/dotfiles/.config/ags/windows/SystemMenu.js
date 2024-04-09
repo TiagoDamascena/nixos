@@ -60,7 +60,7 @@ const SystemMenu = () => Widget.Box({
       shortcut: '󰘳 󰘶 L',
       action: () => {
         App.closeWindow('system-menu');
-        exec('waylock -fork-on-lock');
+        exec('loginctl lock-session');
       },
     }),
     MenuOption({

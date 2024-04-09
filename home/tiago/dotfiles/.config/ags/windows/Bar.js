@@ -50,7 +50,7 @@ export default monitor => Widget.Window({
   name: `bar-${monitor}`,
   class_name: 'bar',
   exclusivity: 'exclusive',
-  layer: 'top',
+  layer: 'bottom',
   monitor: monitor,
   anchor: ['top', 'left', 'right'],
   margins: [10, 10, 0],

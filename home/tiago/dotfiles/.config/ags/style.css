@@ -6,7 +6,7 @@
   min-height: 26px;
   padding: 6px 15px;
   border-radius: 10px;
-  background-color: #11111b;
+  background-color: rgba(17, 16, 27, .75);
   color: #cdd6f4;
 }
 
@@ -33,7 +33,7 @@
 .bar-divider-line {
   min-width: 6px;
   min-height: 6px;
-  background: #313244;
+  background: #6c7086;
   border-radius: 50%;
 }
 
@@ -61,6 +61,10 @@
 .network.active {
   padding: 0 10px;
   background-color: #89b4fa;
+}
+
+.network .icon.disconnected {
+  color: #585b70;
 }
 
 .battery .icon {
@@ -120,7 +124,7 @@
 .popup-window .container {
   border: 2px solid #cba6f7;
   border-radius: 10px;
-  background: rgba(17, 16, 27, .9);
+  background: rgba(17, 16, 27, .75);
 }
 
 .popup-window button {

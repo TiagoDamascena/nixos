@@ -88,10 +88,11 @@
         "col.shadow" = "rgba(1a1a1aee)";
 
         blur = {
-            enabled = "yes";
-            size = 3;
-            passes = 1;
-            new_optimizations = "yes";
+            enabled = true;
+            size = 4;
+            passes = 2;
+            new_optimizations = true;
+            ignore_opacity = true;
         };
       };
 
@@ -127,16 +128,21 @@
 
       windowrulev2 = [
         "float, class:^(org.gnome.Calculator)$"
+        "float, title:^(Open File)"
         "workspace 2 silent, class:^(Postman)$"
         "workspace 4 silent, class:^(discord)$"
         "workspace 4 silent, class:^(Slack)$"
         "workspace 4 silent, class:^(whatsapp-for-linux)$"
+        "workspace 4 silent, title:^(Uplii)$"
         "workspace 5 silent, class:^(Spotify)$"
-        "workspace 6 silent, class:^(Code)$"
+        "workspace 6 silent, class:^(code-url-handler)$"
         "workspace 7 silent, class:^(DBeaver)$"
+        "opacity 0.75, onworkspace:special:scratchpad"
       ];
 
-      layerrule = [ ];
+      layerrule = [
+        "blur, ^(.*)$"
+      ];
 
       "$mainMod" = "SUPER";
 

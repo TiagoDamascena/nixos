@@ -9,6 +9,8 @@ const Wired = () => Widget.Box({
     label: '',
     class_names: ['icon', 'network-label'],
     justification: 'center',
+  }).hook(NetworkService, Widget => {
+    Widget.toggleClassName('disconnected', NetworkService.wired.internet === 'disconnected');
   }),
 });
 
@@ -51,8 +53,14 @@ const Wifi = () => Widget.EventBox({
         reveal_child: active.bind(),
         transition: 'slide_right',
         transition_duration: 200,
-        child: Widget.Label().hook(NetworkService, Widget => {
-          Widget.label = NetworkService.wifi.ssid;
+        child: Widget.Label({
+          label: 'No connection',
+        }).hook(NetworkService, Widget => {
+          if (NetworkService.wifi.state === 'disconnected' || NetworkService.wifi.state === 'unavailable') {
+            Widget.Label = 'No connection';
+          } else {
+            Widget.label = NetworkService.wifi.ssid;
+          }
         }),
       }),
     ],
@@ -66,9 +74,10 @@ const Network = () => Widget.Box();
 export default () => Widget.Box({
   class_names: ['bar-icon', 'network'],
   child: Network(),
-}).bind(
-  'child',
-  NetworkService,
-  'primary',
-  primary => primary === 'wifi' ? Wifi() : Wired(),
-);
+}).hook(NetworkService, Widget => {
+  if (NetworkService.primary === 'wifi' || (!NetworkService.primary && NetworkService.wifi)) {
+    Widget.child = Wifi();
+  } else {
+    Widget.child = Wired();
+  }
+});
