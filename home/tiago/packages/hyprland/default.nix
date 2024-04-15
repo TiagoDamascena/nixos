@@ -141,7 +141,7 @@
       ];
 
       layerrule = [
-        "blur, ^(.*)$"
+        "blur, ^(?!hyprpicker$|selection$).*$"
       ];
 
       "$mainMod" = "SUPER";
