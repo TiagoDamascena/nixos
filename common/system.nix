@@ -29,6 +29,22 @@
     };
   };
 
+  systemd = {
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+          Type = "simple";
+          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+          Restart = "on-failure";
+          RestartSec = 1;
+          TimeoutStopSec = 10;
+        };
+    };
+  };
+
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
   };
@@ -52,19 +68,18 @@
       gnome.gnome-settings-daemon
     ];
 
-    xserver = {
+    displayManager.sddm = {
       enable = true;
-
-      displayManager.sddm = {
-        enable = true;
+      wayland.enable = true;
         theme = "sugar-catppuccin";
-        wayland.enable = true;
       };
 
       libinput = {
         enable = true;
       };
 
+    xserver = {
+      enable = true;
 
       xkb = {
         layout = "br";
@@ -140,15 +155,16 @@
     alacritty
     rofi-wayland
     glib
-    gnome.adwaita-icon-theme
-    gnome.nautilus
-    gnome.gnome-calculator
-    gnome.gnome-calendar
-    gnome.gnome-system-monitor
-    gnome.gnome-disk-utility
-    gnome.dconf-editor
+    adwaita-icon-theme
+    nautilus
+    gnome-calculator
+    gnome-calendar
+    gnome-system-monitor
+    gnome-disk-utility
+    dconf-editor
     gnome.gnome-control-center
-    gnome.eog
+    eog
+    polkit_gnome
   ];
 
   fonts.packages = with pkgs; [

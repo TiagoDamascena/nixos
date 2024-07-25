@@ -10,19 +10,21 @@
     package = pkgs.kanshi;
     systemdTarget = "";
 
-    profiles = {
-      undocked = {
-        outputs = [
+    settings = [
+      {
+        profile.name = "undocked";
+        profile.outputs = [
           {
             criteria = "eDP-1";
           }
         ];
-        exec = [
+        profile.exec = [
           "hyprpaper"
         ];
-      };
-      docked = {
-        outputs = [
+      }
+      {
+        profile.name = "docked";
+        profile.outputs = [
           {
             criteria = "eDP-1";
           }
@@ -30,10 +32,10 @@
             criteria = "HDMI-A-1";
           }
         ];
-        exec = [
+        profile.exec = [
           "hyprpaper"
         ];
-      };
-    };
+      }
+    ];
   };
 }
