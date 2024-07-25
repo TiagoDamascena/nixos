@@ -206,7 +206,8 @@
       spotify
       whatsapp-for-linux
       discord
-      insomnia
+      bruno
+      postman
       drawio
       swaynotificationcenter
       libnotify
@@ -226,6 +227,10 @@
       bitwarden
       onlyoffice-bin
       mpv
+      evince
+      gimp
+      obs-studio
+      beekeeper-studio
     ];
     shell = pkgs.zsh;
   };
