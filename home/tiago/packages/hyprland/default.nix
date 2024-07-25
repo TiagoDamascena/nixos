@@ -21,8 +21,8 @@
     settings = {
       monitor = (
         if (osConfig.networking.hostName == "vivobook") then [
-          "eDP-1,1920x1080@60,0x0,1"
-          ",preferred,auto,1"
+          "eDP-1,1920x1080@60,0x0,1,bitdepth,10"
+          ",preferred,auto,1,bitdepth,10"
         ] else if (osConfig.networking.hostName == "desktop") then [
           "HDMI-A-1, 2560x1080@75, 0x560, 1"
           "HDMI-A-2, 1920x1080@60, 2560x0, 1, transform, 3"
