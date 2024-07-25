@@ -24,35 +24,98 @@
       miguelsolorio.min-theme
       miguelsolorio.symbols
       simonsiefke.svg-preview
+      vscodevim.vim
     ];
 
     userSettings = {
-      "update.mode" = "none";
-      "update.showReleaseNotes" = false;
-      "editor.detectIndentation" = true;
-      "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "extensions.autoUpdate" = false;
-      "extensions.autoCheckUpdates" = false;
-      "extensions.ignoreRecommendations" = true;
-      "window.menuBarVisibility" = "toggle";
-      "symbols.hidesExplorerArrows" = true;
-      "workbench.colorTheme" = "Min Dark";
-      "workbench.iconTheme" = "symbols";
-      "workbench.editor.labelFormat" = "short";
-      "editor.fontFamily" = "JetBrainsMono Nerd Font";
-      "editor.fontLigatures" = true;
-      "editor.minimap.enabled" = false;
-      "editor.rulers" = [80 120];
-      "editor.renderLineHighlight" = "gutter";
-      "editor.semanticHighlighting.enabled" = false;
-      "editor.tabSize" = 2;
       "breadcrumbs.enabled" = false;
+      "editor" = {
+        "cursorSurroundingLines" = 999;
+        "defaultFormatter" = "esbenp.prettier-vscode";
+        "detectIndentation" = true;
+        "fontFamily" = "JetBrainsMono Nerd Font";
+        "fontLigatures" = true;
+        "lineNumbers" = "relative";
+        "linkedEditing" = true;
+        "minimap" = {
+          "enabled" = false;
+        };
+        "renderLineHighlight" = "gutter";
+        "rulers" = [80 120];
+        "semanticHighlighting.enabled" = false;
+        "tabSize" = 2;
+      };
       "explorer.compactFolders" = false;
+      "extensions" = {
+        "autoUpdate" = false;
+        "autoCheckUpdates" = false;
+        "ignoreRecommendations" = true;
+        "experimental.affinity" = {
+          "vscodevim.vim" = 1;
+        };
+      };
       "files.trimTrailingWhitespace" = true;
+      "symbols.hidesExplorerArrows" = true;
       "tailwindCSS.experimental.classRegex" = [[
         "tv\\((([^()]*|\\([^()]*\\))*)\\)"
         "[\"'`]([^\"'`]*).*?[\"'`]"
       ]];
+      "update" = {
+        "mode" = "none";
+        "showReleaseNotes" = false;
+      };
+      "vim" = {
+        "overrideCopy" = true;
+        "useSystemClipboard" = true;
+        "useCtrlKeys" = false;
+        "hlsearch" = true;
+        "leader" = "<Space>";
+        "normalModeKeyBindingsNonRecursive" = [
+          {
+            "before" = ["<leader>" "w"];
+            "commands" = ["workbench.action.files.save"];
+          } {
+            "before" = ["<leader>" "q"];
+            "commands" = ["workbench.action.closeActiveEditor"];
+          } {
+            "before" = ["<leader>" "h"];
+            "commands" = ["workbench.action.focusLeftGroup"];
+          } {
+            "before" = ["<leader>" "j"];
+            "commands" = ["workbench.action.focusDownGroup"];
+          } {
+            "before" = ["<leader>" "k"];
+            "commands" = ["workbench.action.focusUpGroup"];
+          } {
+            "before" = ["<leader>" "l"];
+            "commands" = ["workbench.action.focusRightGroup"];
+          } {
+            "before" = ["<leader>" "r"];
+            "commands" =["workbench.action.openRecent"];
+          } {
+            "before" = ["<leader>" "p"];
+            "commands" = ["workbench.action.quickOpen"];
+          }
+        ];
+        "visualModeKeyBindings" = [
+          {
+            "before" = ["<"];
+            "commands" = ["editor.action.outdentLines"];
+          } {
+            "before" = [">"];
+            "commands" = ["editor.action.indentLines"];
+          } {
+            "before" = ["<leader>" "c"];
+            "commands" = ["editor.action.commentLine"];
+          }
+        ];
+      };
+      "window.menuBarVisibility" = "toggle";
+      "workbench" = {
+        "colorTheme" = "Min Dark";
+        "iconTheme" = "symbols";
+        "editor.labelFormat" = "short";
+      };
     };
 
     keybindings = [
@@ -68,6 +131,18 @@
         "key" = "ctrl+t";
         "command" = "workbench.action.terminal.toggleTerminal";
         "when" = "terminal.active";
+      } {
+        "key" = "ctrl+n";
+        "command" = "explorer.newFile";
+        "when" = "explorerViewletFocus";
+      } {
+        "key" = "ctrl+shift+n";
+        "command" = "explorer.newFolder";
+        "when" = "explorerViewletFocus";
+      } {
+        "key" = "ctrl+shift+d";
+        "command" = "deleteFile";
+        "when" = "explorerViewletFocus && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly";
       }
     ];
   };
