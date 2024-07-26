@@ -192,6 +192,7 @@
       joshuto
       neovim
       hypridle
+      hyprlock
       hyprpaper
       hyprpicker
       swww
