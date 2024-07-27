@@ -29,6 +29,10 @@
         ] else [ ]
       );
 
+      cursor = {
+        no_hardware_cursors = true;
+      };
+
       exec-once = (
         [
           "dbus-update-activation-environment --all"
