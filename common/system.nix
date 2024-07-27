@@ -124,7 +124,10 @@
   };
 
   virtualisation = {
-    docker.enable = true;
+    docker = {
+      enable = true;
+      enableNvidia = config.networking.hostName == "desktop";
+    };
   };
 
   programs = {
