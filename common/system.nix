@@ -81,13 +81,13 @@
 
     displayManager.sddm = {
       enable = true;
-      wayland.enable = true;
-        theme = "sugar-catppuccin";
-      };
+      wayland.enable = false;
+      theme = "sugar-catppuccin";
+    };
 
-      libinput = {
-        enable = true;
-      };
+    libinput = {
+      enable = true;
+    };
 
     xserver = {
       enable = true;
