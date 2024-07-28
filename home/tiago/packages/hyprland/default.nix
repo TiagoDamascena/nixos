@@ -30,31 +30,35 @@
       );
 
       cursor = {
-        no_hardware_cursors = true;
+        no_hardware_cursors = (osConfig.networking.hostName == "desktop");
       };
 
-      exec-once = (
-        [
-          "dbus-update-activation-environment --all"
-          "gnome-keyring-daemon -sd"
-          "hypridle"
-          "wl-clip-persist --clipboard regular"
-          "hyprctl setcursor Bibata-Modern-Ice 24"
-          "swaync"
-          "avizo-service"
-          "ags"
-        ]
-        ++
-        (if (osConfig.networking.hostName == "vivobook") then [
-          "kanshi"
-        ] else if (osConfig.networking.hostName == "desktop") then [
-          "hyprpaper"
-        ] else [ ])
-      );
+      exec-once = ([
+        "dbus-update-activation-environment --all"
+        "gnome-keyring-daemon -sd"
+        "hypridle"
+        "wl-clip-persist --clipboard regular"
+        "swaync"
+        "avizo-service"
+        "ags"
+      ]) ++ (if (osConfig.networking.hostName == "vivobook") then [
+        "kanshi"
+      ] else if (osConfig.networking.hostName == "desktop") then [
+        "hyprpaper"
+      ] else [ ]);
 
-      env = [
+      env = ([
+        "XCURSOR_THEME,Bibata-Modern-Ice"
         "XCURSOR_SIZE,24"
-      ];
+        "HYPRCURSOR_THEME,Bibata-Modern-Ice"
+        "HYPRCURSOR_SIZE,24"
+        "XDG_SESSION_TYPE,wayland"
+      ]) ++ (if osConfig.networking.hostName == "desktop" then [
+        "LIBVA_DRIVER_NAME,nvidia"
+        "GBM_BACKEND,nvidia-drm"
+        "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+        "NVD_BACKEND,direct"
+      ] else []);
 
       input = {
         kb_layout = "br";
