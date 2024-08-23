@@ -13,7 +13,7 @@
         name = "DBeaver";
         genericName = "Database Manager";
         icon = "dbeaver";
-        exec = "dbeaver -nosplash";
+        exec = "env GDK_BACKEND=x11 dbeaver -nosplash";
         terminal = false;
         categories = [ "Application" ];
         mimeType = [ "sql" ];
