@@ -33,6 +33,14 @@
         no_hardware_cursors = (osConfig.networking.hostName == "desktop");
       };
 
+      device = [
+        {
+          name = "hid-0c45:7403";
+          kb_layout = "us";
+          kb_variant = "intl";
+        }
+      ];
+
       exec-once = ([
         "dbus-update-activation-environment --all"
         "gnome-keyring-daemon -sd"
