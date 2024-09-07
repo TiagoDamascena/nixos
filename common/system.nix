@@ -143,8 +143,6 @@
 
   xdg.portal = {
     enable = true;
-
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   programs = {
@@ -251,6 +249,7 @@
       gimp
       obs-studio
       beekeeper-studio
+      zen-browser
     ];
     shell = pkgs.zsh;
   };
