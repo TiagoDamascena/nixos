@@ -21,8 +21,8 @@
     settings = {
       monitor = (
         if (osConfig.networking.hostName == "vivobook") then [
-          "eDP-1,1920x1080@60,0x0,1,bitdepth,10"
-          ",preferred,auto,1,bitdepth,10"
+          "eDP-1,1920x1080@60,0x0,1"
+          ",preferred,auto,1"
         ] else if (osConfig.networking.hostName == "desktop") then [
           "HDMI-A-1, 2560x1080@75, 0x560, 1"
           "HDMI-A-2, 1920x1080@60, 2560x0, 1, transform, 3"
@@ -43,6 +43,7 @@
 
       exec-once = ([
         "dbus-update-activation-environment --all"
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "gnome-keyring-daemon -sd"
         "hypridle"
         "wl-clip-persist --clipboard regular"
@@ -61,6 +62,10 @@
         "HYPRCURSOR_THEME,Bibata-Modern-Ice"
         "HYPRCURSOR_SIZE,24"
         "XDG_SESSION_TYPE,wayland"
+        "XDG_SESSION_DESKTOP,Hyprland"
+        "QT_QPA_PLATFORM,wayland;xcb"
+        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        "QT_QPA_PLATFORMTHEME,qt6ct"
       ]) ++ (if osConfig.networking.hostName == "desktop" then [
         "LIBVA_DRIVER_NAME,nvidia"
         "GBM_BACKEND,nvidia-drm"
