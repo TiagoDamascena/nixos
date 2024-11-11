@@ -76,7 +76,7 @@
 
   services = {
     udev.packages = with pkgs; [
-      gnome.gnome-settings-daemon
+      gnome-settings-daemon
     ];
 
     displayManager.sddm = {
@@ -180,7 +180,7 @@
     gnome-system-monitor
     gnome-disk-utility
     dconf-editor
-    gnome.gnome-control-center
+    gnome-control-center
     eog
     polkit_gnome
   ];
