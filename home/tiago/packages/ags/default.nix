@@ -12,6 +12,7 @@
   programs.ags = {
     enable = true;
     configDir = ../../dotfiles/.config/ags;
+    systemd.enable = true;
 
     extraPackages = [ ];
   };

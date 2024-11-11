@@ -41,20 +41,17 @@
         }
       ];
 
-      exec-once = ([
+      exec-once = [
         "dbus-update-activation-environment --all"
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "gnome-keyring-daemon -sd"
-        "hypridle"
+        "systemctl --user start hypridle.service"
         "wl-clip-persist --clipboard regular"
-        "swaync"
+        "systemctl --user start swaync"
         "avizo-service"
-        "ags"
-      ]) ++ (if (osConfig.networking.hostName == "vivobook") then [
-        "kanshi"
-      ] else if (osConfig.networking.hostName == "desktop") then [
-        "hyprpaper"
-      ] else [ ]);
+        "systemctl --user start ags.service"
+        "systemctl --user start hyprpaper.service"
+      ];
 
       env = ([
         "XCURSOR_THEME,Bibata-Modern-Ice"

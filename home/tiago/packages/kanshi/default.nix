@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  osConfig,
+  ...
+}:
 
 {
   home.packages = with pkgs; [
@@ -6,9 +10,9 @@
   ];
 
   services.kanshi = {
-    enable = true;
+    enable = osConfig.networking.hostName == "vivobook";
     package = pkgs.kanshi;
-    systemdTarget = "";
+    systemdTarget = "graphical-session.target";
 
     settings = [
       {
@@ -19,7 +23,27 @@
           }
         ];
         profile.exec = [
-          "hyprpaper"
+          "systemctl --user restart hyprpaper.service"
+          "systemctl --user restart ags.service"
+        ];
+      }
+      {
+        profile.name = "home";
+        profile.outputs = [
+          {
+            criteria = "LG Electronics 25UM58G 0x01010101";
+            position = "0,0";
+            mode = "2560x1080@60Hz";
+          }
+          {
+            criteria = "eDP-1";
+            position = "2560,0";
+            mode = "1920x1080@60Hz";
+          }
+        ];
+        profile.exec = [
+          "systemctl --user restart hyprpaper.service"
+          "systemctl --user restart ags.service"
         ];
       }
       {
@@ -33,7 +57,8 @@
           }
         ];
         profile.exec = [
-          "hyprpaper"
+          "systemctl --user restart hyprpaper.service"
+          "systemctl --user restart ags.service"
         ];
       }
     ];
