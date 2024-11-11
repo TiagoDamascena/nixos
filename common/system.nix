@@ -249,7 +249,6 @@
       gimp
       obs-studio
       beekeeper-studio
-      zen-browser
     ];
     shell = pkgs.zsh;
   };

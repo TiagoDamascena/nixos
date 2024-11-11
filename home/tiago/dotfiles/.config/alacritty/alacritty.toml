@@ -1,3 +1,4 @@
+[general]
 import = ["/home/tiago/.config/alacritty/catppuccin/catppuccin-mocha.toml"]
 
 [env]
