@@ -201,6 +201,7 @@
     gnome-calendar
     gnome-system-monitor
     gnome-disk-utility
+    baobab
     dconf-editor
     gnome-control-center
     eog
@@ -245,7 +246,7 @@
       })
       spotify
       whatsapp-for-linux
-      discord
+      vesktop
       bruno
       postman
       drawio
@@ -257,6 +258,7 @@
       try_swap_workspace
       docker-compose
       lazydocker
+      lazygit
       gnumake
       mariadb
       awscli2
@@ -271,6 +273,7 @@
       gimp
       obs-studio
       beekeeper-studio
+      vlc
     ];
     shell = pkgs.zsh;
   };
