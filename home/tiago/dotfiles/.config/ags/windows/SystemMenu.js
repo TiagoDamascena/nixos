@@ -69,7 +69,7 @@ const SystemMenu = () => Widget.Box({
       shortcut: '󰘳 󰘶 Q',
       action: () => {
         App.closeWindow('system-menu');
-        exec('bash -c "loginctl kill-session $XDG_SESSION_ID"');
+        exec('systemctl --user stop "wayland-session@*.target"');
       },
     }),
     MenuOption({
