@@ -42,8 +42,6 @@
       ];
 
       exec-once = [
-        "dbus-update-activation-environment --all"
-        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "gnome-keyring-daemon -sd"
         "systemctl --user start hypridle.service"
         "wl-clip-persist --clipboard regular"
