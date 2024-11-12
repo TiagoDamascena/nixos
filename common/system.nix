@@ -79,10 +79,17 @@
       gnome-settings-daemon
     ];
 
-    displayManager.sddm = {
+    displayManager = {
+      defaultSession = "hyprland-uwsm";
+
+      sddm = {
       enable = true;
-      wayland.enable = false;
+        wayland = {
+          enable = false;
+          compositor = "weston";
+        };
       theme = "sugar-catppuccin";
+      };
     };
 
     libinput = {
@@ -147,8 +154,16 @@
 
   programs = {
     hyprland.enable = true;
-    light.enable = true;
+    uwsm = {
+      enable = true;
+      waylandCompositors.hyprland = {
+        binPath = "/run/current-system/sw/bin/Hyprland";
+        comment = "Hyprland session managed by uwsm";
+        prettyName = "Hyprland";
+      };
+    };
 
+    light.enable = true;
     dconf.enable = true;
     seahorse.enable = true;
     zsh.enable = true;
