@@ -10,6 +10,12 @@
     username = "tiago";
     homeDirectory = "/home/tiago";
 
+    sessionVariables = {
+      TERMINAL = "alacritty";
+      EDITOR = "vim";
+      XDG_SCREENSHOTS_DIR = "$HOME/Pictures/Screenshots";
+    };
+
     pointerCursor = {
       gtk.enable = true;
       package = pkgs.bibata-cursors;

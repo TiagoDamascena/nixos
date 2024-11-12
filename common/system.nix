@@ -56,8 +56,11 @@
     };
   };
 
-  environment.sessionVariables = {
+  environment = {
+    sessionVariables = {
     NIXOS_OZONE_WL = "1";
+      SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/keyring/ssh";
+    };
   };
 
   networking = {
