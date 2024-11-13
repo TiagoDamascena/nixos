@@ -12,7 +12,9 @@ const windows = () => [
   VolumeMenu()
 ];
 
-export default {
-  style: App.configDir + '/style.css',
-  windows: windows().flat(1)
-}
+App.config(
+  {
+    style: App.configDir + '/style.css',
+    windows: windows().flat(1)
+  }
+)

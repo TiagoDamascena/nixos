@@ -9,8 +9,7 @@ export const PopupWindow = ({
 }) => Widget.Window({
   name: name,
   class_names: ['popup-window', name],
-  popup: true,
-  focusable: true,
+  keymode: 'on-demand',
   visible: visible,
   child: Widget.Box({
     class_name: 'container',
@@ -22,4 +21,4 @@ export const PopupWindow = ({
     }),
   }),
   ...rest
-});
+}).keybind("Escape", () => App.closeWindow(name));

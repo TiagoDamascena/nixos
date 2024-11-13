@@ -40,7 +40,7 @@ const Volume = () => Widget.EventBox({
               { threshold: 100, icon: '' },
             ];
 
-            const volume = AudioService.speaker.stream.isMuted ? 0 : AudioService.speaker.volume * 100;
+            const volume = AudioService.speaker.stream && !AudioService.speaker.stream.isMuted ? AudioService.speaker.volume * 100 : 0;
             Widget.label = icons.find(icon => volume <= icon.threshold).icon;
           }),
         ]
@@ -68,5 +68,5 @@ export default () => Widget.Box({
 
   if (!AudioService.speaker) return;
 
-  Widget.toggleClassName('muted', AudioService.speaker.stream.isMuted || AudioService.speaker.volume === 0);
+  Widget.toggleClassName('muted', AudioService?.speaker?.stream?.isMuted || AudioService?.speaker?.volume === 0);
 });
