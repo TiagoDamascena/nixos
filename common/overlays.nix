@@ -5,6 +5,7 @@
   hyprland,
   hyprlock,
   hyprpaper,
+  ags,
   ...
 }:
 
@@ -17,6 +18,7 @@
       xdg-desktop-portal-hyprland = hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
       hyprlock = hyprlock.packages.${pkgs.system}.hyprlock;
       hyprpaper = hyprpaper.packages.${pkgs.system}.hyprpaper;
+      ags = ags.packages.${pkgs.system}.default;
     })
   ];
 }
