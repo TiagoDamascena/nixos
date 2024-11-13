@@ -47,8 +47,6 @@
         "wl-clip-persist --clipboard regular"
         "systemctl --user start swaync"
         "avizo-service"
-        "systemctl --user start ags.service"
-        "systemctl --user start hyprpaper.service"
       ];
 
       env = ([

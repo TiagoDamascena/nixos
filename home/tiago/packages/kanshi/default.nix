@@ -10,7 +10,7 @@
   ];
 
   services.kanshi = {
-    enable = osConfig.networking.hostName == "vivobook";
+    enable = true;
     package = pkgs.kanshi;
     systemdTarget = "graphical-session.target";
 
