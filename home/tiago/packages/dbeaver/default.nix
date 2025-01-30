@@ -5,19 +5,13 @@
     dbeaver-bin
   ];
 
-  xdg = {
-    enable = true;
-
-    desktopEntries = {
-      dbeaver = {
-        name = "DBeaver";
-        genericName = "Database Manager";
-        icon = "dbeaver";
-        exec = "dbeaver -nosplash";
-        terminal = false;
-        categories = [ "Application" ];
-        mimeType = [ "sql" ];
-      };
-    };
+  xdg.desktopEntries.dbeaver = {
+    name = "DBeaver";
+    genericName = "Database Manager";
+    icon = "dbeaver";
+    exec = "dbeaver -nosplash";
+    terminal = false;
+    categories = [ "Application" ];
+    mimeType = [ "sql" ];
   };
 }

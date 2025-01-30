@@ -6,7 +6,11 @@
     ./packages
   ];
 
+  programs.home-manager.enable = true;
+
   home = {
+    stateVersion = "24.11";
+
     username = "tiago";
     homeDirectory = "/home/tiago";
 
@@ -22,24 +26,24 @@
       name = "Bibata-Modern-Ice";
       size = 24;
     };
+
+    file.wallpapers = {
+      source = ./wallpapers;
+      target = "Pictures/Wallpapers";
+      recursive = true;
+    };
   };
 
-  xdg.userDirs = {
+  xdg = {
     enable = true;
-    createDirectories = true;
-    desktop = null;
-    music = null;
-    publicShare = null;
-    templates = null;
+
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+      desktop = null;
+      music = null;
+      publicShare = null;
+      templates = null;
+    };
   };
-
-  home.file.wallpapers = {
-    source = ./wallpapers;
-    target = "Pictures/Wallpapers";
-    recursive = true;
-  };
-
-  home.stateVersion = "23.05";
-
-  programs.home-manager.enable = true;
 }

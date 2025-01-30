@@ -56,13 +56,6 @@
     };
   };
 
-  environment = {
-    sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-      SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/keyring/ssh";
-    };
-  };
-
   networking = {
     networkmanager.enable = true;
     firewall = {
@@ -177,7 +170,14 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = with pkgs; [
+
+  environment = {
+    sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+      SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/keyring/ssh";
+    };
+
+    systemPackages = with pkgs; [
     gcc
     zip
     unzip
@@ -207,6 +207,7 @@
     eog
     polkit_gnome
   ];
+  };
 
   fonts.packages = with pkgs; [
     corefonts
