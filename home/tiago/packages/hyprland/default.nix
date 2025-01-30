@@ -42,6 +42,7 @@
       ];
 
       exec-once = [
+        "uwsm finalize"
         "gnome-keyring-daemon -sd"
         "systemctl --user start hypridle.service"
         "wl-clip-persist --clipboard regular"
@@ -145,7 +146,7 @@
         "workspace 4 silent, class:^(whatsapp-for-linux)$"
         "workspace 4 silent, title:^(Uplii)$"
         "workspace 5 silent, class:^(Spotify)$"
-        "workspace 6 silent, class:^(code-url-handler)$"
+        "workspace 6 silent, class:^(code)$"
         "workspace 7 silent, class:^(DBeaver)$"
         "opacity 0.75, onworkspace:special:scratchpad"
       ];
