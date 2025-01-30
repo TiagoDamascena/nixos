@@ -271,6 +271,7 @@
       obs-studio
       beekeeper-studio
       vlc
+      zen-browser
     ];
     shell = pkgs.zsh;
   };

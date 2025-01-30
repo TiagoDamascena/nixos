@@ -7,6 +7,7 @@
   hyprpaper,
   ags,
   anyrun,
+  zen-browser,
   ...
 }:
 
@@ -21,6 +22,7 @@
       hyprpaper = hyprpaper.packages.${pkgs.system}.hyprpaper;
       ags = ags.packages.${pkgs.system}.default;
       anyrun = anyrun.packages.${pkgs.system}.default;
+      zen-browser = zen-browser.packages.${pkgs.system}.default;
     })
   ];
 }
