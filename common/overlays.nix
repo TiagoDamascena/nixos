@@ -6,6 +6,7 @@
   hyprlock,
   hyprpaper,
   ags,
+  anyrun,
   ...
 }:
 
@@ -19,6 +20,7 @@
       hyprlock = hyprlock.packages.${pkgs.system}.hyprlock;
       hyprpaper = hyprpaper.packages.${pkgs.system}.hyprpaper;
       ags = ags.packages.${pkgs.system}.default;
+      anyrun = anyrun.packages.${pkgs.system}.default;
     })
   ];
 }

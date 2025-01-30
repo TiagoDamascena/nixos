@@ -3,6 +3,7 @@
 {
   imports = [
     ./ags
+    ./anyrun
     ./dbeaver
     ./git
     ./gnome
