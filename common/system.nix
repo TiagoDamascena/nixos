@@ -212,11 +212,7 @@
     corefonts
     inter
     rubik
-    (nerdfonts.override {
-      fonts = [
-        "JetBrainsMono"
-        ];
-      })
+    nerd-fonts.jetbrains-mono
   ];
 
   users.users.tiago = {
