@@ -270,7 +270,6 @@
       evince
       gimp
       obs-studio
-      beekeeper-studio
       vlc
       zen-browser
     ];
