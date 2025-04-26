@@ -244,7 +244,7 @@
       })
       spotify
       whatsapp-for-linux
-      vesktop
+      discord
       bruno
       postman
       drawio
