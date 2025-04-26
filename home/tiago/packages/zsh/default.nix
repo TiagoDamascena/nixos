@@ -26,7 +26,7 @@
       lf = "joshuto";
     };
 
-    initExtra = ''
+    initContent = ''
       if [[ -n $DISPLAY ]]; then
         eval "$(starship init zsh)"
       fi
