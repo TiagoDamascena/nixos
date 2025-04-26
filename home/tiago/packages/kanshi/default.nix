@@ -32,12 +32,12 @@
         profile.outputs = [
           {
             criteria = "LG Electronics 25UM58G 0x01010101";
-            position = "0,0";
+            position = "1920,0";
             mode = "2560x1080@60Hz";
           }
           {
             criteria = "eDP-1";
-            position = "2560,0";
+            position = "0,0";
             mode = "1920x1080@60Hz";
           }
         ];
