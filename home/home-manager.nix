@@ -3,7 +3,6 @@
   home-manager,
   ags,
   hyprlock,
-  anyrun,
   ...
 }:
 
@@ -18,7 +17,6 @@
     extraSpecialArgs = {
       ags-module = ags.homeManagerModules.default;
       hyprlock-module = hyprlock.homeManagerModules.hyprlock;
-      anyrun-module = anyrun.homeManagerModules.default;
     };
   };
 }

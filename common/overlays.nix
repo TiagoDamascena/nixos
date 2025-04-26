@@ -6,9 +6,9 @@
   hyprlock,
   hyprpaper,
   ags,
-  anyrun,
   vscode-extensions,
   zen-browser,
+  anyrun,
   ...
 }:
 
@@ -23,8 +23,8 @@
       hyprlock = hyprlock.packages.${pkgs.system}.hyprlock;
       hyprpaper = hyprpaper.packages.${pkgs.system}.hyprpaper;
       ags = ags.packages.${pkgs.system}.default;
-      anyrun = anyrun.packages.${pkgs.system}.default;
       zen-browser = zen-browser.packages.${pkgs.system}.default;
+      anyrun = anyrun.packages.${pkgs.system}.anyrun;
     })
   ];
 }
