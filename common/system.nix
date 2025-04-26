@@ -272,6 +272,7 @@
       obs-studio
       vlc
       zen-browser
+      code-cursor
     ];
     shell = pkgs.zsh;
   };
