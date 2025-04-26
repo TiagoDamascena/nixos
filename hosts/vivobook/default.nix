@@ -7,8 +7,4 @@
   ];
 
   networking.hostName = "vivobook";
-
-  services.blueman = {
-    enable = true;
-  };
 }

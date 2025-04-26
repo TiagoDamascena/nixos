@@ -79,12 +79,12 @@
       defaultSession = "hyprland-uwsm";
 
       sddm = {
-      enable = true;
+        enable = true;
         wayland = {
           enable = false;
           compositor = "weston";
         };
-      theme = "sugar-catppuccin";
+        theme = "sugar-catppuccin";
       };
     };
 
@@ -178,35 +178,36 @@
     };
 
     systemPackages = with pkgs; [
-    gcc
-    zip
-    unzip
-    vim
-    git
-    jq
-    socat
-    pulseaudio
-    eza
-    bat
-    ripgrep
-    htop
-    neofetch
-    sddm-sugar-catppuccin
-    alacritty
-    rofi-wayland
-    glib
-    adwaita-icon-theme
-    nautilus
-    gnome-calculator
-    gnome-calendar
-    gnome-system-monitor
-    gnome-disk-utility
-    baobab
-    dconf-editor
-    gnome-control-center
-    eog
-    polkit_gnome
-  ];
+      gcc
+      zip
+      unzip
+      vim
+      git
+      jq
+      socat
+      pulseaudio
+      eza
+      bat
+      ripgrep
+      htop
+      neofetch
+      sddm-sugar-catppuccin
+      alacritty
+      rofi-wayland
+      glib
+      adwaita-icon-theme
+      nautilus
+      gnome-calculator
+      gnome-calendar
+      gnome-system-monitor
+      gnome-disk-utility
+      baobab
+      dconf-editor
+      gnome-control-center
+      eog
+      polkit_gnome
+      overskride
+    ];
   };
 
   fonts.packages = with pkgs; [
