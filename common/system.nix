@@ -218,9 +218,15 @@
     nerd-fonts.jetbrains-mono
   ];
 
+  users.groups.tiago = {
+    gid = 1000;
+  };
+
   users.users.tiago = {
-    description = "Tiago Damascena";
+    uid = 1000;
+    group = "tiago";
     isNormalUser = true;
+    description = "Tiago Damascena";
     extraGroups = [ "wheel" "video" "audio" "networkmanager" "docker" ];
     packages = with pkgs; [
       zsh
