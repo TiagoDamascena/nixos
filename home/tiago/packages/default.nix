@@ -4,7 +4,11 @@
   imports = [
     ./ags
     ./anyrun
+    ./bat
     ./dbeaver
+    ./eza
+    ./fd
+    ./fzf
     ./git
     ./gnome
     ./hyprland

@@ -186,9 +186,6 @@
       jq
       socat
       pulseaudio
-      eza
-      bat
-      ripgrep
       htop
       neofetch
       sddm-sugar-catppuccin

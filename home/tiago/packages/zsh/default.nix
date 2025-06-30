@@ -24,6 +24,10 @@
     shellAliases = {
       ssh = "TERM=xterm-256color ssh";
       lf = "joshuto";
+      ls = "eza -la";
+      cat = "bat";
+      grep = "batgrep";
+      man = "batman";
     };
 
     initContent = ''
