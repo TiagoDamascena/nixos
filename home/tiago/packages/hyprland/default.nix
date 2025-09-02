@@ -133,10 +133,6 @@
         new_status = "slave";
       };
 
-      gestures = {
-        workspace_swipe = "off";
-      };
-
       windowrulev2 = [
         "float, class:^(org.gnome.Calculator)$"
         "float, title:^(Open File)"
