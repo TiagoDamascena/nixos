@@ -10,7 +10,6 @@
     config = {
       theme = "Coldark-Dark";
       style = "numbers,grid";
-      chop-long-lines = true;
     };
   };
 }
