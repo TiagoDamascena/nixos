@@ -2,23 +2,15 @@
   pkgs,
   lib,
   osConfig,
-  ags-module,
   ...
 }:
 
 {
-  imports = [ ags-module ];
-
-  programs.ags = {
-    enable = true;
-    configDir = ../../dotfiles/.config/ags;
-  };
-
   systemd.user.services.ags = {
     Install.WantedBy = [ "graphical-session.target" ];
 
     Service = {
-      ExecStart = "${pkgs.ags}/bin/ags";
+      ExecStart = "${pkgs.ags_1}/bin/ags";
       Restart = "on-failure";
     };
 

@@ -5,7 +5,6 @@
   hyprland,
   hyprlock,
   hyprpaper,
-  ags,
   vscode-extensions,
   zen-browser,
   anyrun,
@@ -22,9 +21,11 @@
       xdg-desktop-portal-hyprland = hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
       hyprlock = hyprlock.packages.${pkgs.system}.hyprlock;
       hyprpaper = hyprpaper.packages.${pkgs.system}.hyprpaper;
-      ags = ags.packages.${pkgs.system}.default;
       zen-browser = zen-browser.packages.${pkgs.system}.default;
       anyrun = anyrun.packages.${pkgs.system}.anyrun;
+      ags_1 = prev.ags_1.overrideAttrs (old: {
+        buildInputs = old.buildInputs ++ [ prev.libdbusmenu-gtk3 ];
+      });
     })
   ];
 }

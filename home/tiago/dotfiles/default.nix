@@ -1,6 +1,12 @@
 { ... }:
 
 {
+  home.file.ags = {
+    source = ./.config/ags;
+    target = ".config/ags";
+    recursive = true;
+  };
+
   home.file.alacritty = {
     source = ./.config/alacritty;
     target = ".config/alacritty";
