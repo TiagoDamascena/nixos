@@ -246,7 +246,6 @@
         ];
       })
       spotify
-      whatsapp-for-linux
       discord
       bruno
       postman
@@ -276,6 +275,7 @@
       vlc
       zen-browser
       code-cursor
+      whatsie
     ];
     shell = pkgs.zsh;
   };
