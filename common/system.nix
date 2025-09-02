@@ -271,7 +271,7 @@
       onlyoffice-bin
       mpv
       evince
-      gimp
+      gimp3
       obs-studio
       vlc
       zen-browser
