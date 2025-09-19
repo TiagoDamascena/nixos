@@ -198,7 +198,7 @@
       neofetch
       sddm-sugar-catppuccin
       alacritty
-      rofi-wayland
+      rofi
       glib
       adwaita-icon-theme
       nautilus
