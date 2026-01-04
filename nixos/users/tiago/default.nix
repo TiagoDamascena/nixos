@@ -10,4 +10,6 @@
       firefox
     ];
   };
+
+  home-manager.users.tiago = import ../../../home/tiago;
 }

@@ -1,9 +1,9 @@
 {
   imports = [
     ./hardware.nix
-    ../../core
-    ../../users/tiago
-    ../../modules/system/hyprland.nix
+    ../../nixos/core
+    ../../nixos/users/tiago
+    ../../nixos/modules/system/hyprland.nix
   ];
 
   networking.hostName = "desktop";
