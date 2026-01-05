@@ -19,6 +19,10 @@
       size = 24;
     };
 
+    packages = with pkgs; [
+      nautilus
+    ];
+
     stateVersion = "25.11";
   };
 }
