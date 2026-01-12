@@ -10,8 +10,12 @@
       uid = 1000;
       isNormalUser = true;
       description = "Tiago Damascena";
+
       group = "tiago";
       extraGroups = [ "wheel" "networkmanager" ];
+
+      shell = pkgs.fish;
+
       packages = with pkgs; [
         vscode
         firefox

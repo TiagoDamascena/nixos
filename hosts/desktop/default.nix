@@ -9,6 +9,7 @@
     ../../nixos/modules/system/hyprland.nix
     ../../nixos/modules/system/hyprlock.nix
     ../../nixos/modules/system/keyring.nix
+    ../../nixos/modules/shell/fish.nix
   ];
 
   networking.hostName = "desktop";
