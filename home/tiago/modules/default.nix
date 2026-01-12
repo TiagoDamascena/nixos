@@ -1,5 +1,6 @@
 {
   imports = [
+    ./alacritty
     ./fish
     ./fzf
     ./git
