@@ -10,5 +10,6 @@
     ./hyprlock
     ./hyprpaper
     ./ssh
+    ./starship
   ];
 }
