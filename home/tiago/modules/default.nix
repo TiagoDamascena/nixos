@@ -1,6 +1,7 @@
 {
   imports = [
     ./git
+    ./gtk
     ./hypridle
     ./hyprland
     ./hyprlock
