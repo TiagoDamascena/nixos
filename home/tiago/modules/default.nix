@@ -5,5 +5,6 @@
     ./hyprland
     ./hyprlock
     ./hyprpaper
+    ./ssh
   ];
 }
