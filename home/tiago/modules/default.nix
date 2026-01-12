@@ -1,6 +1,7 @@
 {
   imports = [
     ./fish
+    ./fzf
     ./git
     ./gtk
     ./hypridle
