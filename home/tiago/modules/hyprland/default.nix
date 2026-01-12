@@ -1,6 +1,7 @@
 {
   imports = [
     ./binds.nix
+    ./exec.nix
     ./general.nix
     ./layouts.nix
     ./monitors.nix
