@@ -6,6 +6,7 @@
     ../../nixos/modules/system/plymouth.nix
     ../../nixos/modules/system/greetd.nix
     ../../nixos/modules/system/hyprland.nix
+    ../../nixos/modules/system/hyprlock.nix
   ];
 
   networking.hostName = "desktop";
