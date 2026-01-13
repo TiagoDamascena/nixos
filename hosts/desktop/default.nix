@@ -1,6 +1,7 @@
 {
   imports = [
     ./hardware.nix
+    ../../nixos/overlays
     ../../nixos/core
     ../../nixos/users/tiago
     ../../nixos/modules/system/plymouth.nix

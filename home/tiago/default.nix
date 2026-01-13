@@ -23,6 +23,7 @@
       nerd-fonts.jetbrains-mono
       nixfmt
       nautilus
+      zen-browser
     ];
 
     stateVersion = "25.11";
