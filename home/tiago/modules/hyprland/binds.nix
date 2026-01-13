@@ -4,7 +4,7 @@
       # Start application bindings
       "$mainMod, RETURN, exec, uwsm app -- $terminal"
       "$mainMod, SPACE, exec, uwsm app -- $menu"
-      "$mainMod, R, exec, uwsm app -- $run"
+      "$mainMod, H, exec, uwsm app -- $history"
       "$mainMod, E, exec, uwsm app -- $fileManager"
 
       # Window manipulation bindings

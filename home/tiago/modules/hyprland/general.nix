@@ -4,7 +4,7 @@
     "$terminal" = "alacritty";
     "$fileManager" = "nautilus";
     "$menu" = "vicinae toggle";
-    "$run" = "vicinae toggle";
+    "$history" = "vicinae vicinae://extensions/vicinae/clipboard/history";
 
     general = {
       resize_on_border = false;
