@@ -20,6 +20,7 @@
     };
 
     packages = with pkgs; [
+      rubik
       nerd-fonts.jetbrains-mono
       nixfmt
       nautilus
