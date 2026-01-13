@@ -28,5 +28,19 @@
         "specialWorkspace, 1, 4, default, slidevert"
       ];
     };
+
+    layerrule = [
+      {
+        name = "vicinae-blur";
+        blur = "on";
+        ignore_alpha = 0;
+        "match:namespace" = "vicinae";
+      }
+      {
+        name = "vicinae-no-animation";
+        no_anim = "on";
+        "match:namespace" = "vicinae";
+      }
+    ];
   };
 }

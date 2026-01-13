@@ -11,5 +11,6 @@
     ./hyprpaper
     ./ssh
     ./starship
+    ./vicinae
   ];
 }

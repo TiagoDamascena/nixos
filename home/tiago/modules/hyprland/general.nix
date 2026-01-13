@@ -3,8 +3,8 @@
     "$mainMod" = "SUPER";
     "$terminal" = "alacritty";
     "$fileManager" = "nautilus";
-    "$menu" = "wofi --show drun";
-    "$run" = "wofi --show run";
+    "$menu" = "vicinae toggle";
+    "$run" = "vicinae toggle";
 
     general = {
       resize_on_border = false;

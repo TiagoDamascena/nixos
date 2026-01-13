@@ -22,7 +22,6 @@
     packages = with pkgs; [
       nerd-fonts.jetbrains-mono
       nixfmt
-      wofi
       nautilus
     ];
 
