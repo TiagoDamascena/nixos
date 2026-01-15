@@ -15,11 +15,6 @@
       extraGroups = [ "wheel" "networkmanager" ];
 
       shell = pkgs.fish;
-
-      packages = with pkgs; [
-        vscode
-        firefox
-      ];
     };
   };
 

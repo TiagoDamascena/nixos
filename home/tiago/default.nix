@@ -20,11 +20,33 @@
     };
 
     packages = with pkgs; [
+      # Fonts
       rubik
       nerd-fonts.jetbrains-mono
+      # CLI tools
+      gnumake
       nixfmt
+      lazydocker
+      lazygit
+      kubectl
+      kubeseal
+      # Basic applications
       nautilus
+      loupe
+      showtime
+      papers
+      gnome-calculator
+      gnome-calendar
+      gnome-system-monitor
+      # User applications
       zen-browser
+      vscode
+      spotify
+      discord
+      bitwarden-desktop
+      onlyoffice-desktopeditors
+      dbeaver-bin
+      obsidian
     ];
 
     stateVersion = "25.11";
