@@ -22,6 +22,7 @@
     packages = with pkgs; [
       # Fonts
       rubik
+      inter-nerdfont
       nerd-fonts.jetbrains-mono
       # CLI tools
       gnumake

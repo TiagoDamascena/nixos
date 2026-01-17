@@ -12,5 +12,6 @@
     ./ssh
     ./starship
     ./vicinae
+    ./waybar
   ];
 }

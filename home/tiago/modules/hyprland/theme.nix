@@ -41,6 +41,12 @@
         no_anim = "on";
         "match:namespace" = "vicinae";
       }
+      {
+        name = "waybar-blur";
+        blur = "on";
+        ignore_alpha = 0;
+        "match:namespace" = "waybar";
+      }
     ];
   };
 }
