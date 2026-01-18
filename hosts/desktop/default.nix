@@ -7,6 +7,7 @@
     ../../nixos/modules/system/plymouth.nix
     ../../nixos/modules/system/gtk.nix
     ../../nixos/modules/system/greetd.nix
+    ../../nixos/modules/system/gvfs.nix
     ../../nixos/modules/system/hyprland.nix
     ../../nixos/modules/system/hyprlock.nix
     ../../nixos/modules/system/keyring.nix
