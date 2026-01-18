@@ -11,6 +11,7 @@
     ./hyprpaper
     ./ssh
     ./starship
+    ./swaync
     ./vicinae
     ./waybar
   ];

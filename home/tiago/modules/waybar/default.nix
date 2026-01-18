@@ -15,7 +15,7 @@
 
         modules-left = [ "hyprland/workspaces" "mpris" ];
         modules-center = [ "clock" ];
-        modules-right = [ "tray" "wireplumber" "network" ];
+        modules-right = [ "tray" "wireplumber" "network" "custom/notification" ];
 
         "hyprland/workspaces" = {
           all-outputs = true;
@@ -61,11 +61,32 @@
         };
 
         network = {
-          format-ethernet = "󰈀 ";
+          format-ethernet = "󰈀";
           format-wifi = "  {essid}";
-          format-disconnected = "󰪎 ";
+          format-disconnected = "󰪎";
           format-disabled = "disabled";
           tooltip = false;
+        };
+
+        "custom/notification" = {
+          tooltip = true;
+          format = "{icon}";
+          format-icons = {
+            notification = "󱅫";
+            none = "󰂜";
+            dnd-notification = "󰂠";
+            dnd-none = "󰪓";
+            inhibited-notification = "󰂛";
+            inhibited-none = "󰪑";
+            dnd-inhibited-notification = "󰂛";
+            dnd-inhibited-none = "󰪑";
+          };
+          return-type = "json";
+          exec-if = "which swaync-client";
+          exec = "swaync-client -swb";
+          on-click = "swaync-client -t -sw";
+          on-click-right = "swaync-client -d -sw";
+          escape = true;
         };
       };
     };
@@ -150,6 +171,10 @@
 
       #wireplumber {
         margin-right: 10px;
+      }
+
+      #network {
+        margin-right: 10px
       }
     '';
   };

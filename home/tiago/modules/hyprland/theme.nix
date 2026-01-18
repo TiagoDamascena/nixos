@@ -47,6 +47,18 @@
         ignore_alpha = 0;
         "match:namespace" = "waybar";
       }
+      {
+        name = "swaync-control-center-blur";
+        blur = "on";
+        ignore_alpha = 0;
+        "match:namespace" = "swaync-control-center";
+      }
+      {
+        name = "swaync-notification-window-blur";
+        blur = "on";
+        ignore_alpha = 0;
+        "match:namespace" = "swaync-notification-window";
+      }
     ];
   };
 }
