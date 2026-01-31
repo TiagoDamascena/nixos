@@ -12,7 +12,7 @@
       description = "Tiago Damascena";
 
       group = "tiago";
-      extraGroups = [ "wheel" "networkmanager" ];
+      extraGroups = [ "wheel" "networkmanager" "docker" ];
 
       shell = pkgs.fish;
     };
