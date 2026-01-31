@@ -8,6 +8,7 @@
     ../../nixos/users/tiago
     ../../nixos/modules/system/plymouth.nix
     ../../nixos/modules/system/wifi.nix
+    ../../nixos/modules/system/bluetooth.nix
     ../../nixos/modules/system/gtk.nix
     ../../nixos/modules/system/greetd.nix
     ../../nixos/modules/system/gvfs.nix
@@ -34,11 +35,6 @@
   };
 
   hardware.enableAllFirmware = true;
-
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
 
   services.xserver = {
     xkb = {
