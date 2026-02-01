@@ -2,8 +2,12 @@
 
 {
   environment.systemPackages = with pkgs; [
-    vim
     git
+    htop
+    neofetch
+    vim
+    zip
+    unzip
   ];
 
   system.stateVersion = "25.11";

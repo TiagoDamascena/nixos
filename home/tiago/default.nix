@@ -41,13 +41,20 @@
       gnome-system-monitor
       # User applications
       zen-browser
-      vscode
+      google-chrome
       spotify
       discord
       bitwarden-desktop
       onlyoffice-desktopeditors
+      vscode
+      code-cursor
       dbeaver-bin
+      bruno
+      postman
       obsidian
+      drawio
+      vlc
+      gimp
     ];
 
     stateVersion = "25.11";
