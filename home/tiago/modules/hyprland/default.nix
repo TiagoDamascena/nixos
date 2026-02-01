@@ -3,6 +3,7 @@
     ./binds.nix
     ./exec.nix
     ./general.nix
+    ./input.nix
     ./layouts.nix
     ./monitors.nix
     ./theme.nix

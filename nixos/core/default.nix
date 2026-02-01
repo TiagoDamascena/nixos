@@ -1,3 +1,5 @@
+{ lib, ... }:
+
 {
   imports = [
     ./audio.nix
@@ -9,4 +11,23 @@
     ./nixpkgs.nix
     ./system.nix
   ];
+
+  options = {
+    settings = {
+      keyboard.layout = lib.mkOption {
+        type = lib.types.str;
+        default = "us";
+      };
+
+      keyboard.variant = lib.mkOption {
+        type = lib.types.str;
+        default = "";
+      };
+
+      hyprland.monitors = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [ ", preferred, auto, auto" ];
+      };
+    };
+  };
 }

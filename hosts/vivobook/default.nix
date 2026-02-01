@@ -22,6 +22,18 @@
 
   networking.hostName = "vivobook";
 
+  settings = {
+    keyboard = {
+      layout = "br";
+      variant = "abnt2";
+    };
+
+    hyprland.monitors = [
+      "eDP-1, 1920x1080@60, 0x0, 1"
+      "HDMI-A-1, preferred, auto, auto"
+    ];
+  };
+
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -35,11 +47,4 @@
   };
 
   hardware.enableAllFirmware = true;
-
-  services.xserver = {
-    xkb = {
-      layout = "br";
-      variant = "abnt2";
-    };
-  };
 }
