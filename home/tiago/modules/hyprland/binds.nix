@@ -40,6 +40,24 @@
       # Scroll through existing workspaces with mainMod + scroll
       "$mainMod, mouse_down, workspace, e+1"
       "$mainMod, mouse_up, workspace, e-1"
+
+      # Media keybindings
+      ", XF86AudioMute, exec, volumectl toggle-mute"
+      ", XF86AudioMicMute, exec, volumectl -m toggle-mute"
+      ", XF86AudioPrev, exec, playerctl previous"
+      ", XF86AudioNext, exec, playerctl next"
+      ", XF86AudioPlay, exec, playerctl play-pause"
+      ", XF86AudioStop, exec, playerctl stop"
+    ];
+
+    binde = [
+      # Media keybindings
+      ", XF86AudioRaiseVolume, exec, volumectl -u up"
+      ", XF86AudioLowerVolume, exec, volumectl -u down"
+
+      # Brightness keybindings
+      ", XF86MonBrightnessUp, exec, lightctl up"
+      ", XF86MonBrightnessDown, exec, lightctl down"
     ];
 
     bindm = [
