@@ -15,6 +15,7 @@
     ../../nixos/modules/system/hyprland.nix
     ../../nixos/modules/system/hyprlock.nix
     ../../nixos/modules/system/keyring.nix
+    ../../nixos/modules/system/brightness.nix
     ../../nixos/modules/system/playerctl.nix
     ../../nixos/modules/system/docker.nix
     ../../nixos/modules/shell/fish.nix
