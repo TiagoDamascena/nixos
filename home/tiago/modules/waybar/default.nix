@@ -15,7 +15,7 @@
 
         modules-left = [ "hyprland/workspaces" "mpris" ];
         modules-center = [ "clock" ];
-        modules-right = [ "tray" "wireplumber" "network" "custom/notification" ];
+        modules-right = [ "tray" "wireplumber" "network" "battery" "custom/notification" ];
 
         "hyprland/workspaces" = {
           all-outputs = true;
@@ -39,7 +39,7 @@
             stopped = "";
           };
           tooltip-format = "";
-          dynamic-len = 40; 
+          dynamic-len = 40;
         };
 
         clock = {
@@ -62,10 +62,15 @@
 
         network = {
           format-ethernet = "󰈀";
-          format-wifi = "  {essid}";
+          format-wifi = "    {essid}";
           format-disconnected = "󰪎";
           format-disabled = "disabled";
           tooltip = false;
+        };
+
+        "battery" = {
+          format = "{icon}   {capacity}%";
+          format-icons = [ "" "" "" "" "" ];
         };
 
         "custom/notification" = {
@@ -175,6 +180,10 @@
 
       #network {
         margin-right: 10px
+      }
+
+      #battery {
+        margin-right: 10px;
       }
     '';
   };
