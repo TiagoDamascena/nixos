@@ -58,6 +58,7 @@
             headphone = " ";
             default = [" " " " " " " " " "];
           };
+          on-click = "pavucontrol";
         };
 
         network = {

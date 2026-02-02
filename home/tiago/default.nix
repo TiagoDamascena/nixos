@@ -31,6 +31,7 @@
       lazygit
       kubectl
       kubeseal
+      pavucontrol
       # Basic applications
       nautilus
       loupe
