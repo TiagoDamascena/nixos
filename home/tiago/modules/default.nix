@@ -15,5 +15,6 @@
     ./swaync
     ./vicinae
     ./waybar
+    ./xdg
   ];
 }
