@@ -56,6 +56,7 @@
       drawio
       vlc
       gimp
+      localsend
     ];
 
     stateVersion = "25.11";

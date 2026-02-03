@@ -4,6 +4,7 @@
   imports = [
     ./audio.nix
     ./boot.nix
+    ./firewall.nix
     ./home-manager.nix
     ./locale.nix
     ./networking.nix
