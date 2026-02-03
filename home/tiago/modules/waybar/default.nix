@@ -38,8 +38,8 @@
             paused = "";
             stopped = "";
           };
-          tooltip-format = "";
-          dynamic-len = 40;
+          tooltip-format = "{title} - {artist}";
+          title-len = 40;
         };
 
         clock = {
