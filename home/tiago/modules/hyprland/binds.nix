@@ -12,15 +12,15 @@
       "$mainMod, T, togglefloating,"
 
       # Switch workspaces with mainMod + [0-9]
-      "$mainMod, 1, workspace, 1"
-      "$mainMod, 2, workspace, 2"
-      "$mainMod, 3, workspace, 3"
-      "$mainMod, 4, workspace, 4"
-      "$mainMod, 5, workspace, 5"
-      "$mainMod, 6, workspace, 6"
-      "$mainMod, 7, workspace, 7"
-      "$mainMod, 8, workspace, 8"
-      "$mainMod, 9, workspace, 9"
+      "$mainMod, 1, focusworkspaceoncurrentmonitor, 1"
+      "$mainMod, 2, focusworkspaceoncurrentmonitor, 2"
+      "$mainMod, 3, focusworkspaceoncurrentmonitor, 3"
+      "$mainMod, 4, focusworkspaceoncurrentmonitor, 4"
+      "$mainMod, 5, focusworkspaceoncurrentmonitor, 5"
+      "$mainMod, 6, focusworkspaceoncurrentmonitor, 6"
+      "$mainMod, 7, focusworkspaceoncurrentmonitor, 7"
+      "$mainMod, 8, focusworkspaceoncurrentmonitor, 8"
+      "$mainMod, 9, focusworkspaceoncurrentmonitor, 9"
 
       # Move active window to a workspace with mainMod + SHIFT + [0-9]
       "$mainMod SHIFT, 1, movetoworkspace, 1"
