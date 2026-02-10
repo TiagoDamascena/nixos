@@ -7,6 +7,7 @@
     ./layouts.nix
     ./monitors.nix
     ./theme.nix
+    ./windowrules.nix
   ];
 
   wayland.windowManager.hyprland = {
