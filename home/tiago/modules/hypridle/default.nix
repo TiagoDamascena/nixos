@@ -4,7 +4,7 @@
 
     settings = {
       general = {
-        before_sleep_cmd = "hyprlock";
+        before_sleep_cmd = "loginctl lock-session";
         after_sleep_cmd = "hyprctl dispatch dpms on";
         ignore_dbus_inhibit = false;
         lock_cmd = "hyprlock";
@@ -13,7 +13,7 @@
       listener = [
         {
           timeout = 300;
-          on-timeout = "hyprlock";
+          on-timeout = "loginctl lock-session";
         }
         {
           timeout = 600;
