@@ -6,6 +6,7 @@
     ../../nixos/overlays
     ../../nixos/core
     ../../nixos/users/tiago
+    ../../nixos/modules/system/ssh.nix
     ../../nixos/modules/system/plymouth.nix
     ../../nixos/modules/system/wifi.nix
     ../../nixos/modules/system/bluetooth.nix
