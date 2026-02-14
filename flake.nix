@@ -13,6 +13,11 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    projects = {
+      url = "git+ssh://git@github.com/TiagoDamascena/nixos-projects.git";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }: {
@@ -32,6 +37,7 @@
 
         modules = [
           ./hosts/vivobook
+          inputs.projects.nixosModules.default
         ];
       };
     };

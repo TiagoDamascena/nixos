@@ -1,5 +1,33 @@
 {
   "nodes": {
+    "agenix": {
+      "inputs": {
+        "darwin": [
+          "projects"
+        ],
+        "home-manager": [
+          "projects"
+        ],
+        "nixpkgs": [
+          "projects",
+          "nixpkgs"
+        ],
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1770165109,
+        "narHash": "sha256-9VnK6Oqai65puVJ4WYtCTvlJeXxMzAp/69HhQuTdl/I=",
+        "owner": "ryantm",
+        "repo": "agenix",
+        "rev": "b027ee29d959fda4b60b57566d64c98a202e0feb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ryantm",
+        "repo": "agenix",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -7,11 +35,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1770654520,
-        "narHash": "sha256-mg5WZMIPGsFu9MxSrUcuJUPMbfMsF77el5yb/7rc10k=",
+        "lastModified": 1771037579,
+        "narHash": "sha256-NX5XuhGcsmk0oEII2PEtMRgvh2KaAv3/WWQsOpxAgR4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "6c4fdbe1ad198fac36c320fd45c5957324a80b8e",
+        "rev": "05e6dc0f6ed936f918cb6f0f21f1dad1e4c53150",
         "type": "github"
       },
       "original": {
@@ -22,11 +50,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1770562336,
-        "narHash": "sha256-ub1gpAONMFsT/GU2hV6ZWJjur8rJ6kKxdm9IlCT0j84=",
+        "lastModified": 1771008912,
+        "narHash": "sha256-gf2AmWVTs8lEq7z/3ZAsgnZDhWIckkb+ZnAo5RzSxJg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "d6c71932130818840fc8fe9509cf50be8c64634f",
+        "rev": "a82ccc39b39b621151d6732718e3e250109076fa",
         "type": "github"
       },
       "original": {
@@ -36,11 +64,48 @@
         "type": "github"
       }
     },
+    "projects": {
+      "inputs": {
+        "agenix": "agenix",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1771091443,
+        "narHash": "sha256-Y8gJvVro0IF+ivg8606NRm/aFa/HC6XLHfpTd/effPk=",
+        "ref": "refs/heads/main",
+        "rev": "d65534fc4beb2794bbb9666a4570870e289a09a4",
+        "revCount": 6,
+        "type": "git",
+        "url": "ssh://git@github.com/TiagoDamascena/nixos-projects.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/TiagoDamascena/nixos-projects.git"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "projects": "projects",
         "zen-browser": "zen-browser"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
       }
     },
     "zen-browser": {
@@ -50,11 +115,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1770438797,
-        "narHash": "sha256-pwnQTmZswF6bu2/Ie7ajOo8w6rXQwVI954S9WX1UG3w=",
+        "lastModified": 1771043662,
+        "narHash": "sha256-GysLqHNtmK4KAn4xF/5KM/riOwT+VPx5l8riiN18H5k=",
         "owner": "youwen5",
         "repo": "zen-browser-flake",
-        "rev": "d396599774bdbafeb86c122dc2c422c7084ea390",
+        "rev": "7bb11fb238783853fffeee80c86de2ccabdd0ddc",
         "type": "github"
       },
       "original": {
