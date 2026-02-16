@@ -72,11 +72,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1771091443,
-        "narHash": "sha256-Y8gJvVro0IF+ivg8606NRm/aFa/HC6XLHfpTd/effPk=",
+        "lastModified": 1771247794,
+        "narHash": "sha256-CvQeIwXjbbDBtGKySfBAyEwU49YehFEtuxVrl7nI49Y=",
         "ref": "refs/heads/main",
-        "rev": "d65534fc4beb2794bbb9666a4570870e289a09a4",
-        "revCount": 6,
+        "rev": "b9f010ff8af22711be17ca442698f06bac3ad47f",
+        "revCount": 8,
         "type": "git",
         "url": "ssh://git@github.com/TiagoDamascena/nixos-projects.git"
       },
