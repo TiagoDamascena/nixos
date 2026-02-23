@@ -41,6 +41,10 @@
       "$mainMod, mouse_down, workspace, e+1"
       "$mainMod, mouse_up, workspace, e-1"
 
+      # Screenshot keybindings
+      ", Print, exec, grim -g \"$(slurp)\" ~/Pictures/Screenshots/$(date '+%Y-%m-%dT%H:%M:%S').png"
+      "SHIFT, Print, exec, grim -g \"$(slurp)\" - | satty --filename - --output-filename ~/Pictures/Screenshots/$(date '+%Y-%m-%dT%H:%M:%S').png"
+
       # Media keybindings
       ", XF86AudioMute, exec, volumectl toggle-mute"
       ", XF86AudioMicMute, exec, volumectl -m toggle-mute"

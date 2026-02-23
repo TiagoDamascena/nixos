@@ -57,6 +57,10 @@
       vlc
       gimp
       localsend
+      # Screenshot tools
+      grim
+      slurp
+      satty
     ];
 
     stateVersion = "25.11";

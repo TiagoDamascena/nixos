@@ -15,6 +15,12 @@
       size = "380 620";
     }
     {
+      name = "Satty";
+      "match:class" = "com.gabm.satty";
+      float = true;
+      center = true;
+    }
+    {
       "name" = "DBeaver splash";
       "match:class" = "java";
       "match:title" = "Dbeaver";
