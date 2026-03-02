@@ -49,6 +49,7 @@
       onlyoffice-desktopeditors
       vscode
       code-cursor
+      antigravity
       dbeaver-bin
       bruno
       postman
