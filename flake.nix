@@ -14,6 +14,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     projects = {
       url = "git+ssh://git@github.com/TiagoDamascena/nixos-projects.git";
       inputs.nixpkgs.follows = "nixpkgs";

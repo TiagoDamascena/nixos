@@ -10,6 +10,7 @@
     ./hyprland
     ./hyprlock
     ./hyprpaper
+    ./vscode
     ./ssh
     ./starship
     ./swaync
