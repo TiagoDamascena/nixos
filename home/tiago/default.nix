@@ -32,6 +32,7 @@
       kubectl
       kubeseal
       pavucontrol
+      wl-clipboard
       brightnessctl
       # Basic applications
       nautilus
