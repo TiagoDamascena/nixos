@@ -32,6 +32,7 @@
       kubectl
       kubeseal
       pavucontrol
+      brightnessctl
       # Basic applications
       nautilus
       loupe

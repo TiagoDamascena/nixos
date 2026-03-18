@@ -4,7 +4,7 @@
   environment.systemPackages = with pkgs; [
     git
     htop
-    neofetch
+    fastfetch
     vim
     zip
     unzip
