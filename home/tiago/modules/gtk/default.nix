@@ -9,6 +9,8 @@
       name = "adw-gtk3-dark";
     };
 
+    gtk4.theme = null;
+
     colorScheme = "dark";
   };
 

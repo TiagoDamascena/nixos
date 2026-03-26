@@ -6,6 +6,7 @@
     profiles.default = {
       userSettings = {
         "breadcrumbs.enabled" = false;
+        "claudeCode.preferredLocation" = "sidebar";
         "editor" = {
           "cursorSurroundingLines" = 999;
           "defaultFormatter" = "esbenp.prettier-vscode";
@@ -86,11 +87,6 @@
               "commands" = ["editor.action.commentLine"];
             }
           ];
-        };
-        "window" = {
-          "menuBarVisibility" = "toggle";
-          "titleBarStyle" = "native";
-          "customTitleBarVisibility" = "never";
         };
         "workbench" = {
           "colorTheme" = "Min Dark";
