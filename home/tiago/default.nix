@@ -34,6 +34,8 @@
       pavucontrol
       wl-clipboard
       brightnessctl
+      claude-code
+      bubblewrap
       # Basic applications
       nautilus
       loupe
@@ -51,6 +53,7 @@
       onlyoffice-desktopeditors
       vscode
       code-cursor
+      claude-desktop-fhs
       dbeaver-bin
       bruno
       postman

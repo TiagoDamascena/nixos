@@ -19,6 +19,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    claude-desktop = {
+      url = "github:aaddrick/claude-desktop-debian";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     projects = {
       url = "git+ssh://git@github.com/TiagoDamascena/nixos-projects.git";
       inputs.nixpkgs.follows = "nixpkgs";
