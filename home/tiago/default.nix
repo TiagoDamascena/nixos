@@ -34,7 +34,7 @@
       pavucontrol
       wl-clipboard
       brightnessctl
-      claude-code-bin
+      claude-code
       bubblewrap
       # Basic applications
       nautilus
