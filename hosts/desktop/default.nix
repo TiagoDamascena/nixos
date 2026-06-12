@@ -11,6 +11,7 @@
     ../../nixos/modules/system/hyprland.nix
     ../../nixos/modules/system/hyprlock.nix
     ../../nixos/modules/system/keyring.nix
+    ../../nixos/modules/system/nix-ld.nix
     ../../nixos/modules/system/playerctl.nix
     ../../nixos/modules/system/ssh.nix
     ../../nixos/modules/shell/fish.nix

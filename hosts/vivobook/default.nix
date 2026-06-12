@@ -16,6 +16,7 @@
     ../../nixos/modules/system/hyprland.nix
     ../../nixos/modules/system/hyprlock.nix
     ../../nixos/modules/system/keyring.nix
+    ../../nixos/modules/system/nix-ld.nix
     ../../nixos/modules/system/power-management.nix
     ../../nixos/modules/system/playerctl.nix
     ../../nixos/modules/system/docker.nix
