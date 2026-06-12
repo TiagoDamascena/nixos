@@ -52,7 +52,6 @@
       #bitwarden-desktop
       onlyoffice-desktopeditors
       vscode
-      code-cursor
       claude-desktop-fhs
       dbeaver-bin
       bruno
