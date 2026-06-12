@@ -12,7 +12,9 @@
     ../../nixos/modules/system/hyprlock.nix
     ../../nixos/modules/system/keyring.nix
     ../../nixos/modules/system/playerctl.nix
+    ../../nixos/modules/system/ssh.nix
     ../../nixos/modules/shell/fish.nix
+    ../../nixos/modules/system/docker.nix
   ];
 
   networking.hostName = "desktop";

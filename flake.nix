@@ -38,6 +38,7 @@
 
         modules = [
           ./hosts/desktop
+          inputs.projects.nixosModules.default
         ];
       };
 
