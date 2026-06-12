@@ -3,14 +3,14 @@
     enable = true;
     enableDefaultConfig = false;
 
-    matchBlocks = {
+    settings = {
       "*" = {
         addKeysToAgent = "ask";
         compression = false;
         forwardAgent = false;
-        setEnv = {
-          "TERM" = "xterm-256color";
-        };
+        setEnv = [
+          "TERM=xterm-256color"
+        ];
       };
     };
   };
