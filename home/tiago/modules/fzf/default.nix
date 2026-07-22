@@ -2,7 +2,7 @@
   programs.fzf = {
     enable = true;
 
-    historyWidgetOptions = [
+    historyWidget.options = [
       "--style full"
     ];
   };

@@ -25,7 +25,7 @@
         };
         "explorer.compactFolders" = false;
         "extensions" = {
-          "autoUpdate" = false;
+          "autoUpdate" = "off";
           "autoCheckUpdates" = false;
           "ignoreRecommendations" = true;
           "experimental.affinity" = {
