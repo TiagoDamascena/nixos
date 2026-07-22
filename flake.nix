@@ -20,7 +20,7 @@
     };
 
     claude-desktop = {
-      url = "github:aaddrick/claude-desktop-debian/v2.0.19%2Bclaude1.11847.5";
+      url = "github:aaddrick/claude-desktop-debian/v3.2.1+claude1.24012.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
