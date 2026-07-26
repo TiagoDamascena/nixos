@@ -2,10 +2,10 @@
   wayland.windowManager.hyprland.settings = {
     bind = [
       # Start application bindings
-      "$mainMod, RETURN, exec, uwsm app -- $terminal"
-      "$mainMod, SPACE, exec, uwsm app -- $menu"
-      "$mainMod, H, exec, uwsm app -- $history"
-      "$mainMod, E, exec, uwsm app -- $fileManager"
+      "$mainMod, RETURN, exec, uwsm-app -- $terminal"
+      "$mainMod, SPACE, exec, uwsm-app -- $menu"
+      "$mainMod, H, exec, uwsm-app -- $history"
+      "$mainMod, E, exec, uwsm-app -- $fileManager"
 
       # Window manipulation bindings
       "$mainMod, W, killactive,"
