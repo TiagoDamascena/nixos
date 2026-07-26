@@ -6,6 +6,7 @@
     profiles.default = {
       userSettings = {
         "breadcrumbs.enabled" = false;
+        "chat.titleBar.signIn.enabled" = false;
         "claudeCode.preferredLocation" = "sidebar";
         "editor" = {
           "cursorSurroundingLines" = 999;
@@ -87,6 +88,9 @@
               "commands" = ["editor.action.commentLine"];
             }
           ];
+        };
+        "window" = {
+          "controlsStyle" = "hidden";
         };
         "workbench" = {
           "colorTheme" = "Min Dark";
