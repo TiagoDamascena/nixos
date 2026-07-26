@@ -11,7 +11,7 @@
       wallpaper = [
         {
           monitor = "";
-          path = "${config.home.homeDirectory}/.config/wallpaper";
+          path = "${config.home.homeDirectory}/.wallpaper";
           fit_mode = "cover";
         }
       ];

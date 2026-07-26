@@ -19,7 +19,7 @@
 
       background = {
         monitor = "";
-        path = "$HOME/.config/wallpaper";
+        path = "$HOME/.wallpaper";
         blur_passes = 2;
         blur_size = 4;
         brightness = 0.8;
@@ -61,7 +61,7 @@
 
       image = {
         monitor = "";
-        path = "$HOME/.config/avatar";
+        path = "$HOME/.face";
         size = 80;
         border_size = 0;
         border_color = "$accent";
