@@ -36,16 +36,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1784693764,
-        "narHash": "sha256-vbX7DsZ+lWl41SriM5x+gx13z87gUtmlcXujCfCFH30=",
+        "lastModified": 1784952607,
+        "narHash": "sha256-0hU1wvdIWfLQmEW+gCcQIpVsnIaDL07yZG/Fc0QsnrQ=",
         "owner": "aaddrick",
         "repo": "claude-desktop-debian",
-        "rev": "3755cc45bd6cb4afe0decc736a12ed87577ac324",
+        "rev": "0b105f6388590c875f056bf832a828e5aef2a230",
         "type": "github"
       },
       "original": {
         "owner": "aaddrick",
-        "ref": "v3.2.1+claude1.24012.0",
+        "ref": "v3.2.1+claude1.24012.9",
         "repo": "claude-desktop-debian",
         "type": "github"
       }
@@ -172,11 +172,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784715123,
-        "narHash": "sha256-84rMK/x9fY83wjeI6GpGAYvmcsyDqffJqJSxCe3Ta9E=",
+        "lastModified": 1784949765,
+        "narHash": "sha256-MB+0noLfsYMoMsBkyG5CKYZmSk7dSXendvvjfQFUiPw=",
         "owner": "nix-community",
         "repo": "nix-vscode-extensions",
-        "rev": "c4c2a4e9060b8ca156a40b19729fa3f6ee4889fc",
+        "rev": "242a696abba55b45d577b5292e90b597284f5f85",
         "type": "github"
       },
       "original": {

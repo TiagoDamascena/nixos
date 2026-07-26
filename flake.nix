@@ -20,7 +20,7 @@
     };
 
     claude-desktop = {
-      url = "github:aaddrick/claude-desktop-debian/v3.2.1+claude1.24012.0";
+      url = "github:aaddrick/claude-desktop-debian/v3.2.1+claude1.24012.9";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -38,6 +38,7 @@
 
         modules = [
           ./hosts/desktop
+          inputs.struntuz-greet.nixosModules.default
           inputs.projects.nixosModules.default
         ];
       };
@@ -48,6 +49,7 @@
 
         modules = [
           ./hosts/vivobook
+          inputs.struntuz-greet.nixosModules.default
           inputs.projects.nixosModules.default
         ];
       };
