@@ -49,7 +49,7 @@
       google-chrome
       spotify
       discord
-      #bitwarden-desktop
+      bitwarden-desktop
       onlyoffice-desktopeditors
       vscode
       claude-desktop-fhs
