@@ -38,5 +38,12 @@
       "match:class" = "obsidian";
       workspace = "9";
     }
+    {
+      name = "Picture-in-Picture";
+      "match:class" = "zen";
+      "match:title" = "Picture-in-Picture";
+      float = true;
+      pin = true;
+    }
   ];
 }
