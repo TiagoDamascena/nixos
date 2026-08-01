@@ -12,6 +12,11 @@
     decoration = {
       rounding = 10;
       rounding_power = 4;
+
+      blur = {
+        size = 8;
+        passes = 3;
+      };
     };
 
     animations = {
@@ -42,22 +47,22 @@
         "match:namespace" = "vicinae";
       }
       {
-        name = "waybar-blur";
+        name = "struntuz-topbar-blur";
         blur = "on";
         ignore_alpha = 0;
-        "match:namespace" = "waybar";
+        "match:namespace" = "struntuz-topbar";
       }
       {
-        name = "swaync-control-center-blur";
+        name = "struntuz-control-center-blur";
         blur = "on";
         ignore_alpha = 0;
-        "match:namespace" = "swaync-control-center";
+        "match:namespace" = "struntuz-control-center";
       }
       {
-        name = "swaync-notification-window-blur";
+        name = "struntuz-toasts-blur";
         blur = "on";
         ignore_alpha = 0;
-        "match:namespace" = "swaync-notification-window";
+        "match:namespace" = "struntuz-toasts";
       }
     ];
   };

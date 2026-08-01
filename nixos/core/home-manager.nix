@@ -1,4 +1,4 @@
-{ home-manager, ... }:
+{ home-manager, struntuz-topbar, ... }:
 
 {
   imports = [ home-manager.nixosModules.home-manager ];
@@ -7,5 +7,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "backup";
+
+    sharedModules = [ struntuz-topbar.homeModules.default ];
   };
 }

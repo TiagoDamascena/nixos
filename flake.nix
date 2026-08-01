@@ -29,6 +29,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    struntuz-topbar = {
+      url = "github:tiagodamascena/struntuz-topbar";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     projects = {
       url = "git+ssh://git@github.com/TiagoDamascena/nixos-projects.git";
       inputs.nixpkgs.follows = "nixpkgs";

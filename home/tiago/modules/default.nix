@@ -10,12 +10,12 @@
     ./hyprland
     ./hyprlock
     ./hyprpaper
+    ./hyprsunset
     ./vscode
     ./ssh
     ./starship
-    ./swaync
+    ./struntuz-topbar
     ./vicinae
-    ./waybar
     ./xdg
   ];
 }
