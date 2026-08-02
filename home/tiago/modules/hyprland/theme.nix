@@ -49,6 +49,7 @@
       {
         name = "struntuz-topbar-blur";
         blur = "on";
+        blur_popups = "on";
         ignore_alpha = 0;
         "match:namespace" = "struntuz-topbar";
       }
@@ -63,6 +64,12 @@
         blur = "on";
         ignore_alpha = 0;
         "match:namespace" = "struntuz-toasts";
+      }
+      {
+        name = "struntuz-media";
+        blur = "on";
+        ignore_alpha = 0;
+        "match:namespace" = "struntuz-media";
       }
     ];
   };
