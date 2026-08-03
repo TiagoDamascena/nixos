@@ -8,6 +8,12 @@
         dark.name = "catppuccin-mocha";
       };
 
+      font = {
+        normal = {
+          family = "Inter";
+        };
+      };
+
       launcher_window = {
         opacity = 0.72;
       };
