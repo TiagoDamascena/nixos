@@ -275,11 +275,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1785685497,
-        "narHash": "sha256-oP587uwultdFvKZFRKVTOc+DqtoGkVMN24n26pVzVZM=",
+        "lastModified": 1785820248,
+        "narHash": "sha256-DcnG0dWcTEqersNmsDhuTZN088V3SLr/DTibegyVp2M=",
         "owner": "tiagodamascena",
         "repo": "struntuz-topbar",
-        "rev": "597c70a79c9b3680ec40e830fdc8ce763b82a4c3",
+        "rev": "f267dc23ac0c17d4f4ef00837915f9b0a2b84415",
         "type": "github"
       },
       "original": {

@@ -71,6 +71,12 @@
         ignore_alpha = 0;
         "match:namespace" = "struntuz-media";
       }
+      {
+        name = "struntuz-calendar";
+        blur = "on";
+        ignore_alpha = 0;
+        "match:namespace" = "struntuz-calendar";
+      }
     ];
   };
 }
