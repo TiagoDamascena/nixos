@@ -36,6 +36,7 @@
       brightnessctl
       claude-code
       bubblewrap
+      github-cli
       # Basic applications
       nautilus
       loupe
@@ -61,6 +62,7 @@
       vlc
       gimp
       localsend
+      github-desktop
       # Screenshot tools
       grim
       slurp
