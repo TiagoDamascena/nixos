@@ -52,7 +52,7 @@
       bitwarden-desktop
       onlyoffice-desktopeditors
       vscode
-      claude-desktop-fhs
+      llm-agents.claude-desktop
       dbeaver-bin
       bruno
       postman
