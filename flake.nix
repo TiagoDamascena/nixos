@@ -24,6 +24,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    buzz = {
+      url = "github:mulatta/buzz.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     struntuz-greet = {
       url = "github:tiagodamascena/struntuz-greet";
       inputs.nixpkgs.follows = "nixpkgs";
