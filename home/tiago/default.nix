@@ -53,7 +53,7 @@
       bitwarden-desktop
       onlyoffice-desktopeditors
       vscode
-      llm-agents.claude-desktop
+      claude-desktop
       dbeaver-bin
       bruno
       postman
