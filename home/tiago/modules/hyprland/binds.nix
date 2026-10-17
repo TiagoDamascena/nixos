@@ -1,3 +1,8 @@
+{ config, ... }:
+
+let
+  screenshot = "${config.xdg.userDirs.extraConfig.SCREENSHOTS}/$(date '+%Y-%m-%dT%H:%M:%S').png";
+in
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
@@ -42,8 +47,8 @@
       "$mainMod, mouse_up, workspace, e-1"
 
       # Screenshot keybindings
-      ", Print, exec, grim -g \"$(slurp)\" ~/Pictures/Screenshots/$(date '+%Y-%m-%dT%H:%M:%S').png"
-      "SHIFT, Print, exec, grim -g \"$(slurp)\" - | satty --filename - --output-filename ~/Pictures/Screenshots/$(date '+%Y-%m-%dT%H:%M:%S').png"
+      ", Print, exec, grim -g \"$(slurp)\" ${screenshot}"
+      "SHIFT, Print, exec, grim -g \"$(slurp)\" - | satty --filename - --output-filename ${screenshot}"
 
       # Media keybindings
       ", XF86AudioMute, exec, volumectl toggle-mute"

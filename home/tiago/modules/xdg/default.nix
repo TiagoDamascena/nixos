@@ -1,3 +1,5 @@
+{ config, ... }:
+
 {
   xdg = {
     enable = true;
@@ -11,6 +13,10 @@
       music = null;
       publicShare = null;
       templates = null;
+
+      extraConfig = {
+        SCREENSHOTS = "${config.xdg.userDirs.pictures}/Screenshots";
+      };
     };
 
     mimeApps = {
