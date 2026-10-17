@@ -12,5 +12,21 @@
       publicShare = null;
       templates = null;
     };
+
+    mimeApps = {
+      enable = true;
+
+      defaultApplications = {
+        "application/pdf" = "org.gnome.Papers.desktop";
+        "image/png" = "org.gnome.Loupe.desktop";
+        "image/jpeg" = "org.gnome.Loupe.desktop";
+        "x-scheme-handler/bitwarden" = "bitwarden.desktop";
+        "x-scheme-handler/claude" = "com.anthropic.Claude.desktop";
+        "x-scheme-handler/claude-cli" = "claude-code-url-handler.desktop";
+        "x-scheme-handler/plane" = "plane-desktop.desktop";
+        "x-scheme-handler/x-github-client" = "github-desktop.desktop";
+        "x-scheme-handler/x-github-desktop-dev-auth" = "github-desktop.desktop";
+      };
+    };
   };
 }
