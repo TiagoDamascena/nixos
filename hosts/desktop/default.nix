@@ -20,6 +20,13 @@
 
   networking.hostName = "desktop";
 
+  settings = {
+    keyboard = {
+      layout = "us";
+      variant = "altgr-intl";
+    };
+  };
+
   hardware.graphics = {
     enable = true;
   };
