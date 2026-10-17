@@ -147,28 +147,6 @@
         "type": "github"
       }
     },
-    "buzz": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "rust-overlay": "rust-overlay",
-        "treefmt-nix": "treefmt-nix"
-      },
-      "locked": {
-        "lastModified": 1792048444,
-        "narHash": "sha256-K2rT8saVwC+XJGksnIYOXRggkhOZxJl2O5+a0GXC+jM=",
-        "owner": "mulatta",
-        "repo": "buzz.nix",
-        "rev": "f48570ad03f3b74424cbc84206ae27b1f685fdb4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "mulatta",
-        "repo": "buzz.nix",
-        "type": "github"
-      }
-    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -218,7 +196,7 @@
           "nixpkgs"
         ],
         "systems": "systems",
-        "treefmt-nix": "treefmt-nix_2"
+        "treefmt-nix": "treefmt-nix"
       },
       "locked": {
         "lastModified": 1792226690,
@@ -273,7 +251,6 @@
     },
     "root": {
       "inputs": {
-        "buzz": "buzz",
         "home-manager": "home-manager",
         "llm-agents": "llm-agents",
         "nixpkgs": "nixpkgs",
@@ -282,27 +259,6 @@
         "struntuz-topbar": "struntuz-topbar",
         "vscode-extensions": "vscode-extensions",
         "zen-browser": "zen-browser"
-      }
-    },
-    "rust-overlay": {
-      "inputs": {
-        "nixpkgs": [
-          "buzz",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1791707771,
-        "narHash": "sha256-w3m8HtAVCfGTHw+gcCTAy7jFHSdGbokm8NngbeFrkek=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "c1cfa7a2c809d364ac1a7e9b3ec418afa3f19793",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
       }
     },
     "struntuz-greet": {
@@ -365,27 +321,6 @@
       }
     },
     "treefmt-nix": {
-      "inputs": {
-        "nixpkgs": [
-          "buzz",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1790542030,
-        "narHash": "sha256-U6m0B5+ALyOLYG4OVvtguLdem7iYgN6cIP5Q1RhM+g8=",
-        "owner": "numtide",
-        "repo": "treefmt-nix",
-        "rev": "6aca3b3649eb1edf472eca3e91e6bcc0c84a6ad3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "treefmt-nix",
-        "type": "github"
-      }
-    },
-    "treefmt-nix_2": {
       "inputs": {
         "nixpkgs": [
           "llm-agents",

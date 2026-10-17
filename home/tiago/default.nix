@@ -67,9 +67,6 @@
       grim
       slurp
       satty
-      # Buzz
-      claude-agent-acp
-      buzz-desktop
     ];
 
     stateVersion = "26.11";

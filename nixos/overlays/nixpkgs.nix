@@ -1,4 +1,4 @@
-{ pkgs, zen-browser, buzz, vscode-extensions, llm-agents, ... }:
+{ pkgs, zen-browser, vscode-extensions, llm-agents, ... }:
 
 {
   nixpkgs.overlays = [
@@ -6,7 +6,6 @@
     llm-agents.overlays.shared-nixpkgs
     (final: prev: {
       zen-browser = zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
-      buzz-desktop = buzz.packages.${pkgs.stdenv.hostPlatform.system}.buzz-desktop;
       claude-desktop = final.symlinkJoin {
         name = "claude-desktop";
         paths = [ final.llm-agents.claude-desktop.unwrapped ];
