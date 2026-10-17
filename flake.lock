@@ -363,20 +363,23 @@
     },
     "zen-browser": {
       "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1790843023,
-        "narHash": "sha256-vO6WFunNqHCjEaQc3ytshsGhHMqAIeW+5/rEJRLQLxQ=",
-        "owner": "youwen5",
+        "lastModified": 1792192561,
+        "narHash": "sha256-XNE80BcOYerOY/+2bfmVk1Sik7FYq7ID9mbtXTeqDN0=",
+        "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "710bb85c6cb4f186de8a710615be5b93b5f98885",
+        "rev": "733154388e22e459c7e6dd14e6522069bbf25971",
         "type": "github"
       },
       "original": {
-        "owner": "youwen5",
+        "owner": "0xc000022070",
         "repo": "zen-browser-flake",
         "type": "github"
       }

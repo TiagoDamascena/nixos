@@ -46,7 +46,6 @@
       gnome-calendar
       gnome-system-monitor
       # User applications
-      zen-browser
       google-chrome
       spotify
       discord

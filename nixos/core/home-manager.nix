@@ -1,4 +1,4 @@
-{ home-manager, struntuz-topbar, ... }:
+{ home-manager, struntuz-topbar, zen-browser, ... }:
 
 {
   imports = [ home-manager.nixosModules.home-manager ];
@@ -8,6 +8,9 @@
     useUserPackages = true;
     backupFileExtension = "backup";
 
-    sharedModules = [ struntuz-topbar.homeModules.default ];
+    sharedModules = [
+      struntuz-topbar.homeModules.default
+      zen-browser.homeModules.beta
+    ];
   };
 }

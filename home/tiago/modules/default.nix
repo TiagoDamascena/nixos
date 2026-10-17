@@ -17,5 +17,6 @@
     ./struntuz-topbar
     ./vicinae
     ./xdg
+    ./zen-browser
   ];
 }

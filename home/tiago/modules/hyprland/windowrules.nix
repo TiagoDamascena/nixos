@@ -40,7 +40,7 @@
     }
     {
       name = "Picture-in-Picture";
-      "match:class" = "zen";
+      "match:class" = "zen-beta";
       "match:title" = "Picture-in-Picture";
       float = true;
       pin = true;
