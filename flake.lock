@@ -228,6 +228,26 @@
         "type": "github"
       }
     },
+    "plane": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792259326,
+        "narHash": "sha256-ONWdvpxjTxqj10M4oEUZ+Jl2aDlOJZ0g5weR8ZCHTao=",
+        "owner": "TiagoDamascena",
+        "repo": "plane",
+        "rev": "1d73ec5e5b4b2e88511cefea005bc984494d8c2e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "TiagoDamascena",
+        "repo": "plane",
+        "type": "github"
+      }
+    },
     "projects": {
       "inputs": {
         "agenix": "agenix",
@@ -254,6 +274,7 @@
         "home-manager": "home-manager",
         "llm-agents": "llm-agents",
         "nixpkgs": "nixpkgs",
+        "plane": "plane",
         "projects": "projects",
         "struntuz-greet": "struntuz-greet",
         "struntuz-topbar": "struntuz-topbar",

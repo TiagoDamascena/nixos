@@ -1,9 +1,10 @@
-{ pkgs, vscode-extensions, llm-agents, ... }:
+{ pkgs, vscode-extensions, llm-agents, plane, ... }:
 
 {
   nixpkgs.overlays = [
     vscode-extensions.overlays.default
     llm-agents.overlays.shared-nixpkgs
+    plane.overlays.default
     (final: prev: {
       claude-desktop = final.symlinkJoin {
         name = "claude-desktop";

@@ -57,6 +57,7 @@
       bruno
       postman
       obsidian
+      plane-desktop
       drawio
       vlc
       gimp

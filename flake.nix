@@ -27,6 +27,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    plane = {
+      url = "github:TiagoDamascena/plane";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     struntuz-greet = {
       url = "github:tiagodamascena/struntuz-greet";
       inputs.nixpkgs.follows = "nixpkgs";
