@@ -53,6 +53,7 @@
       onlyoffice-desktopeditors
       vscode
       claude-desktop
+      llm-agents.paperclip
       dbeaver-bin
       bruno
       postman
