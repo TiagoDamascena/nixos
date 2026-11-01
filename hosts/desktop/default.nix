@@ -16,6 +16,7 @@
     ../../nixos/modules/system/ssh.nix
     ../../nixos/modules/shell/fish.nix
     ../../nixos/modules/system/docker.nix
+    ../../nixos/modules/system/netbird.nix
   ];
 
   networking.hostName = "desktop";
