@@ -25,9 +25,17 @@
         default = "";
       };
 
+      # Each entry becomes an `hl.monitor({ ... })` call in the Hyprland Lua config.
       hyprland.monitors = lib.mkOption {
-        type = lib.types.listOf lib.types.str;
-        default = [ ", preferred, auto, auto" ];
+        type = with lib.types; listOf (attrsOf (oneOf [ str int float bool ]));
+        default = [
+          {
+            output = "";
+            mode = "preferred";
+            position = "auto";
+            scale = "auto";
+          }
+        ];
       };
     };
   };

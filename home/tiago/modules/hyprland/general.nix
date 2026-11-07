@@ -1,26 +1,29 @@
 {
   wayland.windowManager.hyprland.settings = {
-    "$mainMod" = "SUPER";
-    "$terminal" = "alacritty";
-    "$fileManager" = "nautilus";
-    "$menu" = "vicinae toggle";
-    "$history" = "vicinae vicinae://extensions/vicinae/clipboard/history";
+    # Rendered as Lua locals (`local mainMod = "SUPER"`), usable from binds.
+    mainMod._var = "SUPER";
+    terminal._var = "alacritty";
+    fileManager._var = "nautilus";
+    menu._var = "vicinae toggle";
+    history._var = "vicinae vicinae://extensions/vicinae/clipboard/history";
 
-    general = {
-      resize_on_border = false;
-      allow_tearing = false;
-    };
+    config = {
+      general = {
+        resize_on_border = false;
+        allow_tearing = false;
+      };
 
-    misc = {
-      disable_hyprland_logo = true;
-      disable_splash_rendering = true;
-      focus_on_activate = true;
+      misc = {
+        disable_hyprland_logo = true;
+        disable_splash_rendering = true;
+        focus_on_activate = true;
+      };
     };
 
     env = [
-      "XDG_CURRENT_DESKTOP,Hyprland"
-      "XDG_SESSION_TYPE,wayland"
-      "XDG_SESSION_DESKTOP,Hyprland"
+      { _args = [ "XDG_CURRENT_DESKTOP" "Hyprland" ]; }
+      { _args = [ "XDG_SESSION_TYPE" "wayland" ]; }
+      { _args = [ "XDG_SESSION_DESKTOP" "Hyprland" ]; }
     ];
   };
 }

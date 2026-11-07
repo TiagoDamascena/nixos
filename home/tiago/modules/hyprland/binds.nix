@@ -1,78 +1,86 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 let
+  inherit (lib.generators) mkLuaInline toLua;
+
   screenshot = "${config.xdg.userDirs.extraConfig.SCREENSHOTS}/$(date '+%Y-%m-%dT%H:%M:%S').png";
+
+  # Key combo prefixed with the `mainMod` Lua local defined in general.nix.
+  mod = keys: mkLuaInline "mainMod .. ${toLua { } " + ${keys}"}";
+
+  # hl.dsp.<name>(<args>) — `args` is a Nix value converted to Lua (or null for no args).
+  dsp = name: args: mkLuaInline "hl.dsp.${name}(${lib.optionalString (args != null) (toLua { } args)})";
+
+  # Run a command; `cmd` is a raw Lua expression so it can reference the program locals.
+  execLua = cmd: mkLuaInline "hl.dsp.exec_cmd(${cmd})";
+  exec = cmd: dsp "exec_cmd" cmd;
+
+  bind = keys: dispatcher: opts: {
+    _args = [ keys dispatcher ] ++ lib.optional (opts != { }) opts;
+  };
+
+  workspaces = lib.range 1 9;
 in
 {
-  wayland.windowManager.hyprland.settings = {
-    bind = [
-      # Start application bindings
-      "$mainMod, RETURN, exec, uwsm-app -- $terminal"
-      "$mainMod, SPACE, exec, uwsm-app -- $menu"
-      "$mainMod, H, exec, uwsm-app -- $history"
-      "$mainMod, E, exec, uwsm-app -- $fileManager"
+  wayland.windowManager.hyprland.settings.bind = [
+    # Start application bindings
+    (bind (mod "RETURN") (execLua ''"uwsm-app -- " .. terminal'') { })
+    (bind (mod "SPACE") (execLua ''"uwsm-app -- " .. menu'') { })
+    (bind (mod "H") (execLua ''"uwsm-app -- " .. history'') { })
+    (bind (mod "E") (execLua ''"uwsm-app -- " .. fileManager'') { })
 
-      # Window manipulation bindings
-      "$mainMod, W, killactive,"
-      "$mainMod, T, togglefloating,"
+    # Window manipulation bindings
+    (bind (mod "W") (dsp "window.close" null) { })
+    (bind (mod "T") (dsp "window.float" { action = "toggle"; }) { })
+  ]
+  # Switch workspaces with mainMod + [1-9]
+  ++ map (
+    i:
+    bind (mod (toString i)) (dsp "focus" {
+      workspace = i;
+      on_current_monitor = true;
+    }) { }
+  ) workspaces
+  # Move active window to a workspace with mainMod + SHIFT + [1-9]
+  ++ map (
+    i:
+    bind (mod "SHIFT + ${toString i}") (dsp "window.move" {
+      workspace = i;
+      follow = true;
+    }) { }
+  ) workspaces
+  ++ [
+    # Special workspace (scratchpad)
+    (bind (mod "S") (dsp "workspace.toggle_special" "magic") { })
+    (bind (mod "SHIFT + S") (dsp "window.move" {
+      workspace = "special:magic";
+      follow = true;
+    }) { })
 
-      # Switch workspaces with mainMod + [0-9]
-      "$mainMod, 1, focusworkspaceoncurrentmonitor, 1"
-      "$mainMod, 2, focusworkspaceoncurrentmonitor, 2"
-      "$mainMod, 3, focusworkspaceoncurrentmonitor, 3"
-      "$mainMod, 4, focusworkspaceoncurrentmonitor, 4"
-      "$mainMod, 5, focusworkspaceoncurrentmonitor, 5"
-      "$mainMod, 6, focusworkspaceoncurrentmonitor, 6"
-      "$mainMod, 7, focusworkspaceoncurrentmonitor, 7"
-      "$mainMod, 8, focusworkspaceoncurrentmonitor, 8"
-      "$mainMod, 9, focusworkspaceoncurrentmonitor, 9"
+    # Scroll through existing workspaces with mainMod + scroll
+    (bind (mod "mouse_down") (dsp "focus" { workspace = "e+1"; }) { })
+    (bind (mod "mouse_up") (dsp "focus" { workspace = "e-1"; }) { })
 
-      # Move active window to a workspace with mainMod + SHIFT + [0-9]
-      "$mainMod SHIFT, 1, movetoworkspace, 1"
-      "$mainMod SHIFT, 2, movetoworkspace, 2"
-      "$mainMod SHIFT, 3, movetoworkspace, 3"
-      "$mainMod SHIFT, 4, movetoworkspace, 4"
-      "$mainMod SHIFT, 5, movetoworkspace, 5"
-      "$mainMod SHIFT, 6, movetoworkspace, 6"
-      "$mainMod SHIFT, 7, movetoworkspace, 7"
-      "$mainMod SHIFT, 8, movetoworkspace, 8"
-      "$mainMod SHIFT, 9, movetoworkspace, 9"
+    # Move/resize windows with mainMod + LMB/RMB and dragging
+    (bind (mod "mouse:272") (dsp "window.drag" null) { mouse = true; })
+    (bind (mod "mouse:273") (dsp "window.resize" null) { mouse = true; })
 
-      # Example special workspace (scratchpad)
-      "$mainMod, S, togglespecialworkspace, magic"
-      "$mainMod SHIFT, S, movetoworkspace, special:magic"
+    # Screenshot keybindings
+    (bind "Print" (exec "grim -g \"$(slurp)\" ${screenshot}") { })
+    (bind "SHIFT + Print" (exec "grim -g \"$(slurp)\" - | satty --filename - --output-filename ${screenshot}") { })
 
-      # Scroll through existing workspaces with mainMod + scroll
-      "$mainMod, mouse_down, workspace, e+1"
-      "$mainMod, mouse_up, workspace, e-1"
+    # Media keybindings
+    (bind "XF86AudioMute" (exec "volumectl toggle-mute") { })
+    (bind "XF86AudioMicMute" (exec "volumectl -m toggle-mute") { })
+    (bind "XF86AudioPrev" (exec "playerctl previous") { })
+    (bind "XF86AudioNext" (exec "playerctl next") { })
+    (bind "XF86AudioPlay" (exec "playerctl play-pause") { })
+    (bind "XF86AudioStop" (exec "playerctl stop") { })
+    (bind "XF86AudioRaiseVolume" (exec "volumectl -u up") { repeating = true; })
+    (bind "XF86AudioLowerVolume" (exec "volumectl -u down") { repeating = true; })
 
-      # Screenshot keybindings
-      ", Print, exec, grim -g \"$(slurp)\" ${screenshot}"
-      "SHIFT, Print, exec, grim -g \"$(slurp)\" - | satty --filename - --output-filename ${screenshot}"
-
-      # Media keybindings
-      ", XF86AudioMute, exec, volumectl toggle-mute"
-      ", XF86AudioMicMute, exec, volumectl -m toggle-mute"
-      ", XF86AudioPrev, exec, playerctl previous"
-      ", XF86AudioNext, exec, playerctl next"
-      ", XF86AudioPlay, exec, playerctl play-pause"
-      ", XF86AudioStop, exec, playerctl stop"
-    ];
-
-    binde = [
-      # Media keybindings
-      ", XF86AudioRaiseVolume, exec, volumectl -u up"
-      ", XF86AudioLowerVolume, exec, volumectl -u down"
-
-      # Brightness keybindings
-      ", XF86MonBrightnessUp, exec, lightctl up"
-      ", XF86MonBrightnessDown, exec, lightctl down"
-    ];
-
-    bindm = [
-      # Move/resize windows with mainMod + LMB/RMB and dragging
-      "$mainMod, mouse:272, movewindow"
-      "$mainMod, mouse:273, resizewindow"
-    ];
-  };
+    # Brightness keybindings
+    (bind "XF86MonBrightnessUp" (exec "lightctl up") { repeating = true; })
+    (bind "XF86MonBrightnessDown" (exec "lightctl down") { repeating = true; })
+  ];
 }

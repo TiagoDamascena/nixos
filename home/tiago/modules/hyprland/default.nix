@@ -14,6 +14,8 @@
     enable = true;
     systemd.enable = false;
 
-    configType = "hyprlang";
+    # Hyprland >= 0.57 reads hyprland.lua; hyprlang (hyprland.conf) is ignored
+    # once a hyprland.lua exists, so generate the Lua config.
+    configType = "lua";
   };
 }
