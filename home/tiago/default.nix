@@ -37,6 +37,9 @@
       claude-code
       bubblewrap
       github-cli
+      awscli2
+      terraform
+      ansible
       # Basic applications
       nautilus
       loupe
